@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import useFormData from '../../hook/useFormData'
-import Input from '../../components/input'
+import Input from '../../components/Input'
 import ButtonLoading from '../../components/ButtonLoading'
 
 const Home: NextPage = () => {

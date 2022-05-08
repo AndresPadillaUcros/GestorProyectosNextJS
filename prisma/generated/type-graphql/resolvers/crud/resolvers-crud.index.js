@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UsuarioCrudResolver = exports.ProyectoCrudResolver = exports.InscripcionCrudResolver = exports.AvancesCrudResolver = void 0;
+var AvancesCrudResolver_1 = require("./Avances/AvancesCrudResolver");
+Object.defineProperty(exports, "AvancesCrudResolver", { enumerable: true, get: function () { return AvancesCrudResolver_1.AvancesCrudResolver; } });
+var InscripcionCrudResolver_1 = require("./Inscripcion/InscripcionCrudResolver");
+Object.defineProperty(exports, "InscripcionCrudResolver", { enumerable: true, get: function () { return InscripcionCrudResolver_1.InscripcionCrudResolver; } });
+var ProyectoCrudResolver_1 = require("./Proyecto/ProyectoCrudResolver");
+Object.defineProperty(exports, "ProyectoCrudResolver", { enumerable: true, get: function () { return ProyectoCrudResolver_1.ProyectoCrudResolver; } });
+var UsuarioCrudResolver_1 = require("./Usuario/UsuarioCrudResolver");
+Object.defineProperty(exports, "UsuarioCrudResolver", { enumerable: true, get: function () { return UsuarioCrudResolver_1.UsuarioCrudResolver; } });

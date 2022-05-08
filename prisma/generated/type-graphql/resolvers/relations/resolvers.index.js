@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UsuarioRelationsResolver = exports.ProyectoRelationsResolver = exports.InscripcionRelationsResolver = exports.AvancesRelationsResolver = void 0;
+var AvancesRelationsResolver_1 = require("./Avances/AvancesRelationsResolver");
+Object.defineProperty(exports, "AvancesRelationsResolver", { enumerable: true, get: function () { return AvancesRelationsResolver_1.AvancesRelationsResolver; } });
+var InscripcionRelationsResolver_1 = require("./Inscripcion/InscripcionRelationsResolver");
+Object.defineProperty(exports, "InscripcionRelationsResolver", { enumerable: true, get: function () { return InscripcionRelationsResolver_1.InscripcionRelationsResolver; } });
+var ProyectoRelationsResolver_1 = require("./Proyecto/ProyectoRelationsResolver");
+Object.defineProperty(exports, "ProyectoRelationsResolver", { enumerable: true, get: function () { return ProyectoRelationsResolver_1.ProyectoRelationsResolver; } });
+var UsuarioRelationsResolver_1 = require("./Usuario/UsuarioRelationsResolver");
+Object.defineProperty(exports, "UsuarioRelationsResolver", { enumerable: true, get: function () { return UsuarioRelationsResolver_1.UsuarioRelationsResolver; } });

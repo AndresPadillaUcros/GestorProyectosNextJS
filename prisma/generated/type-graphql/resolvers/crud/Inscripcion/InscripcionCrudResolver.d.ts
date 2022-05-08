@@ -1,0 +1,31 @@
+import { GraphQLResolveInfo } from "graphql";
+import { AggregateInscripcionArgs } from "./args/AggregateInscripcionArgs";
+import { CreateInscripcionArgs } from "./args/CreateInscripcionArgs";
+import { CreateManyInscripcionArgs } from "./args/CreateManyInscripcionArgs";
+import { DeleteInscripcionArgs } from "./args/DeleteInscripcionArgs";
+import { DeleteManyInscripcionArgs } from "./args/DeleteManyInscripcionArgs";
+import { FindFirstInscripcionArgs } from "./args/FindFirstInscripcionArgs";
+import { FindManyInscripcionArgs } from "./args/FindManyInscripcionArgs";
+import { FindUniqueInscripcionArgs } from "./args/FindUniqueInscripcionArgs";
+import { GroupByInscripcionArgs } from "./args/GroupByInscripcionArgs";
+import { UpdateInscripcionArgs } from "./args/UpdateInscripcionArgs";
+import { UpdateManyInscripcionArgs } from "./args/UpdateManyInscripcionArgs";
+import { UpsertInscripcionArgs } from "./args/UpsertInscripcionArgs";
+import { Inscripcion } from "../../../models/Inscripcion";
+import { AffectedRowsOutput } from "../../outputs/AffectedRowsOutput";
+import { AggregateInscripcion } from "../../outputs/AggregateInscripcion";
+import { InscripcionGroupBy } from "../../outputs/InscripcionGroupBy";
+export declare class InscripcionCrudResolver {
+    inscripcion(ctx: any, info: GraphQLResolveInfo, args: FindUniqueInscripcionArgs): Promise<Inscripcion | null>;
+    findFirstInscripcion(ctx: any, info: GraphQLResolveInfo, args: FindFirstInscripcionArgs): Promise<Inscripcion | null>;
+    inscripcions(ctx: any, info: GraphQLResolveInfo, args: FindManyInscripcionArgs): Promise<Inscripcion[]>;
+    createInscripcion(ctx: any, info: GraphQLResolveInfo, args: CreateInscripcionArgs): Promise<Inscripcion>;
+    createManyInscripcion(ctx: any, info: GraphQLResolveInfo, args: CreateManyInscripcionArgs): Promise<AffectedRowsOutput>;
+    deleteInscripcion(ctx: any, info: GraphQLResolveInfo, args: DeleteInscripcionArgs): Promise<Inscripcion | null>;
+    updateInscripcion(ctx: any, info: GraphQLResolveInfo, args: UpdateInscripcionArgs): Promise<Inscripcion | null>;
+    deleteManyInscripcion(ctx: any, info: GraphQLResolveInfo, args: DeleteManyInscripcionArgs): Promise<AffectedRowsOutput>;
+    updateManyInscripcion(ctx: any, info: GraphQLResolveInfo, args: UpdateManyInscripcionArgs): Promise<AffectedRowsOutput>;
+    upsertInscripcion(ctx: any, info: GraphQLResolveInfo, args: UpsertInscripcionArgs): Promise<Inscripcion>;
+    aggregateInscripcion(ctx: any, info: GraphQLResolveInfo, args: AggregateInscripcionArgs): Promise<AggregateInscripcion>;
+    groupByInscripcion(ctx: any, info: GraphQLResolveInfo, args: GroupByInscripcionArgs): Promise<InscripcionGroupBy[]>;
+}

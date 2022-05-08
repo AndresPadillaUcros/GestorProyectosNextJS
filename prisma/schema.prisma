@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator typegraphql {
+  provider           = "typegraphql-prisma"
+  output             = "../prisma/generated/type-graphql"
+  emitTranspiledCode = true
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Enum_Rol {
+  Estudiante
+  Lider
+  Administrador
+}
+
+enum Enum_EstadoUsuario {
+  Pendiente
+  Autorizado
+  NoAutorizado
+}
+
+enum Enum_EstadoProyecto {
+  Activo
+  Inactivo
+}
+
+enum Enum_FaseProyecto {
+  Iniciado
+  Desarollo
+  Terminado
+}
+
+enum Enum_EstadoInscripcion {
+  Aceptado
+  Rechazado
+}
+
+model Usuario {
+  id                 String             @id @default(cuid())
+  email              String             @unique
+  nombre             String
+  apellido           String
+  identificacion     String             @unique
+  rol                Enum_Rol
+  estado             Enum_EstadoUsuario
+  proyectosLiderados Proyecto[]
+  avances            Avances[]
+  inscripciones      Inscripcion[]
+}
+
+model Proyecto {
+  id            String        @id @default(cuid())
+  nombre        String
+  presupuesto   Float
+  fechaInicio   DateTime
+  fechaFin      DateTime?
+  lider         Usuario       @relation(fields: [usuarioId], references: [id])
+  usuarioId     String
+  avances       Avances[]
+  inscripciones Inscripcion[]
+}
+
+model Avances {
+  id            String   @id @default(cuid())
+  fecha         DateTime
+  descripcion   String
+  observaciones String
+  proyecto      Proyecto @relation(fields: [proyectoId], references: [id])
+  proyectoId    String
+  creadoPor     Usuario  @relation(fields: [usuarioId], references: [id])
+  usuarioId     String
+}
+
+model Inscripcion {
+  id           String                 @id @default(cuid())
+  estado       Enum_EstadoInscripcion
+  fechaIngreso DateTime
+  fechaEgreso  DateTime
+  proyecto     Proyecto               @relation(fields: [proyectoId], references: [id])
+  proyectoId   String
+  estudiante   Usuario                @relation(fields: [usuarioId], references: [id])
+  usuarioId    String
+}

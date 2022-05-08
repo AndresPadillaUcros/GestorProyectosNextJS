@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 
 const SideBar = () => {
   return (
@@ -14,35 +14,35 @@ const SideBar = () => {
                 <p> </p>
 
                 <li>
-                    <a href="/"> Inicio</a>
+                    <Link href="/"> Inicio</Link>
                 </li>
 
                 <li>
-                    <a href="/perfil"> Perfil</a>
+                    <Link href="/perfil"> Perfil</Link>
                 </li>
 
                 <li>
-                    <a href="/usuarios"> Usuarios</a>
+                    <Link href="/usuarios"> Usuarios</Link>
                 </li>
                 
                 <li>
-                    <a href="/lista-proyectos"> Proyectos</a>
+                    <Link href="/lista-proyectos"> Proyectos</Link>
                 </li>
 
 
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Mis proyectos </a>
+                    <Link href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Mis proyectos </Link>
                     <ul className="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="/mis-proyectos/">Ver mis proyectos</a>
+                            <Link href="/mis-proyectos/">Ver mis proyectos</Link>
                         </li>
 
                         <li>
-                            <a href="/mis-proyectos/crearProyecto">Crear proyecto</a>
+                            <Link href="/mis-proyectos/crearProyecto">Crear proyecto</Link>
                         </li>
 
                         <li>
-                            <a href="/mis-proyectos/solicitudesEstudiantes"> Solicitudes de estudiantes</a>
+                            <Link href="/mis-proyectos/solicitudesEstudiantes"> Solicitudes de estudiantes</Link>
                         </li>
 
                     </ul>
@@ -55,8 +55,8 @@ const SideBar = () => {
         
         <div >
                 <div >
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-arrow-left"></i>
+                    <button type="button" id="sidebarCollapse" className="btn btn-info">
+                        <i className="fas fa-arrow-left"></i>
                     </button>
                 </div>
         </div>

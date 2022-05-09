@@ -2,15 +2,24 @@ import type { NextPage } from 'next'
 import useFormData from '../../hook/useFormData'
 import Input from '../../components/Input'
 import ButtonLoading from '../../components/ButtonLoading'
+import DropDown from '../../components/Dropdown'
+import { useQuery, useMutation } from '@apollo/client';
+
+import { GET_USUARIOS } from '../../graphql/usuarios/queries';
 
 const Home: NextPage = () => {
-  return (
+
+    const {data,loading}=useQuery(GET_USUARIOS);
+
+    if (loading) return <div> Cargando usuarios...</div>
+
+
+    return (
         <div className='flew flex-col w-full h-full items-center justify-center p-10'>
                 <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Editar Perfil</h1>
                 <form
-
-                        ref={null} 
-                        className='flex flex-col items-center justify-center'
+                    ref={null} 
+                    className='flex flex-col items-center justify-center'
                 >
                     <Input
                         label='Nombre:'
@@ -44,12 +53,31 @@ const Home: NextPage = () => {
                         required={true}
                         disabled={false}
                     />
+{/*                     <DropDown
+                        label='Rol:'
+                        type='text'
+                        name='correo'
+                        defaultValue={null}
+                        required={true}
+                        disabled={false}
+                    />
+                    <DropDown
+                        label='Estado:'
+                        name='estado'
+                        defaultValue={queryDataProyecto.Proyecto.estado}
+                        required={true}
+                        options={Enum_EstadoProyecto}
+                        disabled={true}
+                    />
 
                     <ButtonLoading
-                            disabled={null}
-                            loading={null}
-                            text='Confirmar'
-                    /> 
+                        label='Estado del proyecto:'
+                        name='estado'
+                        defaultValue={queryDataProyecto.Proyecto.estado}
+                        required={true}
+                        options={Enum_EstadoProyecto}
+                        disabled={true}
+                    />  */}
 
 
 
@@ -57,7 +85,7 @@ const Home: NextPage = () => {
                 </form>
                 
           </div>
-  )
+    )
 }
 
 export default Home

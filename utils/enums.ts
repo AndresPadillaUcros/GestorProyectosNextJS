@@ -1,34 +1,34 @@
-const Enum_Rol : any = {
-    ADMINISTRADOR: 'Administrador',
-    ESTUDIANTE: 'Estudiante',
-    LIDER: 'Líder',
+const Enum_Rol:any = {
+    Administrador: 'Administrador',
+    Estudiante: 'Estudiante',
+    Lider: 'Líder',
   };
   
-const Enum_EstadoUsuario: any = {
-    PENDIENTE: 'Pendiente',
-    AUTORIZADO: 'Autorizado',
-    NO_AUTORIZADO: 'No autorizado',
+const Enum_EstadoUsuario:any= {
+    Pendiente: 'Pendiente',
+    Autorizado: 'Autorizado',
+    No_autorizado: 'No autorizado',
   };
   
-const Enum_EstadoProyecto: any = {
+const Enum_EstadoProyecto:any= {
     ACTIVO: 'Activo',
     INACTIVO: 'Inactivo',
   };
 
 
-const Enum_FaseProyecto: any={
+const Enum_FaseProyecto:any={
     INICIADO:'Iniciado',
     DESARROLLO:'En desarrollo',
     TERMINADO:'Terminado',
     NULO:'Nulo',
 }
 
-const Enum_TipoObjetivo={
+const Enum_TipoObjetivo:any={
   GENERAL:'General',
   ESPECIFICO:'Especifico',
 }
 
-const Enum_EstadoInscripcion={
+const Enum_EstadoInscripcion:any={
   ACEPTADO:'Aceptado',
   RECHAZADO:'Rechazado',
   PENDIENTE:'Pendiente',

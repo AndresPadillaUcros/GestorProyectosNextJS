@@ -18,28 +18,23 @@ interface Context{
     prisma:PrismaClient
 }
 
-export const config={
-    api:{
-        bodyParser:false
-    }
-}
 
 const functionHandler= async(req:NextApiRequest,res:NextApiResponse)=>{
     const schema =await buildSchema({
         resolvers:resolvers,
         validate:false
     })
-
+    
     const apolloServer = new ApolloServer({
         
         context:():Context => ({prisma}),
         schema:schema,
         introspection:true
     })
-
+    
     const startServer = apolloServer.start()
     await startServer
-
+    
     return apolloServer.createHandler({
         path:'/api/graphql'
     })(req,res)
@@ -53,3 +48,10 @@ export default cors((req:any,res:any)  => {
     }
     return functionHandler(req,res)
 })
+
+
+export const config={
+    api:{
+        bodyParser:false
+    }
+}

@@ -4,5 +4,7 @@ export declare enum ProyectoScalarFieldEnum {
     presupuesto = "presupuesto",
     fechaInicio = "fechaInicio",
     fechaFin = "fechaFin",
+    estado = "estado",
+    fase = "fase",
     usuarioId = "usuarioId"
 }

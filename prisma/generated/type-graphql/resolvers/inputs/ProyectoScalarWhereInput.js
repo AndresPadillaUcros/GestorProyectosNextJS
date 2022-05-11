@@ -6,6 +6,8 @@ const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
 const DateTimeFilter_1 = require("../inputs/DateTimeFilter");
 const DateTimeNullableFilter_1 = require("../inputs/DateTimeNullableFilter");
+const EnumEnum_EstadoProyectoFilter_1 = require("../inputs/EnumEnum_EstadoProyectoFilter");
+const EnumEnum_FaseProyectoFilter_1 = require("../inputs/EnumEnum_FaseProyectoFilter");
 const FloatFilter_1 = require("../inputs/FloatFilter");
 const StringFilter_1 = require("../inputs/StringFilter");
 let ProyectoScalarWhereInput = ProyectoScalarWhereInput_1 = class ProyectoScalarWhereInput {
@@ -58,6 +60,18 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", DateTimeNullableFilter_1.DateTimeNullableFilter)
 ], ProyectoScalarWhereInput.prototype, "fechaFin", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => EnumEnum_EstadoProyectoFilter_1.EnumEnum_EstadoProyectoFilter, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", EnumEnum_EstadoProyectoFilter_1.EnumEnum_EstadoProyectoFilter)
+], ProyectoScalarWhereInput.prototype, "estado", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => EnumEnum_FaseProyectoFilter_1.EnumEnum_FaseProyectoFilter, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", EnumEnum_FaseProyectoFilter_1.EnumEnum_FaseProyectoFilter)
+], ProyectoScalarWhereInput.prototype, "fase", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => StringFilter_1.StringFilter, {
         nullable: true

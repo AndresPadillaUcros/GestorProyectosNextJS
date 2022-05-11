@@ -1,6 +1,7 @@
 import React from 'react'
-import { useNavigate, Outlet } from 'react-router-dom';
 import SideBar from '../components/sidebar';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Layout = ({children}) => {
   return (
@@ -11,6 +12,7 @@ const Layout = ({children}) => {
                 {children}
             </div>
         </div>
+        <ToastContainer />
 
 
 

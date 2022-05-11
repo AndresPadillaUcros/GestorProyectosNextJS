@@ -40,6 +40,18 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", String)
 ], ProyectoOrderByWithRelationInput.prototype, "fechaFin", void 0);
 tslib_1.__decorate([
+    TypeGraphQL.Field(_type => SortOrder_1.SortOrder, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", String)
+], ProyectoOrderByWithRelationInput.prototype, "estado", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => SortOrder_1.SortOrder, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", String)
+], ProyectoOrderByWithRelationInput.prototype, "fase", void 0);
+tslib_1.__decorate([
     TypeGraphQL.Field(_type => UsuarioOrderByWithRelationInput_1.UsuarioOrderByWithRelationInput, {
         nullable: true
     }),

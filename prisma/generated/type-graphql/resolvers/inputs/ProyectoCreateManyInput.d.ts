@@ -4,5 +4,7 @@ export declare class ProyectoCreateManyInput {
     presupuesto: number;
     fechaInicio: Date;
     fechaFin?: Date | undefined;
+    estado: "Activo" | "Inactivo";
+    fase: "Iniciado" | "Desarollo" | "Terminado";
     usuarioId: string;
 }

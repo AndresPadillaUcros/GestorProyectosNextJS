@@ -3,18 +3,19 @@ import { Enum_Rol , Enum_EstadoUsuario } from '../../utils/enums'
 import Link from 'next/link'
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_USUARIOS } from '../../graphql/usuarios/queries';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const Home: NextPage = () => {
 
 
-    const {data,loading}=useQuery(GET_USUARIOS);
-    if (loading) return <div> Cargando usuarios...</div>
+  const {data,loading}=useQuery(GET_USUARIOS);
 
+  if (loading) return <div> Cargando usuarios...</div>
 
 
   return (
       <div>
-                <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Lista de Usuarios</h1>
+                <h1 className='text-center'>Lista de Usuarios</h1>
                 <table className='tabla'>
                   <thead>
                     <tr>
@@ -32,15 +33,17 @@ const Home: NextPage = () => {
                       <>
                         {data.usuarios.map((u:any) => {
                           return (
-                            <tr key={u._id}>
+                            <tr key={u.id}>
                               <td>{u.nombre}</td>
                               <td>{u.apellido}</td>
                               <td>{u.email}</td>
                               <td>{u.identificacion}</td>
                               <td>{Enum_Rol[u.rol]}</td>
                               <td>{Enum_EstadoUsuario[u.estado]}
-                                  <Link href={`/usuarios/editar/${u._id}`}>
-                                    <i className='fas fa-pen text-yellow-600 hover:text-yellow-400 cursor-pointer px-3' />
+                                  <Link href={`/usuarios/editarUsuario/${u.id}`}>
+                                    <Tooltip title='Editar'>
+                                      <i className='fas fa-pen text-warning cursor-pointer ' role="button"/>
+                                    </Tooltip>
                                   </Link>         
                               </td>
                             </tr>

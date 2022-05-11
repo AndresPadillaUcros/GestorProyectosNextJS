@@ -63,6 +63,8 @@ model Proyecto {
   presupuesto   Float
   fechaInicio   DateTime
   fechaFin      DateTime?
+  estado        Enum_EstadoProyecto
+  fase          Enum_FaseProyecto 
   lider         Usuario       @relation(fields: [usuarioId], references: [id])
   usuarioId     String
   avances       Avances[]

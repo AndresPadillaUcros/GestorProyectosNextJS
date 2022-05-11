@@ -1,31 +1,65 @@
 import type { NextPage } from 'next'
+import React,{useEffect} from 'react'
 import useFormData from '../../hook/useFormData'
 import Input from '../../components/Input'
 import ButtonLoading from '../../components/ButtonLoading'
 import DropDown from '../../components/Dropdown'
-import { useQuery, useMutation } from '@apollo/client';
+import {toast } from 'react-toastify'
 
-import { GET_USUARIOS } from '../../graphql/usuarios/queries';
+import { useQuery, useMutation } from '@apollo/client';
+import { Enum_EstadoUsuario , Enum_Rol} from '../../utils/enums'
+import { GET_USUARIO } from '../../graphql/usuarios/queries'
+import { EDITAR_USUARIO} from '../../graphql/usuarios/mutations'
 
 const Home: NextPage = () => {
 
-    const {data,loading}=useQuery(GET_USUARIOS);
+    const{form, formData,updateFormData} = useFormData(null);
 
-    if (loading) return <div> Cargando usuarios...</div>
+    const  id = "cl2xhtsh00004lcdjbts8sgij"
+
+    const{data:queryData,error:queryError,loading:queryLoading}=useQuery(GET_USUARIO,{ variables:{where:{id}}});
+
+    const [editarUsuario, {data:mutationData, loading:mutationLoading, error:mutationError}] = useMutation(EDITAR_USUARIO,
+        {refetchQueries:[{query:GET_USUARIO} ] } );
+
+    const submitForm = (e:any)=>{
+        e.preventDefault(); 
+        editarUsuario({
+            variables:{
+                      where:{id}, 
+                      data:{
+                        nombre:{set:  Object(formData)['nombre']},
+                        apellido:{set:  Object(formData)['apellido']},
+                        identificacion:{set:  Object(formData)['identificacion']},
+                        email:{set:  Object(formData)['email']},
+                        },
+                      }
+        })
+    };
+
+    useEffect(()=>{
+        if (mutationData){
+            toast.success('Perfil modificado con exito',{position: "top-right",autoClose: 2000, hideProgressBar: true,closeOnClick: true,});
+        }
+    }, [mutationData])
+
+    if (queryLoading) return <div> Cargando usuarios...</div>
 
 
     return (
-        <div className='flew flex-col w-full h-full items-center justify-center p-10'>
-                <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Editar Perfil</h1>
+        <div className='d-flex flex-column w-100 h-100 p-3  '>
+                <h1 className=' text-center'>Editar Perfil</h1>
                 <form
-                    ref={null} 
-                    className='flex flex-col items-center justify-center'
+                    onSubmit={submitForm}
+                    onChange={updateFormData}
+                    ref={form} 
+                    className='d-flex flex-column justify-content-center align-items-center'
                 >
                     <Input
                         label='Nombre:'
                         type='text'
                         name='nombre'
-                        defaultValue={null}
+                        defaultValue={queryData.usuario.nombre}
                         required={true}
                         disabled={false}
                     />
@@ -33,7 +67,7 @@ const Home: NextPage = () => {
                         label='Apellido:'
                         type='text'
                         name='apellido'
-                        defaultValue={null}
+                        defaultValue={queryData.usuario.apellido}
                         required={true}
                         disabled={false}
                     />
@@ -41,49 +75,41 @@ const Home: NextPage = () => {
                         label='Identificacion:'
                         type='text'
                         name='identificacion'
-                        defaultValue={null}
+                        defaultValue={queryData.usuario.identificacion}
                         required={true}
                         disabled={false}
                     />
                     <Input
                         label='Correo:'
                         type='email'
-                        name='correo'
-                        defaultValue={null}
-                        required={true}
-                        disabled={false}
-                    />
-{/*                     <DropDown
-                        label='Rol:'
-                        type='text'
-                        name='correo'
-                        defaultValue={null}
+                        name='email'
+                        defaultValue={queryData.usuario.email}
                         required={true}
                         disabled={false}
                     />
                     <DropDown
+                        label='Rol:'
+                        name='rol'
+                        defaultValue={queryData.usuario.rol}
+                        required={true}
+                        options={Enum_Rol}
+                        disabled={true}
+                    />
+                    <DropDown
                         label='Estado:'
                         name='estado'
-                        defaultValue={queryDataProyecto.Proyecto.estado}
+                        defaultValue={queryData.usuario.estado}
                         required={true}
-                        options={Enum_EstadoProyecto}
+                        options={Enum_EstadoUsuario}
                         disabled={true}
                     />
 
                     <ButtonLoading
-                        label='Estado del proyecto:'
-                        name='estado'
-                        defaultValue={queryDataProyecto.Proyecto.estado}
-                        required={true}
-                        options={Enum_EstadoProyecto}
-                        disabled={true}
-                    />  */}
-
-
-
-
-                </form>
-                
+                        disabled={Object.keys(formData).length === 0}
+                        loading={mutationLoading}
+                        text='Confirmar'
+                    /> 
+                </form>               
           </div>
     )
 }

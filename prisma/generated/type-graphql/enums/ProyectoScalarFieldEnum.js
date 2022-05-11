@@ -10,6 +10,8 @@ var ProyectoScalarFieldEnum;
     ProyectoScalarFieldEnum["presupuesto"] = "presupuesto";
     ProyectoScalarFieldEnum["fechaInicio"] = "fechaInicio";
     ProyectoScalarFieldEnum["fechaFin"] = "fechaFin";
+    ProyectoScalarFieldEnum["estado"] = "estado";
+    ProyectoScalarFieldEnum["fase"] = "fase";
     ProyectoScalarFieldEnum["usuarioId"] = "usuarioId";
 })(ProyectoScalarFieldEnum = exports.ProyectoScalarFieldEnum || (exports.ProyectoScalarFieldEnum = {}));
 TypeGraphQL.registerEnumType(ProyectoScalarFieldEnum, {

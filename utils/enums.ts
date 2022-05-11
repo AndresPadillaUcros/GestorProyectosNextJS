@@ -1,3 +1,5 @@
+/* El front muestra lo que esta despues de los dos puntos , mientras que el back entiende lo que esta antes*/
+
 const Enum_Rol:any = {
     Administrador: 'Administrador',
     Estudiante: 'Estudiante',
@@ -7,7 +9,7 @@ const Enum_Rol:any = {
 const Enum_EstadoUsuario:any= {
     Pendiente: 'Pendiente',
     Autorizado: 'Autorizado',
-    No_autorizado: 'No autorizado',
+    NoAutorizado: 'No autorizado',
   };
   
 const Enum_EstadoProyecto:any= {

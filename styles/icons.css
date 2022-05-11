@@ -1,0 +1,17 @@
+.fa-pen{
+    float:right
+}
+
+.fa-pen:hover {
+    color: blue !important;
+    transform: scale(1.5);
+}
+
+.fa-trash:hover {
+    color: red !important;
+    transform: scale(1.5);
+}
+
+.fa-arrow-left{
+    size:100px
+}

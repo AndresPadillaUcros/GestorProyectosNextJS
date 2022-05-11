@@ -6,6 +6,8 @@ export declare class ProyectoCreateWithoutLiderInput {
     presupuesto: number;
     fechaInicio: Date;
     fechaFin?: Date | undefined;
+    estado: "Activo" | "Inactivo";
+    fase: "Iniciado" | "Desarollo" | "Terminado";
     avances?: AvancesCreateNestedManyWithoutProyectoInput | undefined;
     inscripciones?: InscripcionCreateNestedManyWithoutProyectoInput | undefined;
 }

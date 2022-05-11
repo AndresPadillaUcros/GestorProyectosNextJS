@@ -4,5 +4,7 @@ export declare class ProyectoMinAggregate {
     presupuesto: number | null;
     fechaInicio: Date | null;
     fechaFin: Date | null;
+    estado: "Activo" | "Inactivo" | null;
+    fase: "Iniciado" | "Desarollo" | "Terminado" | null;
     usuarioId: string | null;
 }

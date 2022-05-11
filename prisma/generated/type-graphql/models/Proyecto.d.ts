@@ -8,6 +8,8 @@ export declare class Proyecto {
     presupuesto: number;
     fechaInicio: Date;
     fechaFin?: Date | null;
+    estado: "Activo" | "Inactivo";
+    fase: "Iniciado" | "Desarollo" | "Terminado";
     lider?: Usuario;
     usuarioId: string;
     avances?: Avances[];

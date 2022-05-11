@@ -1,5 +1,7 @@
 import { DateTimeFilter } from "../inputs/DateTimeFilter";
 import { DateTimeNullableFilter } from "../inputs/DateTimeNullableFilter";
+import { EnumEnum_EstadoProyectoFilter } from "../inputs/EnumEnum_EstadoProyectoFilter";
+import { EnumEnum_FaseProyectoFilter } from "../inputs/EnumEnum_FaseProyectoFilter";
 import { FloatFilter } from "../inputs/FloatFilter";
 import { StringFilter } from "../inputs/StringFilter";
 export declare class ProyectoScalarWhereInput {
@@ -11,5 +13,7 @@ export declare class ProyectoScalarWhereInput {
     presupuesto?: FloatFilter | undefined;
     fechaInicio?: DateTimeFilter | undefined;
     fechaFin?: DateTimeNullableFilter | undefined;
+    estado?: EnumEnum_EstadoProyectoFilter | undefined;
+    fase?: EnumEnum_FaseProyectoFilter | undefined;
     usuarioId?: StringFilter | undefined;
 }

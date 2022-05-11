@@ -4,4 +4,6 @@ export declare class ProyectoCreateManyLiderInput {
     presupuesto: number;
     fechaInicio: Date;
     fechaFin?: Date | undefined;
+    estado: "Activo" | "Inactivo";
+    fase: "Iniciado" | "Desarollo" | "Terminado";
 }

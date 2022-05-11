@@ -8,6 +8,8 @@ const ProyectoCountAggregate_1 = require("../outputs/ProyectoCountAggregate");
 const ProyectoMaxAggregate_1 = require("../outputs/ProyectoMaxAggregate");
 const ProyectoMinAggregate_1 = require("../outputs/ProyectoMinAggregate");
 const ProyectoSumAggregate_1 = require("../outputs/ProyectoSumAggregate");
+const Enum_EstadoProyecto_1 = require("../../enums/Enum_EstadoProyecto");
+const Enum_FaseProyecto_1 = require("../../enums/Enum_FaseProyecto");
 let ProyectoGroupBy = class ProyectoGroupBy {
 };
 tslib_1.__decorate([
@@ -40,6 +42,18 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", Date)
 ], ProyectoGroupBy.prototype, "fechaFin", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => Enum_EstadoProyecto_1.Enum_EstadoProyecto, {
+        nullable: false
+    }),
+    tslib_1.__metadata("design:type", String)
+], ProyectoGroupBy.prototype, "estado", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => Enum_FaseProyecto_1.Enum_FaseProyecto, {
+        nullable: false
+    }),
+    tslib_1.__metadata("design:type", String)
+], ProyectoGroupBy.prototype, "fase", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
         nullable: false

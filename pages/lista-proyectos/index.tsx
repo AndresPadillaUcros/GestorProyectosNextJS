@@ -1,22 +1,22 @@
 import type { NextPage } from 'next'
 import { Enum_EstadoProyecto , Enum_FaseProyecto } from '../../utils/enums'
 import Link from 'next/link'
+import { GET_PROYECTOS } from '../../graphql/proyectos/queries';
+import { useQuery, useMutation } from '@apollo/client';
 
 const Home: NextPage = () => {
 
-  const data =
-    {
-      Proyectos:[ 
-          {_id:'1',nombre:'Proyecto 1', lider:{nombre:'Amdres',apellido:'Marica'} ,estado:'ACTIVO', fase:'INICIADO'},
-          {_id:'2',nombre:'Proyecto 2', lider:{nombre:'Amdres',apellido:'Marica'} ,estado:'ACTIVO', fase:'INICIADO'},
-      ]
-    }
+  const {data,loading}=useQuery(GET_PROYECTOS);
 
+
+  if (loading) return <div> Cargando usuarios...</div>
+
+  console.log(data)
 
 
   return (
       <div>
-          <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Lista de Proyectos</h1>
+          <h1 className='text-center'>Lista de Proyectos</h1>
           <table className='tabla'>
             <thead>
               <tr>
@@ -28,9 +28,9 @@ const Home: NextPage = () => {
               </tr>
             </thead>
             <tbody>
-              {data && data.Proyectos ? (
+              {data && data.proyectos ? (
                 <>
-                  {data.Proyectos.map((u) => {
+                  {data.proyectos.map((u:any) => {
                     return (
                       <tr key={u._id}>
                         <td>{u.nombre}</td>

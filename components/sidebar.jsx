@@ -31,7 +31,7 @@ const SideBar = () => {
 
 
                 <li>
-                    <Link href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Mis proyectos </Link>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Mis proyectos </a>
                     <ul className="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <Link href="/mis-proyectos/">Ver mis proyectos</Link>
@@ -53,13 +53,13 @@ const SideBar = () => {
 
         </nav>   
         
-        <div >
+{/*         <div >
                 <div >
                     <button type="button" id="sidebarCollapse" className="btn btn-info">
                         <i className="fas fa-arrow-left"></i>
                     </button>
                 </div>
-        </div>
+        </div> */}
 
 
     </div>

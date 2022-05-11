@@ -6,6 +6,8 @@ const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
 const DateTimeNullableWithAggregatesFilter_1 = require("../inputs/DateTimeNullableWithAggregatesFilter");
 const DateTimeWithAggregatesFilter_1 = require("../inputs/DateTimeWithAggregatesFilter");
+const EnumEnum_EstadoProyectoWithAggregatesFilter_1 = require("../inputs/EnumEnum_EstadoProyectoWithAggregatesFilter");
+const EnumEnum_FaseProyectoWithAggregatesFilter_1 = require("../inputs/EnumEnum_FaseProyectoWithAggregatesFilter");
 const FloatWithAggregatesFilter_1 = require("../inputs/FloatWithAggregatesFilter");
 const StringWithAggregatesFilter_1 = require("../inputs/StringWithAggregatesFilter");
 let ProyectoScalarWhereWithAggregatesInput = ProyectoScalarWhereWithAggregatesInput_1 = class ProyectoScalarWhereWithAggregatesInput {
@@ -58,6 +60,18 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", DateTimeNullableWithAggregatesFilter_1.DateTimeNullableWithAggregatesFilter)
 ], ProyectoScalarWhereWithAggregatesInput.prototype, "fechaFin", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => EnumEnum_EstadoProyectoWithAggregatesFilter_1.EnumEnum_EstadoProyectoWithAggregatesFilter, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", EnumEnum_EstadoProyectoWithAggregatesFilter_1.EnumEnum_EstadoProyectoWithAggregatesFilter)
+], ProyectoScalarWhereWithAggregatesInput.prototype, "estado", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => EnumEnum_FaseProyectoWithAggregatesFilter_1.EnumEnum_FaseProyectoWithAggregatesFilter, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", EnumEnum_FaseProyectoWithAggregatesFilter_1.EnumEnum_FaseProyectoWithAggregatesFilter)
+], ProyectoScalarWhereWithAggregatesInput.prototype, "fase", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => StringWithAggregatesFilter_1.StringWithAggregatesFilter, {
         nullable: true

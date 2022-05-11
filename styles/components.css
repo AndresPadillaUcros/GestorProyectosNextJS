@@ -1,0 +1,27 @@
+.input {
+    padding: 0.5rem;
+    border-color:lightskyblue;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    text-align: center;
+}
+
+
+.buttonLoading {
+    font-weight: 700;
+    line-height: 1.75rem;
+    font-size: 1.125rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.75rem;
+    color:white;
+    background-color: lightskyblue;
+    opacity:1;
+}
+
+.buttonLoading:disabled{
+    background-color: gray;
+    cursor: pointer;
+}

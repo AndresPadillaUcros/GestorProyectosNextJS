@@ -4,6 +4,8 @@ export declare class ProyectoCountAggregate {
     presupuesto: number;
     fechaInicio: number;
     fechaFin: number;
+    estado: number;
+    fase: number;
     usuarioId: number;
     _all: number;
 }

@@ -15,16 +15,16 @@ const GET_USUARIOS = gql`
 `;
 
 const GET_USUARIO=gql`
-    query Usuarios($_id: String!){
-        Usuario(_id: $_id) {
-            _id
-            nombre
-            apellido
-            identificacion
-            correo
-            estado
-            rol    
-        }
+    query Usuario($where: UsuarioWhereUniqueInput!) {
+    usuario(where: $where) {
+        id
+        email
+        nombre
+        apellido
+        identificacion
+        rol
+        estado
+    }
     }
 `;
 

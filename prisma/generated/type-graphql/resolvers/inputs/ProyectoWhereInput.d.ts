@@ -1,6 +1,8 @@
 import { AvancesListRelationFilter } from "../inputs/AvancesListRelationFilter";
 import { DateTimeFilter } from "../inputs/DateTimeFilter";
 import { DateTimeNullableFilter } from "../inputs/DateTimeNullableFilter";
+import { EnumEnum_EstadoProyectoFilter } from "../inputs/EnumEnum_EstadoProyectoFilter";
+import { EnumEnum_FaseProyectoFilter } from "../inputs/EnumEnum_FaseProyectoFilter";
 import { FloatFilter } from "../inputs/FloatFilter";
 import { InscripcionListRelationFilter } from "../inputs/InscripcionListRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
@@ -14,6 +16,8 @@ export declare class ProyectoWhereInput {
     presupuesto?: FloatFilter | undefined;
     fechaInicio?: DateTimeFilter | undefined;
     fechaFin?: DateTimeNullableFilter | undefined;
+    estado?: EnumEnum_EstadoProyectoFilter | undefined;
+    fase?: EnumEnum_FaseProyectoFilter | undefined;
     lider?: UsuarioRelationFilter | undefined;
     usuarioId?: StringFilter | undefined;
     avances?: AvancesListRelationFilter | undefined;

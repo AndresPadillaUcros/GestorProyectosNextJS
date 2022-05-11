@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UsuarioScalarFieldEnum = exports.SortOrder = exports.QueryMode = exports.ProyectoScalarFieldEnum = exports.InscripcionScalarFieldEnum = exports.Enum_Rol = exports.Enum_FaseProyecto = exports.Enum_EstadoUsuario = exports.Enum_EstadoProyecto = exports.Enum_EstadoInscripcion = exports.AvancesScalarFieldEnum = void 0;
+exports.UsuarioScalarFieldEnum = exports.SortOrder = exports.QueryMode = exports.ProyectoScalarFieldEnum = exports.ObjetivosEspecificosScalarFieldEnum = exports.InscripcionScalarFieldEnum = exports.Enum_Rol = exports.Enum_FaseProyecto = exports.Enum_EstadoUsuario = exports.Enum_EstadoProyecto = exports.Enum_EstadoInscripcion = exports.AvancesScalarFieldEnum = void 0;
 var AvancesScalarFieldEnum_1 = require("./AvancesScalarFieldEnum");
 Object.defineProperty(exports, "AvancesScalarFieldEnum", { enumerable: true, get: function () { return AvancesScalarFieldEnum_1.AvancesScalarFieldEnum; } });
 var Enum_EstadoInscripcion_1 = require("./Enum_EstadoInscripcion");
@@ -15,6 +15,8 @@ var Enum_Rol_1 = require("./Enum_Rol");
 Object.defineProperty(exports, "Enum_Rol", { enumerable: true, get: function () { return Enum_Rol_1.Enum_Rol; } });
 var InscripcionScalarFieldEnum_1 = require("./InscripcionScalarFieldEnum");
 Object.defineProperty(exports, "InscripcionScalarFieldEnum", { enumerable: true, get: function () { return InscripcionScalarFieldEnum_1.InscripcionScalarFieldEnum; } });
+var ObjetivosEspecificosScalarFieldEnum_1 = require("./ObjetivosEspecificosScalarFieldEnum");
+Object.defineProperty(exports, "ObjetivosEspecificosScalarFieldEnum", { enumerable: true, get: function () { return ObjetivosEspecificosScalarFieldEnum_1.ObjetivosEspecificosScalarFieldEnum; } });
 var ProyectoScalarFieldEnum_1 = require("./ProyectoScalarFieldEnum");
 Object.defineProperty(exports, "ProyectoScalarFieldEnum", { enumerable: true, get: function () { return ProyectoScalarFieldEnum_1.ProyectoScalarFieldEnum; } });
 var QueryMode_1 = require("./QueryMode");

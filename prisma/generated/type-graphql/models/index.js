@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Usuario = exports.Proyecto = exports.Inscripcion = exports.Avances = void 0;
+exports.Usuario = exports.Proyecto = exports.ObjetivosEspecificos = exports.Inscripcion = exports.Avances = void 0;
 var Avances_1 = require("./Avances");
 Object.defineProperty(exports, "Avances", { enumerable: true, get: function () { return Avances_1.Avances; } });
 var Inscripcion_1 = require("./Inscripcion");
 Object.defineProperty(exports, "Inscripcion", { enumerable: true, get: function () { return Inscripcion_1.Inscripcion; } });
+var ObjetivosEspecificos_1 = require("./ObjetivosEspecificos");
+Object.defineProperty(exports, "ObjetivosEspecificos", { enumerable: true, get: function () { return ObjetivosEspecificos_1.ObjetivosEspecificos; } });
 var Proyecto_1 = require("./Proyecto");
 Object.defineProperty(exports, "Proyecto", { enumerable: true, get: function () { return Proyecto_1.Proyecto; } });
 var Usuario_1 = require("./Usuario");

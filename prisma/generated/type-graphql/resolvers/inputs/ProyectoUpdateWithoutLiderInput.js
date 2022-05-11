@@ -11,7 +11,7 @@ const FloatFieldUpdateOperationsInput_1 = require("../inputs/FloatFieldUpdateOpe
 const InscripcionUpdateManyWithoutProyectoInput_1 = require("../inputs/InscripcionUpdateManyWithoutProyectoInput");
 const NullableDateTimeFieldUpdateOperationsInput_1 = require("../inputs/NullableDateTimeFieldUpdateOperationsInput");
 const NullableStringFieldUpdateOperationsInput_1 = require("../inputs/NullableStringFieldUpdateOperationsInput");
-const ProyectoUpdateobjetivosEspecificosInput_1 = require("../inputs/ProyectoUpdateobjetivosEspecificosInput");
+const ObjetivosEspecificosUpdateManyWithoutProyectoInput_1 = require("../inputs/ObjetivosEspecificosUpdateManyWithoutProyectoInput");
 const StringFieldUpdateOperationsInput_1 = require("../inputs/StringFieldUpdateOperationsInput");
 let ProyectoUpdateWithoutLiderInput = class ProyectoUpdateWithoutLiderInput {
 };
@@ -64,11 +64,11 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", NullableStringFieldUpdateOperationsInput_1.NullableStringFieldUpdateOperationsInput)
 ], ProyectoUpdateWithoutLiderInput.prototype, "objetivoGeneral", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => ProyectoUpdateobjetivosEspecificosInput_1.ProyectoUpdateobjetivosEspecificosInput, {
+    TypeGraphQL.Field(_type => ObjetivosEspecificosUpdateManyWithoutProyectoInput_1.ObjetivosEspecificosUpdateManyWithoutProyectoInput, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", ProyectoUpdateobjetivosEspecificosInput_1.ProyectoUpdateobjetivosEspecificosInput)
-], ProyectoUpdateWithoutLiderInput.prototype, "objetivosEspecificos", void 0);
+    tslib_1.__metadata("design:type", ObjetivosEspecificosUpdateManyWithoutProyectoInput_1.ObjetivosEspecificosUpdateManyWithoutProyectoInput)
+], ProyectoUpdateWithoutLiderInput.prototype, "ObjetivosEspecificos", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => AvancesUpdateManyWithoutProyectoInput_1.AvancesUpdateManyWithoutProyectoInput, {
         nullable: true

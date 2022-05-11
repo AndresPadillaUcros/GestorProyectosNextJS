@@ -7,6 +7,5 @@ export declare class ProyectoCountOrderByAggregateInput {
     estado?: "asc" | "desc" | undefined;
     fase?: "asc" | "desc" | undefined;
     objetivoGeneral?: "asc" | "desc" | undefined;
-    objetivosEspecificos?: "asc" | "desc" | undefined;
     usuarioId?: "asc" | "desc" | undefined;
 }

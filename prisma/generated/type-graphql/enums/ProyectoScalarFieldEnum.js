@@ -13,7 +13,6 @@ var ProyectoScalarFieldEnum;
     ProyectoScalarFieldEnum["estado"] = "estado";
     ProyectoScalarFieldEnum["fase"] = "fase";
     ProyectoScalarFieldEnum["objetivoGeneral"] = "objetivoGeneral";
-    ProyectoScalarFieldEnum["objetivosEspecificos"] = "objetivosEspecificos";
     ProyectoScalarFieldEnum["usuarioId"] = "usuarioId";
 })(ProyectoScalarFieldEnum = exports.ProyectoScalarFieldEnum || (exports.ProyectoScalarFieldEnum = {}));
 TypeGraphQL.registerEnumType(ProyectoScalarFieldEnum, {

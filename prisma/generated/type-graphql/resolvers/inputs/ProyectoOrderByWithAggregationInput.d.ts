@@ -12,7 +12,6 @@ export declare class ProyectoOrderByWithAggregationInput {
     estado?: "asc" | "desc" | undefined;
     fase?: "asc" | "desc" | undefined;
     objetivoGeneral?: "asc" | "desc" | undefined;
-    objetivosEspecificos?: "asc" | "desc" | undefined;
     usuarioId?: "asc" | "desc" | undefined;
     _count?: ProyectoCountOrderByAggregateInput | undefined;
     _avg?: ProyectoAvgOrderByAggregateInput | undefined;

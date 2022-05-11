@@ -7,5 +7,5 @@ export declare class FindFirstProyectoArgs {
     cursor?: ProyectoWhereUniqueInput | undefined;
     take?: number | undefined;
     skip?: number | undefined;
-    distinct?: Array<"id" | "nombre" | "presupuesto" | "fechaInicio" | "fechaFin" | "estado" | "fase" | "objetivoGeneral" | "objetivosEspecificos" | "usuarioId"> | undefined;
+    distinct?: Array<"id" | "nombre" | "presupuesto" | "fechaInicio" | "fechaFin" | "estado" | "fase" | "objetivoGeneral" | "usuarioId"> | undefined;
 }

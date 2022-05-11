@@ -4,7 +4,6 @@ import { EnumEnum_FaseProyectoFieldUpdateOperationsInput } from "../inputs/EnumE
 import { FloatFieldUpdateOperationsInput } from "../inputs/FloatFieldUpdateOperationsInput";
 import { NullableDateTimeFieldUpdateOperationsInput } from "../inputs/NullableDateTimeFieldUpdateOperationsInput";
 import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
-import { ProyectoUpdateobjetivosEspecificosInput } from "../inputs/ProyectoUpdateobjetivosEspecificosInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
 export declare class ProyectoUpdateManyMutationInput {
     id?: StringFieldUpdateOperationsInput | undefined;
@@ -15,5 +14,4 @@ export declare class ProyectoUpdateManyMutationInput {
     estado?: EnumEnum_EstadoProyectoFieldUpdateOperationsInput | undefined;
     fase?: EnumEnum_FaseProyectoFieldUpdateOperationsInput | undefined;
     objetivoGeneral?: NullableStringFieldUpdateOperationsInput | undefined;
-    objetivosEspecificos?: ProyectoUpdateobjetivosEspecificosInput | undefined;
 }

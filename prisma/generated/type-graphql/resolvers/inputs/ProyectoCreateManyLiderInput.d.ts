@@ -1,4 +1,3 @@
-import { ProyectoCreateobjetivosEspecificosInput } from "../inputs/ProyectoCreateobjetivosEspecificosInput";
 export declare class ProyectoCreateManyLiderInput {
     id?: string | undefined;
     nombre: string;
@@ -8,5 +7,4 @@ export declare class ProyectoCreateManyLiderInput {
     estado: "Activo" | "Inactivo";
     fase: "Iniciado" | "Desarollo" | "Terminado";
     objetivoGeneral?: string | undefined;
-    objetivosEspecificos?: ProyectoCreateobjetivosEspecificosInput | undefined;
 }

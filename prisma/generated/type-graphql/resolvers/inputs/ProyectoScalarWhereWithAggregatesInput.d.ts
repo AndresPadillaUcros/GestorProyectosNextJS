@@ -3,7 +3,6 @@ import { DateTimeWithAggregatesFilter } from "../inputs/DateTimeWithAggregatesFi
 import { EnumEnum_EstadoProyectoWithAggregatesFilter } from "../inputs/EnumEnum_EstadoProyectoWithAggregatesFilter";
 import { EnumEnum_FaseProyectoWithAggregatesFilter } from "../inputs/EnumEnum_FaseProyectoWithAggregatesFilter";
 import { FloatWithAggregatesFilter } from "../inputs/FloatWithAggregatesFilter";
-import { StringNullableListFilter } from "../inputs/StringNullableListFilter";
 import { StringNullableWithAggregatesFilter } from "../inputs/StringNullableWithAggregatesFilter";
 import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter";
 export declare class ProyectoScalarWhereWithAggregatesInput {
@@ -18,6 +17,5 @@ export declare class ProyectoScalarWhereWithAggregatesInput {
     estado?: EnumEnum_EstadoProyectoWithAggregatesFilter | undefined;
     fase?: EnumEnum_FaseProyectoWithAggregatesFilter | undefined;
     objetivoGeneral?: StringNullableWithAggregatesFilter | undefined;
-    objetivosEspecificos?: StringNullableListFilter | undefined;
     usuarioId?: StringWithAggregatesFilter | undefined;
 }

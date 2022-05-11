@@ -9,7 +9,6 @@ const EnumEnum_FaseProyectoFieldUpdateOperationsInput_1 = require("../inputs/Enu
 const FloatFieldUpdateOperationsInput_1 = require("../inputs/FloatFieldUpdateOperationsInput");
 const NullableDateTimeFieldUpdateOperationsInput_1 = require("../inputs/NullableDateTimeFieldUpdateOperationsInput");
 const NullableStringFieldUpdateOperationsInput_1 = require("../inputs/NullableStringFieldUpdateOperationsInput");
-const ProyectoUpdateobjetivosEspecificosInput_1 = require("../inputs/ProyectoUpdateobjetivosEspecificosInput");
 const StringFieldUpdateOperationsInput_1 = require("../inputs/StringFieldUpdateOperationsInput");
 let ProyectoUpdateManyMutationInput = class ProyectoUpdateManyMutationInput {
 };
@@ -61,12 +60,6 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", NullableStringFieldUpdateOperationsInput_1.NullableStringFieldUpdateOperationsInput)
 ], ProyectoUpdateManyMutationInput.prototype, "objetivoGeneral", void 0);
-tslib_1.__decorate([
-    TypeGraphQL.Field(_type => ProyectoUpdateobjetivosEspecificosInput_1.ProyectoUpdateobjetivosEspecificosInput, {
-        nullable: true
-    }),
-    tslib_1.__metadata("design:type", ProyectoUpdateobjetivosEspecificosInput_1.ProyectoUpdateobjetivosEspecificosInput)
-], ProyectoUpdateManyMutationInput.prototype, "objetivosEspecificos", void 0);
 ProyectoUpdateManyMutationInput = tslib_1.__decorate([
     TypeGraphQL.InputType("ProyectoUpdateManyMutationInput", {
         isAbstract: true

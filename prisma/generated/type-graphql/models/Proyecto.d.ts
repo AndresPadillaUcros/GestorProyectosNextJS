@@ -1,6 +1,5 @@
 import { Avances } from "../models/Avances";
 import { Inscripcion } from "../models/Inscripcion";
-import { ObjetivosEspecificos } from "../models/ObjetivosEspecificos";
 import { Usuario } from "../models/Usuario";
 import { ProyectoCount } from "../resolvers/outputs/ProyectoCount";
 export declare class Proyecto {
@@ -12,7 +11,6 @@ export declare class Proyecto {
     estado: "Activo" | "Inactivo";
     fase: "Iniciado" | "Desarollo" | "Terminado";
     objetivoGeneral?: string | null;
-    objetivosEspecificos?: ObjetivosEspecificos[];
     lider?: Usuario;
     usuarioId: string;
     avances?: Avances[];

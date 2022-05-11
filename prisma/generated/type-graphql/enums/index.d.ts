@@ -5,7 +5,6 @@ export { Enum_EstadoUsuario } from "./Enum_EstadoUsuario";
 export { Enum_FaseProyecto } from "./Enum_FaseProyecto";
 export { Enum_Rol } from "./Enum_Rol";
 export { InscripcionScalarFieldEnum } from "./InscripcionScalarFieldEnum";
-export { ObjetivosEspecificosScalarFieldEnum } from "./ObjetivosEspecificosScalarFieldEnum";
 export { ProyectoScalarFieldEnum } from "./ProyectoScalarFieldEnum";
 export { QueryMode } from "./QueryMode";
 export { SortOrder } from "./SortOrder";

@@ -1,7 +1,6 @@
 export { AffectedRowsOutput } from "./AffectedRowsOutput";
 export { AggregateAvances } from "./AggregateAvances";
 export { AggregateInscripcion } from "./AggregateInscripcion";
-export { AggregateObjetivosEspecificos } from "./AggregateObjetivosEspecificos";
 export { AggregateProyecto } from "./AggregateProyecto";
 export { AggregateUsuario } from "./AggregateUsuario";
 export { AvancesCountAggregate } from "./AvancesCountAggregate";
@@ -12,10 +11,6 @@ export { InscripcionCountAggregate } from "./InscripcionCountAggregate";
 export { InscripcionGroupBy } from "./InscripcionGroupBy";
 export { InscripcionMaxAggregate } from "./InscripcionMaxAggregate";
 export { InscripcionMinAggregate } from "./InscripcionMinAggregate";
-export { ObjetivosEspecificosCountAggregate } from "./ObjetivosEspecificosCountAggregate";
-export { ObjetivosEspecificosGroupBy } from "./ObjetivosEspecificosGroupBy";
-export { ObjetivosEspecificosMaxAggregate } from "./ObjetivosEspecificosMaxAggregate";
-export { ObjetivosEspecificosMinAggregate } from "./ObjetivosEspecificosMinAggregate";
 export { ProyectoAvgAggregate } from "./ProyectoAvgAggregate";
 export { ProyectoCount } from "./ProyectoCount";
 export { ProyectoCountAggregate } from "./ProyectoCountAggregate";

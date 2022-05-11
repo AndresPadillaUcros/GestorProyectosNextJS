@@ -11,6 +11,8 @@ export declare class ProyectoGroupBy {
     fechaFin: Date | null;
     estado: "Activo" | "Inactivo";
     fase: "Iniciado" | "Desarollo" | "Terminado";
+    objetivoGeneral: string | null;
+    objetivosEspecificos: string[] | null;
     usuarioId: string;
     _count: ProyectoCountAggregate | null;
     _avg: ProyectoAvgAggregate | null;

@@ -9,6 +9,8 @@ export declare class ProyectoOrderByWithRelationInput {
     fechaFin?: "asc" | "desc" | undefined;
     estado?: "asc" | "desc" | undefined;
     fase?: "asc" | "desc" | undefined;
+    objetivoGeneral?: "asc" | "desc" | undefined;
+    objetivosEspecificos?: "asc" | "desc" | undefined;
     lider?: UsuarioOrderByWithRelationInput | undefined;
     usuarioId?: "asc" | "desc" | undefined;
     avances?: AvancesOrderByRelationAggregateInput | undefined;

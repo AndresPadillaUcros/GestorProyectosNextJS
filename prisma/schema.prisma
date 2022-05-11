@@ -65,6 +65,8 @@ model Proyecto {
   fechaFin      DateTime?
   estado        Enum_EstadoProyecto
   fase          Enum_FaseProyecto 
+  objetivoGeneral String?
+  objetivosEspecificos String[]
   lider         Usuario       @relation(fields: [usuarioId], references: [id])
   usuarioId     String
   avances       Avances[]

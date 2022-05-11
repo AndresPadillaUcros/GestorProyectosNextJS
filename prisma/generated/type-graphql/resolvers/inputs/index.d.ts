@@ -110,8 +110,11 @@ export { NestedFloatWithAggregatesFilter } from "./NestedFloatWithAggregatesFilt
 export { NestedIntFilter } from "./NestedIntFilter";
 export { NestedIntNullableFilter } from "./NestedIntNullableFilter";
 export { NestedStringFilter } from "./NestedStringFilter";
+export { NestedStringNullableFilter } from "./NestedStringNullableFilter";
+export { NestedStringNullableWithAggregatesFilter } from "./NestedStringNullableWithAggregatesFilter";
 export { NestedStringWithAggregatesFilter } from "./NestedStringWithAggregatesFilter";
 export { NullableDateTimeFieldUpdateOperationsInput } from "./NullableDateTimeFieldUpdateOperationsInput";
+export { NullableStringFieldUpdateOperationsInput } from "./NullableStringFieldUpdateOperationsInput";
 export { ProyectoAvgOrderByAggregateInput } from "./ProyectoAvgOrderByAggregateInput";
 export { ProyectoCountOrderByAggregateInput } from "./ProyectoCountOrderByAggregateInput";
 export { ProyectoCreateInput } from "./ProyectoCreateInput";
@@ -127,6 +130,7 @@ export { ProyectoCreateOrConnectWithoutLiderInput } from "./ProyectoCreateOrConn
 export { ProyectoCreateWithoutAvancesInput } from "./ProyectoCreateWithoutAvancesInput";
 export { ProyectoCreateWithoutInscripcionesInput } from "./ProyectoCreateWithoutInscripcionesInput";
 export { ProyectoCreateWithoutLiderInput } from "./ProyectoCreateWithoutLiderInput";
+export { ProyectoCreateobjetivosEspecificosInput } from "./ProyectoCreateobjetivosEspecificosInput";
 export { ProyectoListRelationFilter } from "./ProyectoListRelationFilter";
 export { ProyectoMaxOrderByAggregateInput } from "./ProyectoMaxOrderByAggregateInput";
 export { ProyectoMinOrderByAggregateInput } from "./ProyectoMinOrderByAggregateInput";
@@ -147,6 +151,7 @@ export { ProyectoUpdateWithWhereUniqueWithoutLiderInput } from "./ProyectoUpdate
 export { ProyectoUpdateWithoutAvancesInput } from "./ProyectoUpdateWithoutAvancesInput";
 export { ProyectoUpdateWithoutInscripcionesInput } from "./ProyectoUpdateWithoutInscripcionesInput";
 export { ProyectoUpdateWithoutLiderInput } from "./ProyectoUpdateWithoutLiderInput";
+export { ProyectoUpdateobjetivosEspecificosInput } from "./ProyectoUpdateobjetivosEspecificosInput";
 export { ProyectoUpsertWithWhereUniqueWithoutLiderInput } from "./ProyectoUpsertWithWhereUniqueWithoutLiderInput";
 export { ProyectoUpsertWithoutAvancesInput } from "./ProyectoUpsertWithoutAvancesInput";
 export { ProyectoUpsertWithoutInscripcionesInput } from "./ProyectoUpsertWithoutInscripcionesInput";
@@ -154,6 +159,9 @@ export { ProyectoWhereInput } from "./ProyectoWhereInput";
 export { ProyectoWhereUniqueInput } from "./ProyectoWhereUniqueInput";
 export { StringFieldUpdateOperationsInput } from "./StringFieldUpdateOperationsInput";
 export { StringFilter } from "./StringFilter";
+export { StringNullableFilter } from "./StringNullableFilter";
+export { StringNullableListFilter } from "./StringNullableListFilter";
+export { StringNullableWithAggregatesFilter } from "./StringNullableWithAggregatesFilter";
 export { StringWithAggregatesFilter } from "./StringWithAggregatesFilter";
 export { UsuarioCountOrderByAggregateInput } from "./UsuarioCountOrderByAggregateInput";
 export { UsuarioCreateInput } from "./UsuarioCreateInput";

@@ -6,5 +6,6 @@ export declare class ProyectoMaxOrderByAggregateInput {
     fechaFin?: "asc" | "desc" | undefined;
     estado?: "asc" | "desc" | undefined;
     fase?: "asc" | "desc" | undefined;
+    objetivoGeneral?: "asc" | "desc" | undefined;
     usuarioId?: "asc" | "desc" | undefined;
 }

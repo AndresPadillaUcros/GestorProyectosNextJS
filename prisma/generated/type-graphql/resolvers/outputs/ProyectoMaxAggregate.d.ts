@@ -6,5 +6,6 @@ export declare class ProyectoMaxAggregate {
     fechaFin: Date | null;
     estado: "Activo" | "Inactivo" | null;
     fase: "Iniciado" | "Desarollo" | "Terminado" | null;
+    objetivoGeneral: string | null;
     usuarioId: string | null;
 }

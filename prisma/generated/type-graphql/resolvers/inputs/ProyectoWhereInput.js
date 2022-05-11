@@ -12,6 +12,8 @@ const EnumEnum_FaseProyectoFilter_1 = require("../inputs/EnumEnum_FaseProyectoFi
 const FloatFilter_1 = require("../inputs/FloatFilter");
 const InscripcionListRelationFilter_1 = require("../inputs/InscripcionListRelationFilter");
 const StringFilter_1 = require("../inputs/StringFilter");
+const StringNullableFilter_1 = require("../inputs/StringNullableFilter");
+const StringNullableListFilter_1 = require("../inputs/StringNullableListFilter");
 const UsuarioRelationFilter_1 = require("../inputs/UsuarioRelationFilter");
 let ProyectoWhereInput = ProyectoWhereInput_1 = class ProyectoWhereInput {
 };
@@ -75,6 +77,18 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", EnumEnum_FaseProyectoFilter_1.EnumEnum_FaseProyectoFilter)
 ], ProyectoWhereInput.prototype, "fase", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => StringNullableFilter_1.StringNullableFilter, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", StringNullableFilter_1.StringNullableFilter)
+], ProyectoWhereInput.prototype, "objetivoGeneral", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => StringNullableListFilter_1.StringNullableListFilter, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", StringNullableListFilter_1.StringNullableListFilter)
+], ProyectoWhereInput.prototype, "objetivosEspecificos", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => UsuarioRelationFilter_1.UsuarioRelationFilter, {
         nullable: true

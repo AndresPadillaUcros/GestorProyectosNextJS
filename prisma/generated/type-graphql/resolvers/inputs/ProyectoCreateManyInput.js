@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProyectoCreateManyInput = void 0;
 const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
+const ProyectoCreateobjetivosEspecificosInput_1 = require("../inputs/ProyectoCreateobjetivosEspecificosInput");
 const Enum_EstadoProyecto_1 = require("../../enums/Enum_EstadoProyecto");
 const Enum_FaseProyecto_1 = require("../../enums/Enum_FaseProyecto");
 let ProyectoCreateManyInput = class ProyectoCreateManyInput {
@@ -49,6 +50,18 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateManyInput.prototype, "fase", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => String, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", String)
+], ProyectoCreateManyInput.prototype, "objetivoGeneral", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => ProyectoCreateobjetivosEspecificosInput_1.ProyectoCreateobjetivosEspecificosInput, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", ProyectoCreateobjetivosEspecificosInput_1.ProyectoCreateobjetivosEspecificosInput)
+], ProyectoCreateManyInput.prototype, "objetivosEspecificos", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
         nullable: false

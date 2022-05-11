@@ -9,6 +9,8 @@ const EnumEnum_FaseProyectoFieldUpdateOperationsInput_1 = require("../inputs/Enu
 const FloatFieldUpdateOperationsInput_1 = require("../inputs/FloatFieldUpdateOperationsInput");
 const InscripcionUpdateManyWithoutProyectoInput_1 = require("../inputs/InscripcionUpdateManyWithoutProyectoInput");
 const NullableDateTimeFieldUpdateOperationsInput_1 = require("../inputs/NullableDateTimeFieldUpdateOperationsInput");
+const NullableStringFieldUpdateOperationsInput_1 = require("../inputs/NullableStringFieldUpdateOperationsInput");
+const ProyectoUpdateobjetivosEspecificosInput_1 = require("../inputs/ProyectoUpdateobjetivosEspecificosInput");
 const StringFieldUpdateOperationsInput_1 = require("../inputs/StringFieldUpdateOperationsInput");
 const UsuarioUpdateOneRequiredWithoutProyectosLideradosInput_1 = require("../inputs/UsuarioUpdateOneRequiredWithoutProyectosLideradosInput");
 let ProyectoUpdateWithoutAvancesInput = class ProyectoUpdateWithoutAvancesInput {
@@ -55,6 +57,18 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", EnumEnum_FaseProyectoFieldUpdateOperationsInput_1.EnumEnum_FaseProyectoFieldUpdateOperationsInput)
 ], ProyectoUpdateWithoutAvancesInput.prototype, "fase", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => NullableStringFieldUpdateOperationsInput_1.NullableStringFieldUpdateOperationsInput, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", NullableStringFieldUpdateOperationsInput_1.NullableStringFieldUpdateOperationsInput)
+], ProyectoUpdateWithoutAvancesInput.prototype, "objetivoGeneral", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => ProyectoUpdateobjetivosEspecificosInput_1.ProyectoUpdateobjetivosEspecificosInput, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", ProyectoUpdateobjetivosEspecificosInput_1.ProyectoUpdateobjetivosEspecificosInput)
+], ProyectoUpdateWithoutAvancesInput.prototype, "objetivosEspecificos", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => UsuarioUpdateOneRequiredWithoutProyectosLideradosInput_1.UsuarioUpdateOneRequiredWithoutProyectosLideradosInput, {
         nullable: true

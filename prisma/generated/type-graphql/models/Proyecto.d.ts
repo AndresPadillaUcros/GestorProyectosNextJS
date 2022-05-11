@@ -10,6 +10,8 @@ export declare class Proyecto {
     fechaFin?: Date | null;
     estado: "Activo" | "Inactivo";
     fase: "Iniciado" | "Desarollo" | "Terminado";
+    objetivoGeneral?: string | null;
+    objetivosEspecificos: string[];
     lider?: Usuario;
     usuarioId: string;
     avances?: Avances[];

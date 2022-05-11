@@ -13,16 +13,16 @@ const Enum_EstadoUsuario:any= {
   };
   
 const Enum_EstadoProyecto:any= {
-    ACTIVO: 'Activo',
-    INACTIVO: 'Inactivo',
+    Activo: 'Activo',
+    Inactivo: 'Inactivo',
   };
 
 
 const Enum_FaseProyecto:any={
-    INICIADO:'Iniciado',
-    DESARROLLO:'En desarrollo',
-    TERMINADO:'Terminado',
-    NULO:'Nulo',
+    Iniciado:'Iniciado',
+    Desarrollo:'En desarrollo',
+    Terminado:'Terminado',
+    Nulo:'Nulo',
 }
 
 const Enum_TipoObjetivo:any={

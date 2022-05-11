@@ -39,7 +39,7 @@ const Home: NextPage = () => {
                         <td>{Enum_FaseProyecto[u.fase]}</td>
                         <td>
                           <Link href={`/proyectos/editar/${u._id}`}>
-                            <i className='fas fa-book-reader text-yellow-600 hover:text-yellow-400 cursor-pointer' />
+                            <i className='fas fa-book-reader text-warning cursor-pointer' />
                           </Link>
                         </td>
                       </tr>

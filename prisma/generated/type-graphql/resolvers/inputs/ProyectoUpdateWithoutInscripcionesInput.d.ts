@@ -4,6 +4,8 @@ import { EnumEnum_EstadoProyectoFieldUpdateOperationsInput } from "../inputs/Enu
 import { EnumEnum_FaseProyectoFieldUpdateOperationsInput } from "../inputs/EnumEnum_FaseProyectoFieldUpdateOperationsInput";
 import { FloatFieldUpdateOperationsInput } from "../inputs/FloatFieldUpdateOperationsInput";
 import { NullableDateTimeFieldUpdateOperationsInput } from "../inputs/NullableDateTimeFieldUpdateOperationsInput";
+import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
+import { ProyectoUpdateobjetivosEspecificosInput } from "../inputs/ProyectoUpdateobjetivosEspecificosInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
 import { UsuarioUpdateOneRequiredWithoutProyectosLideradosInput } from "../inputs/UsuarioUpdateOneRequiredWithoutProyectosLideradosInput";
 export declare class ProyectoUpdateWithoutInscripcionesInput {
@@ -14,6 +16,8 @@ export declare class ProyectoUpdateWithoutInscripcionesInput {
     fechaFin?: NullableDateTimeFieldUpdateOperationsInput | undefined;
     estado?: EnumEnum_EstadoProyectoFieldUpdateOperationsInput | undefined;
     fase?: EnumEnum_FaseProyectoFieldUpdateOperationsInput | undefined;
+    objetivoGeneral?: NullableStringFieldUpdateOperationsInput | undefined;
+    objetivosEspecificos?: ProyectoUpdateobjetivosEspecificosInput | undefined;
     lider?: UsuarioUpdateOneRequiredWithoutProyectosLideradosInput | undefined;
     avances?: AvancesUpdateManyWithoutProyectoInput | undefined;
 }

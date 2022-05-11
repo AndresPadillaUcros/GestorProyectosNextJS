@@ -58,19 +58,26 @@ model Usuario {
 }
 
 model Proyecto {
-  id            String        @id @default(cuid())
-  nombre        String
-  presupuesto   Float
-  fechaInicio   DateTime
-  fechaFin      DateTime?
-  estado        Enum_EstadoProyecto
-  fase          Enum_FaseProyecto 
-  objetivoGeneral String?
-  objetivosEspecificos String[]
-  lider         Usuario       @relation(fields: [usuarioId], references: [id])
-  usuarioId     String
-  avances       Avances[]
-  inscripciones Inscripcion[]
+  id                   String                 @id @default(cuid())
+  nombre               String
+  presupuesto          Float
+  fechaInicio          DateTime
+  fechaFin             DateTime?
+  estado               Enum_EstadoProyecto
+  fase                 Enum_FaseProyecto
+  objetivoGeneral      String?
+  ObjetivosEspecificos ObjetivosEspecificos[]
+  lider                Usuario                @relation(fields: [usuarioId], references: [id])
+  usuarioId            String
+  avances              Avances[]
+  inscripciones        Inscripcion[]
+}
+
+model ObjetivosEspecificos {
+  id          String   @id @default(cuid())
+  descripcion String
+  proyecto    Proyecto @relation(fields: [proyectoId], references: [id])
+  proyectoId  String
 }
 
 model Avances {

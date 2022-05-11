@@ -10,7 +10,7 @@ export declare class ProyectoCreateWithoutAvancesInput {
     estado: "Activo" | "Inactivo";
     fase: "Iniciado" | "Desarollo" | "Terminado";
     objetivoGeneral?: string | undefined;
-    ObjetivosEspecificos?: ObjetivosEspecificosCreateNestedManyWithoutProyectoInput | undefined;
+    objetivosEspecificos?: ObjetivosEspecificosCreateNestedManyWithoutProyectoInput | undefined;
     lider: UsuarioCreateNestedOneWithoutProyectosLideradosInput;
     inscripciones?: InscripcionCreateNestedManyWithoutProyectoInput | undefined;
 }

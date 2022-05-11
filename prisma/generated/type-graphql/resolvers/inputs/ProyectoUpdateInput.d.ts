@@ -18,7 +18,7 @@ export declare class ProyectoUpdateInput {
     estado?: EnumEnum_EstadoProyectoFieldUpdateOperationsInput | undefined;
     fase?: EnumEnum_FaseProyectoFieldUpdateOperationsInput | undefined;
     objetivoGeneral?: NullableStringFieldUpdateOperationsInput | undefined;
-    ObjetivosEspecificos?: ObjetivosEspecificosUpdateManyWithoutProyectoInput | undefined;
+    objetivosEspecificos?: ObjetivosEspecificosUpdateManyWithoutProyectoInput | undefined;
     lider?: UsuarioUpdateOneRequiredWithoutProyectosLideradosInput | undefined;
     avances?: AvancesUpdateManyWithoutProyectoInput | undefined;
     inscripciones?: InscripcionUpdateManyWithoutProyectoInput | undefined;

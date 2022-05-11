@@ -63,7 +63,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", ObjetivosEspecificosOrderByRelationAggregateInput_1.ObjetivosEspecificosOrderByRelationAggregateInput)
-], ProyectoOrderByWithRelationInput.prototype, "ObjetivosEspecificos", void 0);
+], ProyectoOrderByWithRelationInput.prototype, "objetivosEspecificos", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => UsuarioOrderByWithRelationInput_1.UsuarioOrderByWithRelationInput, {
         nullable: true

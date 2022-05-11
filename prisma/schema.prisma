@@ -66,7 +66,7 @@ model Proyecto {
   estado               Enum_EstadoProyecto
   fase                 Enum_FaseProyecto
   objetivoGeneral      String?
-  ObjetivosEspecificos ObjetivosEspecificos[]
+  objetivosEspecificos ObjetivosEspecificos[]
   lider                Usuario                @relation(fields: [usuarioId], references: [id])
   usuarioId            String
   avances              Avances[]

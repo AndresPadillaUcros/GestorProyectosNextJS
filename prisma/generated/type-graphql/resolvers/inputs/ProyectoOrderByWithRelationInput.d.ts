@@ -11,7 +11,7 @@ export declare class ProyectoOrderByWithRelationInput {
     estado?: "asc" | "desc" | undefined;
     fase?: "asc" | "desc" | undefined;
     objetivoGeneral?: "asc" | "desc" | undefined;
-    ObjetivosEspecificos?: ObjetivosEspecificosOrderByRelationAggregateInput | undefined;
+    objetivosEspecificos?: ObjetivosEspecificosOrderByRelationAggregateInput | undefined;
     lider?: UsuarioOrderByWithRelationInput | undefined;
     usuarioId?: "asc" | "desc" | undefined;
     avances?: AvancesOrderByRelationAggregateInput | undefined;

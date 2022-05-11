@@ -1,5 +1,5 @@
 export declare class ProyectoCount {
-    ObjetivosEspecificos: number;
+    objetivosEspecificos: number;
     avances: number;
     inscripciones: number;
 }

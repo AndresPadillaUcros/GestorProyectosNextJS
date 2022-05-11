@@ -13,12 +13,12 @@ const ProyectoInscripcionesArgs_1 = require("./args/ProyectoInscripcionesArgs");
 const ProyectoObjetivosEspecificosArgs_1 = require("./args/ProyectoObjetivosEspecificosArgs");
 const helpers_1 = require("../../../helpers");
 let ProyectoRelationsResolver = class ProyectoRelationsResolver {
-    async ObjetivosEspecificos(proyecto, ctx, args) {
+    async objetivosEspecificos(proyecto, ctx, args) {
         return (0, helpers_1.getPrismaFromContext)(ctx).proyecto.findUnique({
             where: {
                 id: proyecto.id,
             },
-        }).ObjetivosEspecificos(args);
+        }).objetivosEspecificos(args);
     }
     async lider(proyecto, ctx) {
         return (0, helpers_1.getPrismaFromContext)(ctx).proyecto.findUnique({
@@ -52,7 +52,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", Function),
     tslib_1.__metadata("design:paramtypes", [Proyecto_1.Proyecto, Object, ProyectoObjetivosEspecificosArgs_1.ProyectoObjetivosEspecificosArgs]),
     tslib_1.__metadata("design:returntype", Promise)
-], ProyectoRelationsResolver.prototype, "ObjetivosEspecificos", null);
+], ProyectoRelationsResolver.prototype, "objetivosEspecificos", null);
 tslib_1.__decorate([
     TypeGraphQL.FieldResolver(_type => Usuario_1.Usuario, {
         nullable: false

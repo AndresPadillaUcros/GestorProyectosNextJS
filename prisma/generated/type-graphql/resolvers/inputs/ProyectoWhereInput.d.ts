@@ -21,7 +21,7 @@ export declare class ProyectoWhereInput {
     estado?: EnumEnum_EstadoProyectoFilter | undefined;
     fase?: EnumEnum_FaseProyectoFilter | undefined;
     objetivoGeneral?: StringNullableFilter | undefined;
-    ObjetivosEspecificos?: ObjetivosEspecificosListRelationFilter | undefined;
+    objetivosEspecificos?: ObjetivosEspecificosListRelationFilter | undefined;
     lider?: UsuarioRelationFilter | undefined;
     usuarioId?: StringFilter | undefined;
     avances?: AvancesListRelationFilter | undefined;

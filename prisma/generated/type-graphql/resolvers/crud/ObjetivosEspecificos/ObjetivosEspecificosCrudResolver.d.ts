@@ -1,0 +1,31 @@
+import { GraphQLResolveInfo } from "graphql";
+import { AggregateObjetivosEspecificosArgs } from "./args/AggregateObjetivosEspecificosArgs";
+import { CreateManyObjetivosEspecificosArgs } from "./args/CreateManyObjetivosEspecificosArgs";
+import { CreateObjetivosEspecificosArgs } from "./args/CreateObjetivosEspecificosArgs";
+import { DeleteManyObjetivosEspecificosArgs } from "./args/DeleteManyObjetivosEspecificosArgs";
+import { DeleteObjetivosEspecificosArgs } from "./args/DeleteObjetivosEspecificosArgs";
+import { FindFirstObjetivosEspecificosArgs } from "./args/FindFirstObjetivosEspecificosArgs";
+import { FindManyObjetivosEspecificosArgs } from "./args/FindManyObjetivosEspecificosArgs";
+import { FindUniqueObjetivosEspecificosArgs } from "./args/FindUniqueObjetivosEspecificosArgs";
+import { GroupByObjetivosEspecificosArgs } from "./args/GroupByObjetivosEspecificosArgs";
+import { UpdateManyObjetivosEspecificosArgs } from "./args/UpdateManyObjetivosEspecificosArgs";
+import { UpdateObjetivosEspecificosArgs } from "./args/UpdateObjetivosEspecificosArgs";
+import { UpsertObjetivosEspecificosArgs } from "./args/UpsertObjetivosEspecificosArgs";
+import { ObjetivosEspecificos } from "../../../models/ObjetivosEspecificos";
+import { AffectedRowsOutput } from "../../outputs/AffectedRowsOutput";
+import { AggregateObjetivosEspecificos } from "../../outputs/AggregateObjetivosEspecificos";
+import { ObjetivosEspecificosGroupBy } from "../../outputs/ObjetivosEspecificosGroupBy";
+export declare class ObjetivosEspecificosCrudResolver {
+    findUniqueObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: FindUniqueObjetivosEspecificosArgs): Promise<ObjetivosEspecificos | null>;
+    findFirstObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: FindFirstObjetivosEspecificosArgs): Promise<ObjetivosEspecificos | null>;
+    findManyObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: FindManyObjetivosEspecificosArgs): Promise<ObjetivosEspecificos[]>;
+    createObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: CreateObjetivosEspecificosArgs): Promise<ObjetivosEspecificos>;
+    createManyObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: CreateManyObjetivosEspecificosArgs): Promise<AffectedRowsOutput>;
+    deleteObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: DeleteObjetivosEspecificosArgs): Promise<ObjetivosEspecificos | null>;
+    updateObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: UpdateObjetivosEspecificosArgs): Promise<ObjetivosEspecificos | null>;
+    deleteManyObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: DeleteManyObjetivosEspecificosArgs): Promise<AffectedRowsOutput>;
+    updateManyObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: UpdateManyObjetivosEspecificosArgs): Promise<AffectedRowsOutput>;
+    upsertObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: UpsertObjetivosEspecificosArgs): Promise<ObjetivosEspecificos>;
+    aggregateObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: AggregateObjetivosEspecificosArgs): Promise<AggregateObjetivosEspecificos>;
+    groupByObjetivosEspecificos(ctx: any, info: GraphQLResolveInfo, args: GroupByObjetivosEspecificosArgs): Promise<ObjetivosEspecificosGroupBy[]>;
+}

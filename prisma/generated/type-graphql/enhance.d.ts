@@ -7,6 +7,7 @@ import * as inputTypes from "./resolvers/inputs";
 declare const crudResolversMap: {
     Usuario: typeof crudResolvers.UsuarioCrudResolver;
     Proyecto: typeof crudResolvers.ProyectoCrudResolver;
+    ObjetivosEspecificos: typeof crudResolvers.ObjetivosEspecificosCrudResolver;
     Avances: typeof crudResolvers.AvancesCrudResolver;
     Inscripcion: typeof crudResolvers.InscripcionCrudResolver;
 };
@@ -31,6 +32,7 @@ export declare function applyArgsTypesEnhanceMap(argsTypesEnhanceMap: ArgsTypesE
 declare const relationResolversMap: {
     Usuario: typeof relationResolvers.UsuarioRelationsResolver;
     Proyecto: typeof relationResolvers.ProyectoRelationsResolver;
+    ObjetivosEspecificos: typeof relationResolvers.ObjetivosEspecificosRelationsResolver;
     Avances: typeof relationResolvers.AvancesRelationsResolver;
     Inscripcion: typeof relationResolvers.InscripcionRelationsResolver;
 };

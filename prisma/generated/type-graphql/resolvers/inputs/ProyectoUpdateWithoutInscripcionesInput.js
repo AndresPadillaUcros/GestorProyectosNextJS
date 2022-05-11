@@ -10,6 +10,7 @@ const EnumEnum_FaseProyectoFieldUpdateOperationsInput_1 = require("../inputs/Enu
 const FloatFieldUpdateOperationsInput_1 = require("../inputs/FloatFieldUpdateOperationsInput");
 const NullableDateTimeFieldUpdateOperationsInput_1 = require("../inputs/NullableDateTimeFieldUpdateOperationsInput");
 const NullableStringFieldUpdateOperationsInput_1 = require("../inputs/NullableStringFieldUpdateOperationsInput");
+const ObjetivosEspecificosUpdateManyWithoutProyectoInput_1 = require("../inputs/ObjetivosEspecificosUpdateManyWithoutProyectoInput");
 const StringFieldUpdateOperationsInput_1 = require("../inputs/StringFieldUpdateOperationsInput");
 const UsuarioUpdateOneRequiredWithoutProyectosLideradosInput_1 = require("../inputs/UsuarioUpdateOneRequiredWithoutProyectosLideradosInput");
 let ProyectoUpdateWithoutInscripcionesInput = class ProyectoUpdateWithoutInscripcionesInput {
@@ -74,6 +75,12 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", AvancesUpdateManyWithoutProyectoInput_1.AvancesUpdateManyWithoutProyectoInput)
 ], ProyectoUpdateWithoutInscripcionesInput.prototype, "avances", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => ObjetivosEspecificosUpdateManyWithoutProyectoInput_1.ObjetivosEspecificosUpdateManyWithoutProyectoInput, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", ObjetivosEspecificosUpdateManyWithoutProyectoInput_1.ObjetivosEspecificosUpdateManyWithoutProyectoInput)
+], ProyectoUpdateWithoutInscripcionesInput.prototype, "objetivosEspecificos", void 0);
 ProyectoUpdateWithoutInscripcionesInput = tslib_1.__decorate([
     TypeGraphQL.InputType("ProyectoUpdateWithoutInscripcionesInput", {
         isAbstract: true

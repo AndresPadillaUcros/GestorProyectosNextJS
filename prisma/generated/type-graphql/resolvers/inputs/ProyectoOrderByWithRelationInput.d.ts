@@ -1,5 +1,6 @@
 import { AvancesOrderByRelationAggregateInput } from "../inputs/AvancesOrderByRelationAggregateInput";
 import { InscripcionOrderByRelationAggregateInput } from "../inputs/InscripcionOrderByRelationAggregateInput";
+import { ObjetivosEspecificosOrderByRelationAggregateInput } from "../inputs/ObjetivosEspecificosOrderByRelationAggregateInput";
 import { UsuarioOrderByWithRelationInput } from "../inputs/UsuarioOrderByWithRelationInput";
 export declare class ProyectoOrderByWithRelationInput {
     id?: "asc" | "desc" | undefined;
@@ -14,4 +15,5 @@ export declare class ProyectoOrderByWithRelationInput {
     usuarioId?: "asc" | "desc" | undefined;
     avances?: AvancesOrderByRelationAggregateInput | undefined;
     inscripciones?: InscripcionOrderByRelationAggregateInput | undefined;
+    objetivosEspecificos?: ObjetivosEspecificosOrderByRelationAggregateInput | undefined;
 }

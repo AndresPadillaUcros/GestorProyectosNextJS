@@ -1,0 +1,12 @@
+export { AggregateObjetivosEspecificosArgs } from "./AggregateObjetivosEspecificosArgs";
+export { CreateManyObjetivosEspecificosArgs } from "./CreateManyObjetivosEspecificosArgs";
+export { CreateObjetivosEspecificosArgs } from "./CreateObjetivosEspecificosArgs";
+export { DeleteManyObjetivosEspecificosArgs } from "./DeleteManyObjetivosEspecificosArgs";
+export { DeleteObjetivosEspecificosArgs } from "./DeleteObjetivosEspecificosArgs";
+export { FindFirstObjetivosEspecificosArgs } from "./FindFirstObjetivosEspecificosArgs";
+export { FindManyObjetivosEspecificosArgs } from "./FindManyObjetivosEspecificosArgs";
+export { FindUniqueObjetivosEspecificosArgs } from "./FindUniqueObjetivosEspecificosArgs";
+export { GroupByObjetivosEspecificosArgs } from "./GroupByObjetivosEspecificosArgs";
+export { UpdateManyObjetivosEspecificosArgs } from "./UpdateManyObjetivosEspecificosArgs";
+export { UpdateObjetivosEspecificosArgs } from "./UpdateObjetivosEspecificosArgs";
+export { UpsertObjetivosEspecificosArgs } from "./UpsertObjetivosEspecificosArgs";

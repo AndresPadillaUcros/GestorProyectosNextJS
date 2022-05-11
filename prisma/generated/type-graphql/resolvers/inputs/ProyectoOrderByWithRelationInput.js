@@ -5,6 +5,7 @@ const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
 const AvancesOrderByRelationAggregateInput_1 = require("../inputs/AvancesOrderByRelationAggregateInput");
 const InscripcionOrderByRelationAggregateInput_1 = require("../inputs/InscripcionOrderByRelationAggregateInput");
+const ObjetivosEspecificosOrderByRelationAggregateInput_1 = require("../inputs/ObjetivosEspecificosOrderByRelationAggregateInput");
 const UsuarioOrderByWithRelationInput_1 = require("../inputs/UsuarioOrderByWithRelationInput");
 const SortOrder_1 = require("../../enums/SortOrder");
 let ProyectoOrderByWithRelationInput = class ProyectoOrderByWithRelationInput {
@@ -81,6 +82,12 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", InscripcionOrderByRelationAggregateInput_1.InscripcionOrderByRelationAggregateInput)
 ], ProyectoOrderByWithRelationInput.prototype, "inscripciones", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => ObjetivosEspecificosOrderByRelationAggregateInput_1.ObjetivosEspecificosOrderByRelationAggregateInput, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", ObjetivosEspecificosOrderByRelationAggregateInput_1.ObjetivosEspecificosOrderByRelationAggregateInput)
+], ProyectoOrderByWithRelationInput.prototype, "objetivosEspecificos", void 0);
 ProyectoOrderByWithRelationInput = tslib_1.__decorate([
     TypeGraphQL.InputType("ProyectoOrderByWithRelationInput", {
         isAbstract: true

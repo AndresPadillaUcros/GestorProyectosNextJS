@@ -70,9 +70,15 @@ model Proyecto {
   usuarioId            String
   avances              Avances[]
   inscripciones        Inscripcion[]
+  objetivosEspecificos ObjetivosEspecificos[]
 }
 
-
+model ObjetivosEspecificos {
+  id          String   @id @default(cuid())
+  descripcion String
+  proyecto    Proyecto @relation(fields: [proyectoId], references: [id])
+  proyectoId  String
+}
 
 model Avances {
   id            String   @id @default(cuid())

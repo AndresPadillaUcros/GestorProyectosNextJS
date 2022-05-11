@@ -5,6 +5,7 @@ import { EnumEnum_EstadoProyectoFilter } from "../inputs/EnumEnum_EstadoProyecto
 import { EnumEnum_FaseProyectoFilter } from "../inputs/EnumEnum_FaseProyectoFilter";
 import { FloatFilter } from "../inputs/FloatFilter";
 import { InscripcionListRelationFilter } from "../inputs/InscripcionListRelationFilter";
+import { ObjetivosEspecificosListRelationFilter } from "../inputs/ObjetivosEspecificosListRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
 import { StringNullableFilter } from "../inputs/StringNullableFilter";
 import { UsuarioRelationFilter } from "../inputs/UsuarioRelationFilter";
@@ -24,4 +25,5 @@ export declare class ProyectoWhereInput {
     usuarioId?: StringFilter | undefined;
     avances?: AvancesListRelationFilter | undefined;
     inscripciones?: InscripcionListRelationFilter | undefined;
+    objetivosEspecificos?: ObjetivosEspecificosListRelationFilter | undefined;
 }

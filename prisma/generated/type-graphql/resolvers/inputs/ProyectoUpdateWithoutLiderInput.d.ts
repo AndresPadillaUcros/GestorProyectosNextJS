@@ -6,6 +6,7 @@ import { FloatFieldUpdateOperationsInput } from "../inputs/FloatFieldUpdateOpera
 import { InscripcionUpdateManyWithoutProyectoInput } from "../inputs/InscripcionUpdateManyWithoutProyectoInput";
 import { NullableDateTimeFieldUpdateOperationsInput } from "../inputs/NullableDateTimeFieldUpdateOperationsInput";
 import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
+import { ObjetivosEspecificosUpdateManyWithoutProyectoInput } from "../inputs/ObjetivosEspecificosUpdateManyWithoutProyectoInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
 export declare class ProyectoUpdateWithoutLiderInput {
     id?: StringFieldUpdateOperationsInput | undefined;
@@ -18,4 +19,5 @@ export declare class ProyectoUpdateWithoutLiderInput {
     objetivoGeneral?: NullableStringFieldUpdateOperationsInput | undefined;
     avances?: AvancesUpdateManyWithoutProyectoInput | undefined;
     inscripciones?: InscripcionUpdateManyWithoutProyectoInput | undefined;
+    objetivosEspecificos?: ObjetivosEspecificosUpdateManyWithoutProyectoInput | undefined;
 }

@@ -11,6 +11,7 @@ const FloatFieldUpdateOperationsInput_1 = require("../inputs/FloatFieldUpdateOpe
 const InscripcionUpdateManyWithoutProyectoInput_1 = require("../inputs/InscripcionUpdateManyWithoutProyectoInput");
 const NullableDateTimeFieldUpdateOperationsInput_1 = require("../inputs/NullableDateTimeFieldUpdateOperationsInput");
 const NullableStringFieldUpdateOperationsInput_1 = require("../inputs/NullableStringFieldUpdateOperationsInput");
+const ObjetivosEspecificosUpdateManyWithoutProyectoInput_1 = require("../inputs/ObjetivosEspecificosUpdateManyWithoutProyectoInput");
 const StringFieldUpdateOperationsInput_1 = require("../inputs/StringFieldUpdateOperationsInput");
 let ProyectoUpdateWithoutLiderInput = class ProyectoUpdateWithoutLiderInput {
 };
@@ -74,6 +75,12 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", InscripcionUpdateManyWithoutProyectoInput_1.InscripcionUpdateManyWithoutProyectoInput)
 ], ProyectoUpdateWithoutLiderInput.prototype, "inscripciones", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => ObjetivosEspecificosUpdateManyWithoutProyectoInput_1.ObjetivosEspecificosUpdateManyWithoutProyectoInput, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", ObjetivosEspecificosUpdateManyWithoutProyectoInput_1.ObjetivosEspecificosUpdateManyWithoutProyectoInput)
+], ProyectoUpdateWithoutLiderInput.prototype, "objetivosEspecificos", void 0);
 ProyectoUpdateWithoutLiderInput = tslib_1.__decorate([
     TypeGraphQL.InputType("ProyectoUpdateWithoutLiderInput", {
         isAbstract: true

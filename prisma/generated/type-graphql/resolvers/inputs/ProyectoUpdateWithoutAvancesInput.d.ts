@@ -5,6 +5,7 @@ import { FloatFieldUpdateOperationsInput } from "../inputs/FloatFieldUpdateOpera
 import { InscripcionUpdateManyWithoutProyectoInput } from "../inputs/InscripcionUpdateManyWithoutProyectoInput";
 import { NullableDateTimeFieldUpdateOperationsInput } from "../inputs/NullableDateTimeFieldUpdateOperationsInput";
 import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
+import { ObjetivosEspecificosUpdateManyWithoutProyectoInput } from "../inputs/ObjetivosEspecificosUpdateManyWithoutProyectoInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
 import { UsuarioUpdateOneRequiredWithoutProyectosLideradosInput } from "../inputs/UsuarioUpdateOneRequiredWithoutProyectosLideradosInput";
 export declare class ProyectoUpdateWithoutAvancesInput {
@@ -18,4 +19,5 @@ export declare class ProyectoUpdateWithoutAvancesInput {
     objetivoGeneral?: NullableStringFieldUpdateOperationsInput | undefined;
     lider?: UsuarioUpdateOneRequiredWithoutProyectosLideradosInput | undefined;
     inscripciones?: InscripcionUpdateManyWithoutProyectoInput | undefined;
+    objetivosEspecificos?: ObjetivosEspecificosUpdateManyWithoutProyectoInput | undefined;
 }

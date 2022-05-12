@@ -659,3 +659,13 @@ import { useRouter } from 'next/router'
 
 
 // export default EditarProyecto;
+
+import React from 'react'
+
+const home= () => {
+  return (
+    <div>Holas</div>
+  )
+}
+
+export default home

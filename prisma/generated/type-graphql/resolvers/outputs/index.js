@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UsuarioMinAggregate = exports.UsuarioMaxAggregate = exports.UsuarioGroupBy = exports.UsuarioCountAggregate = exports.UsuarioCount = exports.ProyectoSumAggregate = exports.ProyectoMinAggregate = exports.ProyectoMaxAggregate = exports.ProyectoGroupBy = exports.ProyectoCountAggregate = exports.ProyectoCount = exports.ProyectoAvgAggregate = exports.ObjetivosEspecificosMinAggregate = exports.ObjetivosEspecificosMaxAggregate = exports.ObjetivosEspecificosGroupBy = exports.ObjetivosEspecificosCountAggregate = exports.InscripcionMinAggregate = exports.InscripcionMaxAggregate = exports.InscripcionGroupBy = exports.InscripcionCountAggregate = exports.AvancesMinAggregate = exports.AvancesMaxAggregate = exports.AvancesGroupBy = exports.AvancesCountAggregate = exports.AggregateUsuario = exports.AggregateProyecto = exports.AggregateObjetivosEspecificos = exports.AggregateInscripcion = exports.AggregateAvances = exports.AffectedRowsOutput = void 0;
+exports.UsuarioMinAggregate = exports.UsuarioMaxAggregate = exports.UsuarioGroupBy = exports.UsuarioCountAggregate = exports.UsuarioCount = exports.ProyectoMinAggregate = exports.ProyectoMaxAggregate = exports.ProyectoGroupBy = exports.ProyectoCountAggregate = exports.ProyectoCount = exports.ObjetivosEspecificosMinAggregate = exports.ObjetivosEspecificosMaxAggregate = exports.ObjetivosEspecificosGroupBy = exports.ObjetivosEspecificosCountAggregate = exports.InscripcionMinAggregate = exports.InscripcionMaxAggregate = exports.InscripcionGroupBy = exports.InscripcionCountAggregate = exports.AvancesMinAggregate = exports.AvancesMaxAggregate = exports.AvancesGroupBy = exports.AvancesCountAggregate = exports.AggregateUsuario = exports.AggregateProyecto = exports.AggregateObjetivosEspecificos = exports.AggregateInscripcion = exports.AggregateAvances = exports.AffectedRowsOutput = void 0;
 var AffectedRowsOutput_1 = require("./AffectedRowsOutput");
 Object.defineProperty(exports, "AffectedRowsOutput", { enumerable: true, get: function () { return AffectedRowsOutput_1.AffectedRowsOutput; } });
 var AggregateAvances_1 = require("./AggregateAvances");
@@ -37,8 +37,6 @@ var ObjetivosEspecificosMaxAggregate_1 = require("./ObjetivosEspecificosMaxAggre
 Object.defineProperty(exports, "ObjetivosEspecificosMaxAggregate", { enumerable: true, get: function () { return ObjetivosEspecificosMaxAggregate_1.ObjetivosEspecificosMaxAggregate; } });
 var ObjetivosEspecificosMinAggregate_1 = require("./ObjetivosEspecificosMinAggregate");
 Object.defineProperty(exports, "ObjetivosEspecificosMinAggregate", { enumerable: true, get: function () { return ObjetivosEspecificosMinAggregate_1.ObjetivosEspecificosMinAggregate; } });
-var ProyectoAvgAggregate_1 = require("./ProyectoAvgAggregate");
-Object.defineProperty(exports, "ProyectoAvgAggregate", { enumerable: true, get: function () { return ProyectoAvgAggregate_1.ProyectoAvgAggregate; } });
 var ProyectoCount_1 = require("./ProyectoCount");
 Object.defineProperty(exports, "ProyectoCount", { enumerable: true, get: function () { return ProyectoCount_1.ProyectoCount; } });
 var ProyectoCountAggregate_1 = require("./ProyectoCountAggregate");
@@ -49,8 +47,6 @@ var ProyectoMaxAggregate_1 = require("./ProyectoMaxAggregate");
 Object.defineProperty(exports, "ProyectoMaxAggregate", { enumerable: true, get: function () { return ProyectoMaxAggregate_1.ProyectoMaxAggregate; } });
 var ProyectoMinAggregate_1 = require("./ProyectoMinAggregate");
 Object.defineProperty(exports, "ProyectoMinAggregate", { enumerable: true, get: function () { return ProyectoMinAggregate_1.ProyectoMinAggregate; } });
-var ProyectoSumAggregate_1 = require("./ProyectoSumAggregate");
-Object.defineProperty(exports, "ProyectoSumAggregate", { enumerable: true, get: function () { return ProyectoSumAggregate_1.ProyectoSumAggregate; } });
 var UsuarioCount_1 = require("./UsuarioCount");
 Object.defineProperty(exports, "UsuarioCount", { enumerable: true, get: function () { return UsuarioCount_1.UsuarioCount; } });
 var UsuarioCountAggregate_1 = require("./UsuarioCountAggregate");

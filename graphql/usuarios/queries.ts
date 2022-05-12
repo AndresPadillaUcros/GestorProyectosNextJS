@@ -1,17 +1,17 @@
 import {gql} from '@apollo/client'
 
 const GET_USUARIOS = gql`
-    query Usuarios {
-    usuarios {
-        id
-        email
-        nombre
-        apellido
-        identificacion
-        rol
-        estado
+    query Usuario($where: UsuarioWhereInput) {
+        usuarios(where: $where) {
+            id
+            email
+            nombre
+            apellido
+            identificacion
+            rol
+            estado
+        }
     }
-} 
 `;
 
 const GET_USUARIO=gql`

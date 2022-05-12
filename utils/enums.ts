@@ -22,7 +22,6 @@ const Enum_FaseProyecto:any={
     Iniciado:'Iniciado',
     Desarrollo:'En desarrollo',
     Terminado:'Terminado',
-    Nulo:'Nulo',
 }
 
 const Enum_TipoObjetivo:any={

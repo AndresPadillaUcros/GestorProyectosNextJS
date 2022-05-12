@@ -4,12 +4,12 @@ import { ObjetivosEspecificosCreateNestedManyWithoutProyectoInput } from "../inp
 export declare class ProyectoCreateWithoutLiderInput {
     id?: string | undefined;
     nombre: string;
-    presupuesto: number;
+    presupuesto: string;
     fechaInicio: Date;
     fechaFin?: Date | undefined;
-    estado: "Activo" | "Inactivo";
-    fase: "Iniciado" | "Desarollo" | "Terminado";
-    objetivoGeneral?: string | undefined;
+    estado?: "Activo" | "Inactivo" | undefined;
+    fase?: "Iniciado" | "Desarollo" | "Terminado" | undefined;
+    objetivoGeneral: string;
     avances?: AvancesCreateNestedManyWithoutProyectoInput | undefined;
     inscripciones?: InscripcionCreateNestedManyWithoutProyectoInput | undefined;
     objetivosEspecificos?: ObjetivosEspecificosCreateNestedManyWithoutProyectoInput | undefined;

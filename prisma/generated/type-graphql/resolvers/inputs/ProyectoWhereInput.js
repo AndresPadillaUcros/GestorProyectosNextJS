@@ -9,11 +9,9 @@ const DateTimeFilter_1 = require("../inputs/DateTimeFilter");
 const DateTimeNullableFilter_1 = require("../inputs/DateTimeNullableFilter");
 const EnumEnum_EstadoProyectoFilter_1 = require("../inputs/EnumEnum_EstadoProyectoFilter");
 const EnumEnum_FaseProyectoFilter_1 = require("../inputs/EnumEnum_FaseProyectoFilter");
-const FloatFilter_1 = require("../inputs/FloatFilter");
 const InscripcionListRelationFilter_1 = require("../inputs/InscripcionListRelationFilter");
 const ObjetivosEspecificosListRelationFilter_1 = require("../inputs/ObjetivosEspecificosListRelationFilter");
 const StringFilter_1 = require("../inputs/StringFilter");
-const StringNullableFilter_1 = require("../inputs/StringNullableFilter");
 const UsuarioRelationFilter_1 = require("../inputs/UsuarioRelationFilter");
 let ProyectoWhereInput = ProyectoWhereInput_1 = class ProyectoWhereInput {
 };
@@ -48,10 +46,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
 ], ProyectoWhereInput.prototype, "nombre", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => FloatFilter_1.FloatFilter, {
+    TypeGraphQL.Field(_type => StringFilter_1.StringFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", FloatFilter_1.FloatFilter)
+    tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
 ], ProyectoWhereInput.prototype, "presupuesto", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => DateTimeFilter_1.DateTimeFilter, {
@@ -78,10 +76,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", EnumEnum_FaseProyectoFilter_1.EnumEnum_FaseProyectoFilter)
 ], ProyectoWhereInput.prototype, "fase", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => StringNullableFilter_1.StringNullableFilter, {
+    TypeGraphQL.Field(_type => StringFilter_1.StringFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", StringNullableFilter_1.StringNullableFilter)
+    tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
 ], ProyectoWhereInput.prototype, "objetivoGeneral", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => UsuarioRelationFilter_1.UsuarioRelationFilter, {

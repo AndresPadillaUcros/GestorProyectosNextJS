@@ -3,11 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProyectoGroupBy = void 0;
 const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
-const ProyectoAvgAggregate_1 = require("../outputs/ProyectoAvgAggregate");
 const ProyectoCountAggregate_1 = require("../outputs/ProyectoCountAggregate");
 const ProyectoMaxAggregate_1 = require("../outputs/ProyectoMaxAggregate");
 const ProyectoMinAggregate_1 = require("../outputs/ProyectoMinAggregate");
-const ProyectoSumAggregate_1 = require("../outputs/ProyectoSumAggregate");
 const Enum_EstadoProyecto_1 = require("../../enums/Enum_EstadoProyecto");
 const Enum_FaseProyecto_1 = require("../../enums/Enum_FaseProyecto");
 let ProyectoGroupBy = class ProyectoGroupBy {
@@ -25,10 +23,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", String)
 ], ProyectoGroupBy.prototype, "nombre", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => TypeGraphQL.Float, {
+    TypeGraphQL.Field(_type => String, {
         nullable: false
     }),
-    tslib_1.__metadata("design:type", Number)
+    tslib_1.__metadata("design:type", String)
 ], ProyectoGroupBy.prototype, "presupuesto", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Date, {
@@ -56,7 +54,7 @@ tslib_1.__decorate([
 ], ProyectoGroupBy.prototype, "fase", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
-        nullable: true
+        nullable: false
     }),
     tslib_1.__metadata("design:type", String)
 ], ProyectoGroupBy.prototype, "objetivoGeneral", void 0);
@@ -72,18 +70,6 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", ProyectoCountAggregate_1.ProyectoCountAggregate)
 ], ProyectoGroupBy.prototype, "_count", void 0);
-tslib_1.__decorate([
-    TypeGraphQL.Field(_type => ProyectoAvgAggregate_1.ProyectoAvgAggregate, {
-        nullable: true
-    }),
-    tslib_1.__metadata("design:type", ProyectoAvgAggregate_1.ProyectoAvgAggregate)
-], ProyectoGroupBy.prototype, "_avg", void 0);
-tslib_1.__decorate([
-    TypeGraphQL.Field(_type => ProyectoSumAggregate_1.ProyectoSumAggregate, {
-        nullable: true
-    }),
-    tslib_1.__metadata("design:type", ProyectoSumAggregate_1.ProyectoSumAggregate)
-], ProyectoGroupBy.prototype, "_sum", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => ProyectoMinAggregate_1.ProyectoMinAggregate, {
         nullable: true

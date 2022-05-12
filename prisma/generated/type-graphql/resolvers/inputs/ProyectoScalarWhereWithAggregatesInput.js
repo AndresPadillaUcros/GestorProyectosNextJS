@@ -8,8 +8,6 @@ const DateTimeNullableWithAggregatesFilter_1 = require("../inputs/DateTimeNullab
 const DateTimeWithAggregatesFilter_1 = require("../inputs/DateTimeWithAggregatesFilter");
 const EnumEnum_EstadoProyectoWithAggregatesFilter_1 = require("../inputs/EnumEnum_EstadoProyectoWithAggregatesFilter");
 const EnumEnum_FaseProyectoWithAggregatesFilter_1 = require("../inputs/EnumEnum_FaseProyectoWithAggregatesFilter");
-const FloatWithAggregatesFilter_1 = require("../inputs/FloatWithAggregatesFilter");
-const StringNullableWithAggregatesFilter_1 = require("../inputs/StringNullableWithAggregatesFilter");
 const StringWithAggregatesFilter_1 = require("../inputs/StringWithAggregatesFilter");
 let ProyectoScalarWhereWithAggregatesInput = ProyectoScalarWhereWithAggregatesInput_1 = class ProyectoScalarWhereWithAggregatesInput {
 };
@@ -44,10 +42,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", StringWithAggregatesFilter_1.StringWithAggregatesFilter)
 ], ProyectoScalarWhereWithAggregatesInput.prototype, "nombre", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => FloatWithAggregatesFilter_1.FloatWithAggregatesFilter, {
+    TypeGraphQL.Field(_type => StringWithAggregatesFilter_1.StringWithAggregatesFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", FloatWithAggregatesFilter_1.FloatWithAggregatesFilter)
+    tslib_1.__metadata("design:type", StringWithAggregatesFilter_1.StringWithAggregatesFilter)
 ], ProyectoScalarWhereWithAggregatesInput.prototype, "presupuesto", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => DateTimeWithAggregatesFilter_1.DateTimeWithAggregatesFilter, {
@@ -74,10 +72,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", EnumEnum_FaseProyectoWithAggregatesFilter_1.EnumEnum_FaseProyectoWithAggregatesFilter)
 ], ProyectoScalarWhereWithAggregatesInput.prototype, "fase", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter_1.StringNullableWithAggregatesFilter, {
+    TypeGraphQL.Field(_type => StringWithAggregatesFilter_1.StringWithAggregatesFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", StringNullableWithAggregatesFilter_1.StringNullableWithAggregatesFilter)
+    tslib_1.__metadata("design:type", StringWithAggregatesFilter_1.StringWithAggregatesFilter)
 ], ProyectoScalarWhereWithAggregatesInput.prototype, "objetivoGeneral", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => StringWithAggregatesFilter_1.StringWithAggregatesFilter, {

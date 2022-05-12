@@ -11,11 +11,16 @@ import { Enum_EstadoUsuario , Enum_Rol} from '../../utils/enums'
 import { GET_USUARIO } from '../../graphql/usuarios/queries'
 import { EDITAR_USUARIO} from '../../graphql/usuarios/mutations'
 
+
+import { useUser } from '../../context/userContext.js';
+
 const Home: NextPage = () => {
+
+    const { userData } = useUser()
+    const  id = userData.id
 
     const{form, formData,updateFormData} = useFormData(null);
 
-    const  id = "cl2xhtsh00004lcdjbts8sgij"
 
     const{data:queryData,error:queryError,loading:queryLoading}=useQuery(GET_USUARIO,{ variables:{where:{id}}});
 

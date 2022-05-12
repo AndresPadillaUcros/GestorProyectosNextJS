@@ -16,13 +16,11 @@ export { ObjetivosEspecificosCountAggregate } from "./ObjetivosEspecificosCountA
 export { ObjetivosEspecificosGroupBy } from "./ObjetivosEspecificosGroupBy";
 export { ObjetivosEspecificosMaxAggregate } from "./ObjetivosEspecificosMaxAggregate";
 export { ObjetivosEspecificosMinAggregate } from "./ObjetivosEspecificosMinAggregate";
-export { ProyectoAvgAggregate } from "./ProyectoAvgAggregate";
 export { ProyectoCount } from "./ProyectoCount";
 export { ProyectoCountAggregate } from "./ProyectoCountAggregate";
 export { ProyectoGroupBy } from "./ProyectoGroupBy";
 export { ProyectoMaxAggregate } from "./ProyectoMaxAggregate";
 export { ProyectoMinAggregate } from "./ProyectoMinAggregate";
-export { ProyectoSumAggregate } from "./ProyectoSumAggregate";
 export { UsuarioCount } from "./UsuarioCount";
 export { UsuarioCountAggregate } from "./UsuarioCountAggregate";
 export { UsuarioGroupBy } from "./UsuarioGroupBy";

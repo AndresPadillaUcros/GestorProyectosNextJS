@@ -3,11 +3,9 @@ import { DateTimeFilter } from "../inputs/DateTimeFilter";
 import { DateTimeNullableFilter } from "../inputs/DateTimeNullableFilter";
 import { EnumEnum_EstadoProyectoFilter } from "../inputs/EnumEnum_EstadoProyectoFilter";
 import { EnumEnum_FaseProyectoFilter } from "../inputs/EnumEnum_FaseProyectoFilter";
-import { FloatFilter } from "../inputs/FloatFilter";
 import { InscripcionListRelationFilter } from "../inputs/InscripcionListRelationFilter";
 import { ObjetivosEspecificosListRelationFilter } from "../inputs/ObjetivosEspecificosListRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
-import { StringNullableFilter } from "../inputs/StringNullableFilter";
 import { UsuarioRelationFilter } from "../inputs/UsuarioRelationFilter";
 export declare class ProyectoWhereInput {
     AND?: ProyectoWhereInput[] | undefined;
@@ -15,12 +13,12 @@ export declare class ProyectoWhereInput {
     NOT?: ProyectoWhereInput[] | undefined;
     id?: StringFilter | undefined;
     nombre?: StringFilter | undefined;
-    presupuesto?: FloatFilter | undefined;
+    presupuesto?: StringFilter | undefined;
     fechaInicio?: DateTimeFilter | undefined;
     fechaFin?: DateTimeNullableFilter | undefined;
     estado?: EnumEnum_EstadoProyectoFilter | undefined;
     fase?: EnumEnum_FaseProyectoFilter | undefined;
-    objetivoGeneral?: StringNullableFilter | undefined;
+    objetivoGeneral?: StringFilter | undefined;
     lider?: UsuarioRelationFilter | undefined;
     usuarioId?: StringFilter | undefined;
     avances?: AvancesListRelationFilter | undefined;

@@ -1,7 +1,7 @@
 export declare class ProyectoMaxAggregate {
     id: string | null;
     nombre: string | null;
-    presupuesto: number | null;
+    presupuesto: string | null;
     fechaInicio: Date | null;
     fechaFin: Date | null;
     estado: "Activo" | "Inactivo" | null;

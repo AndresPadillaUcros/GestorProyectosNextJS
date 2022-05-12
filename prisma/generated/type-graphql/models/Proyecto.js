@@ -21,10 +21,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", String)
 ], Proyecto.prototype, "nombre", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => TypeGraphQL.Float, {
+    TypeGraphQL.Field(_type => String, {
         nullable: false
     }),
-    tslib_1.__metadata("design:type", Number)
+    tslib_1.__metadata("design:type", String)
 ], Proyecto.prototype, "presupuesto", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Date, {
@@ -52,7 +52,7 @@ tslib_1.__decorate([
 ], Proyecto.prototype, "fase", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
-        nullable: true
+        nullable: false
     }),
     tslib_1.__metadata("design:type", String)
 ], Proyecto.prototype, "objetivoGeneral", void 0);

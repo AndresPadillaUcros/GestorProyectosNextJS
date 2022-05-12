@@ -38,7 +38,7 @@ const Home: NextPage = () => {
                         <td>{Enum_EstadoProyecto[u.estado]}</td>
                         <td>{Enum_FaseProyecto[u.fase]}</td>
                         <td>
-                          <Link href={`/proyectos/editar/${u._id}`}>
+                          <Link href={`/lista-proyectos/editarProyecto/${u._id}`}>
                             <i className='fas fa-book-reader text-warning cursor-pointer' />
                           </Link>
                         </td>

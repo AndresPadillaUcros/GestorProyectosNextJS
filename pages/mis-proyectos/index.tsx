@@ -1,20 +1,23 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { Enum_EstadoProyecto , Enum_FaseProyecto } from '../../utils/enums'
-
-const queryDataProyecto =
-{
-  FiltrarProyectoPorLider:[ 
-    {_id:'1',nombre:'Proyecto 1', lider:{nombre:'Amdres',apellido:'Marica'} ,estado:'ACTIVO', fase:'INICIADO'},
-    {_id:'1',nombre:'Proyecto 1', lider:{nombre:'Amdres',apellido:'Marica'} ,estado:'ACTIVO', fase:'INICIADO'},
-  ]
-}
+import { useQuery, useMutation } from '@apollo/client';
+import { GET_PROYECTOS_LIDER } from '../../graphql/proyectos/queries'
+import { useUser } from '../../context/userContext.js'
 
 
 const Home: NextPage = () => {
+
+  const { userData } = useUser();
+
+  const{data:queryData,loading:queryLoading}=useQuery(GET_PROYECTOS_LIDER,{variables:{where:{id:userData._id}}});
+
+  if (queryLoading) return <div> Cargando ...</div>
+
+
   return (
     <div>
-        <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Mis proyectos</h1>
+        <h1 className=' text-center'>Mis proyectos</h1>
         <table className='tabla'>
           <thead>
             <tr>
@@ -25,13 +28,13 @@ const Home: NextPage = () => {
             </tr>
           </thead>
           <tbody>
-            {queryDataProyecto && queryDataProyecto.FiltrarProyectoPorLider ? (
+            {queryData && queryData.proyectos ? (
               <>
-                {queryDataProyecto.FiltrarProyectoPorLider.map((u) => {
+                {queryData.proyectos.map((u:any) => {
                   return (
                     <tr key={u._id}>
                       <td>{u.nombre}
-                        <Link href={`/proyectos/editar/${u._id}`}>
+                        <Link href={`/lista-proyectos/editarProyecto/${u._id}`}>
                           <i className='fas fa-book-reader text-yellow-600 hover:text-yellow-400 cursor-pointer px-3' />
                         </Link> 
                       </td>

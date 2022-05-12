@@ -24,10 +24,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateInput.prototype, "nombre", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => TypeGraphQL.Float, {
+    TypeGraphQL.Field(_type => String, {
         nullable: false
     }),
-    tslib_1.__metadata("design:type", Number)
+    tslib_1.__metadata("design:type", String)
 ], ProyectoCreateInput.prototype, "presupuesto", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Date, {
@@ -43,19 +43,19 @@ tslib_1.__decorate([
 ], ProyectoCreateInput.prototype, "fechaFin", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Enum_EstadoProyecto_1.Enum_EstadoProyecto, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateInput.prototype, "estado", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Enum_FaseProyecto_1.Enum_FaseProyecto, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateInput.prototype, "fase", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
-        nullable: true
+        nullable: false
     }),
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateInput.prototype, "objetivoGeneral", void 0);

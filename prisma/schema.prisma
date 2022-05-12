@@ -60,12 +60,12 @@ model Usuario {
 model Proyecto {
   id                   String                 @id @default(cuid())
   nombre               String
-  presupuesto          Float
+  presupuesto          String
   fechaInicio          DateTime
   fechaFin             DateTime?
-  estado               Enum_EstadoProyecto
-  fase                 Enum_FaseProyecto
-  objetivoGeneral      String?
+  estado               Enum_EstadoProyecto @default(Activo)
+  fase                 Enum_FaseProyecto  @default(Iniciado)
+  objetivoGeneral      String
   lider                Usuario                @relation(fields: [usuarioId], references: [id])
   usuarioId            String
   avances              Avances[]

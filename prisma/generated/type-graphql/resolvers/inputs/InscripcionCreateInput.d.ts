@@ -2,9 +2,9 @@ import { ProyectoCreateNestedOneWithoutInscripcionesInput } from "../inputs/Proy
 import { UsuarioCreateNestedOneWithoutInscripcionesInput } from "../inputs/UsuarioCreateNestedOneWithoutInscripcionesInput";
 export declare class InscripcionCreateInput {
     id?: string | undefined;
-    estado: "Aceptado" | "Rechazado";
-    fechaIngreso: Date;
-    fechaEgreso: Date;
+    estado?: "Aceptado" | "Rechazado" | "Pendiente" | undefined;
+    fechaIngreso?: Date | undefined;
+    fechaEgreso?: Date | undefined;
     proyecto: ProyectoCreateNestedOneWithoutInscripcionesInput;
     estudiante: UsuarioCreateNestedOneWithoutInscripcionesInput;
 }

@@ -2,9 +2,9 @@ import { ProyectoCreateNestedOneWithoutAvancesInput } from "../inputs/ProyectoCr
 import { UsuarioCreateNestedOneWithoutAvancesInput } from "../inputs/UsuarioCreateNestedOneWithoutAvancesInput";
 export declare class AvancesCreateInput {
     id?: string | undefined;
-    fecha: Date;
+    fecha?: Date | undefined;
     descripcion: string;
-    observaciones: string;
+    observaciones?: string | undefined;
     proyecto: ProyectoCreateNestedOneWithoutAvancesInput;
     creadoPor: UsuarioCreateNestedOneWithoutAvancesInput;
 }

@@ -1,8 +1,8 @@
 export declare class AvancesCreateManyInput {
     id?: string | undefined;
-    fecha: Date;
+    fecha?: Date | undefined;
     descripcion: string;
-    observaciones: string;
+    observaciones?: string | undefined;
     proyectoId: string;
     usuarioId: string;
 }

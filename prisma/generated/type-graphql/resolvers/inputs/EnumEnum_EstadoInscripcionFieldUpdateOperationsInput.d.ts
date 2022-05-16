@@ -1,3 +1,3 @@
 export declare class EnumEnum_EstadoInscripcionFieldUpdateOperationsInput {
-    set?: "Aceptado" | "Rechazado" | undefined;
+    set?: "Aceptado" | "Rechazado" | "Pendiente" | undefined;
 }

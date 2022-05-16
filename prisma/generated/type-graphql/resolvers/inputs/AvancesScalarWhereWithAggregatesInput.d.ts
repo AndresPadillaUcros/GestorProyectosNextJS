@@ -1,4 +1,5 @@
 import { DateTimeWithAggregatesFilter } from "../inputs/DateTimeWithAggregatesFilter";
+import { StringNullableWithAggregatesFilter } from "../inputs/StringNullableWithAggregatesFilter";
 import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter";
 export declare class AvancesScalarWhereWithAggregatesInput {
     AND?: AvancesScalarWhereWithAggregatesInput[] | undefined;
@@ -7,7 +8,7 @@ export declare class AvancesScalarWhereWithAggregatesInput {
     id?: StringWithAggregatesFilter | undefined;
     fecha?: DateTimeWithAggregatesFilter | undefined;
     descripcion?: StringWithAggregatesFilter | undefined;
-    observaciones?: StringWithAggregatesFilter | undefined;
+    observaciones?: StringNullableWithAggregatesFilter | undefined;
     proyectoId?: StringWithAggregatesFilter | undefined;
     usuarioId?: StringWithAggregatesFilter | undefined;
 }

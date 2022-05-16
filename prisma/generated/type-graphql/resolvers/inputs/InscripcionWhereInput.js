@@ -5,6 +5,7 @@ exports.InscripcionWhereInput = void 0;
 const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
 const DateTimeFilter_1 = require("../inputs/DateTimeFilter");
+const DateTimeNullableFilter_1 = require("../inputs/DateTimeNullableFilter");
 const EnumEnum_EstadoInscripcionFilter_1 = require("../inputs/EnumEnum_EstadoInscripcionFilter");
 const ProyectoRelationFilter_1 = require("../inputs/ProyectoRelationFilter");
 const StringFilter_1 = require("../inputs/StringFilter");
@@ -48,10 +49,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", DateTimeFilter_1.DateTimeFilter)
 ], InscripcionWhereInput.prototype, "fechaIngreso", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => DateTimeFilter_1.DateTimeFilter, {
+    TypeGraphQL.Field(_type => DateTimeNullableFilter_1.DateTimeNullableFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", DateTimeFilter_1.DateTimeFilter)
+    tslib_1.__metadata("design:type", DateTimeNullableFilter_1.DateTimeNullableFilter)
 ], InscripcionWhereInput.prototype, "fechaEgreso", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => ProyectoRelationFilter_1.ProyectoRelationFilter, {

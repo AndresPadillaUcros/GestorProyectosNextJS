@@ -4,7 +4,7 @@ export declare class Avances {
     id: string;
     fecha: Date;
     descripcion: string;
-    observaciones: string;
+    observaciones?: string | null;
     proyecto?: Proyecto;
     proyectoId: string;
     creadoPor?: Usuario;

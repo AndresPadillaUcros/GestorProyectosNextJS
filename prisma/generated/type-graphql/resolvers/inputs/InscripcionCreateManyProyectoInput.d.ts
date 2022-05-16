@@ -1,7 +1,7 @@
 export declare class InscripcionCreateManyProyectoInput {
     id?: string | undefined;
-    estado: "Aceptado" | "Rechazado";
-    fechaIngreso: Date;
-    fechaEgreso: Date;
+    estado?: "Aceptado" | "Rechazado" | "Pendiente" | undefined;
+    fechaIngreso?: Date | undefined;
+    fechaEgreso?: Date | undefined;
     usuarioId: string;
 }

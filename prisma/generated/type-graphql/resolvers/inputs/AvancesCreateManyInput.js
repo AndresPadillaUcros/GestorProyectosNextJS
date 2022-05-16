@@ -13,7 +13,7 @@ tslib_1.__decorate([
 ], AvancesCreateManyInput.prototype, "id", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Date, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", Date)
 ], AvancesCreateManyInput.prototype, "fecha", void 0);
@@ -25,7 +25,7 @@ tslib_1.__decorate([
 ], AvancesCreateManyInput.prototype, "descripcion", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", String)
 ], AvancesCreateManyInput.prototype, "observaciones", void 0);

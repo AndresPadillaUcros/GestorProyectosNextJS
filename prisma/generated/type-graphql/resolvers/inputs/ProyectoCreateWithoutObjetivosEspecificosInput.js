@@ -24,13 +24,13 @@ tslib_1.__decorate([
 ], ProyectoCreateWithoutObjetivosEspecificosInput.prototype, "nombre", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateWithoutObjetivosEspecificosInput.prototype, "presupuesto", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Date, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", Date)
 ], ProyectoCreateWithoutObjetivosEspecificosInput.prototype, "fechaInicio", void 0);
@@ -54,7 +54,7 @@ tslib_1.__decorate([
 ], ProyectoCreateWithoutObjetivosEspecificosInput.prototype, "fase", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateWithoutObjetivosEspecificosInput.prototype, "objetivoGeneral", void 0);

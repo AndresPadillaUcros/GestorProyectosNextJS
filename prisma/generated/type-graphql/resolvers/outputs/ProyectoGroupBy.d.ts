@@ -4,12 +4,12 @@ import { ProyectoMinAggregate } from "../outputs/ProyectoMinAggregate";
 export declare class ProyectoGroupBy {
     id: string;
     nombre: string;
-    presupuesto: string;
-    fechaInicio: Date;
+    presupuesto: string | null;
+    fechaInicio: Date | null;
     fechaFin: Date | null;
     estado: "Activo" | "Inactivo";
     fase: "Iniciado" | "Desarollo" | "Terminado";
-    objetivoGeneral: string;
+    objetivoGeneral: string | null;
     usuarioId: string;
     _count: ProyectoCountAggregate | null;
     _min: ProyectoMinAggregate | null;

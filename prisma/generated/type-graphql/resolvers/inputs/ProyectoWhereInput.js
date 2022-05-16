@@ -5,13 +5,13 @@ exports.ProyectoWhereInput = void 0;
 const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
 const AvancesListRelationFilter_1 = require("../inputs/AvancesListRelationFilter");
-const DateTimeFilter_1 = require("../inputs/DateTimeFilter");
 const DateTimeNullableFilter_1 = require("../inputs/DateTimeNullableFilter");
 const EnumEnum_EstadoProyectoFilter_1 = require("../inputs/EnumEnum_EstadoProyectoFilter");
 const EnumEnum_FaseProyectoFilter_1 = require("../inputs/EnumEnum_FaseProyectoFilter");
 const InscripcionListRelationFilter_1 = require("../inputs/InscripcionListRelationFilter");
 const ObjetivosEspecificosListRelationFilter_1 = require("../inputs/ObjetivosEspecificosListRelationFilter");
 const StringFilter_1 = require("../inputs/StringFilter");
+const StringNullableFilter_1 = require("../inputs/StringNullableFilter");
 const UsuarioRelationFilter_1 = require("../inputs/UsuarioRelationFilter");
 let ProyectoWhereInput = ProyectoWhereInput_1 = class ProyectoWhereInput {
 };
@@ -46,16 +46,16 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
 ], ProyectoWhereInput.prototype, "nombre", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => StringFilter_1.StringFilter, {
+    TypeGraphQL.Field(_type => StringNullableFilter_1.StringNullableFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
+    tslib_1.__metadata("design:type", StringNullableFilter_1.StringNullableFilter)
 ], ProyectoWhereInput.prototype, "presupuesto", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => DateTimeFilter_1.DateTimeFilter, {
+    TypeGraphQL.Field(_type => DateTimeNullableFilter_1.DateTimeNullableFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", DateTimeFilter_1.DateTimeFilter)
+    tslib_1.__metadata("design:type", DateTimeNullableFilter_1.DateTimeNullableFilter)
 ], ProyectoWhereInput.prototype, "fechaInicio", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => DateTimeNullableFilter_1.DateTimeNullableFilter, {
@@ -76,10 +76,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", EnumEnum_FaseProyectoFilter_1.EnumEnum_FaseProyectoFilter)
 ], ProyectoWhereInput.prototype, "fase", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => StringFilter_1.StringFilter, {
+    TypeGraphQL.Field(_type => StringNullableFilter_1.StringNullableFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
+    tslib_1.__metadata("design:type", StringNullableFilter_1.StringNullableFilter)
 ], ProyectoWhereInput.prototype, "objetivoGeneral", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => UsuarioRelationFilter_1.UsuarioRelationFilter, {

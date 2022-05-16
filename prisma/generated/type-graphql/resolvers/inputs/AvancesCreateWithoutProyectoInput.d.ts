@@ -1,8 +1,8 @@
 import { UsuarioCreateNestedOneWithoutAvancesInput } from "../inputs/UsuarioCreateNestedOneWithoutAvancesInput";
 export declare class AvancesCreateWithoutProyectoInput {
     id?: string | undefined;
-    fecha: Date;
+    fecha?: Date | undefined;
     descripcion: string;
-    observaciones: string;
+    observaciones?: string | undefined;
     creadoPor: UsuarioCreateNestedOneWithoutAvancesInput;
 }

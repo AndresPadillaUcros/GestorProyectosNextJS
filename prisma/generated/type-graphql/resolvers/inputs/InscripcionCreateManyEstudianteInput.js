@@ -14,19 +14,19 @@ tslib_1.__decorate([
 ], InscripcionCreateManyEstudianteInput.prototype, "id", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Enum_EstadoInscripcion_1.Enum_EstadoInscripcion, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", String)
 ], InscripcionCreateManyEstudianteInput.prototype, "estado", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Date, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", Date)
 ], InscripcionCreateManyEstudianteInput.prototype, "fechaIngreso", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Date, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", Date)
 ], InscripcionCreateManyEstudianteInput.prototype, "fechaEgreso", void 0);

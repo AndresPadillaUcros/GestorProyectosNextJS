@@ -21,13 +21,13 @@ tslib_1.__decorate([
 ], ProyectoCreateManyInput.prototype, "nombre", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateManyInput.prototype, "presupuesto", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Date, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", Date)
 ], ProyectoCreateManyInput.prototype, "fechaInicio", void 0);
@@ -51,7 +51,7 @@ tslib_1.__decorate([
 ], ProyectoCreateManyInput.prototype, "fase", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateManyInput.prototype, "objetivoGeneral", void 0);

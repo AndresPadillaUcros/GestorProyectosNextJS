@@ -14,7 +14,7 @@ tslib_1.__decorate([
 ], AvancesCreateWithoutProyectoInput.prototype, "id", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => Date, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", Date)
 ], AvancesCreateWithoutProyectoInput.prototype, "fecha", void 0);
@@ -26,7 +26,7 @@ tslib_1.__decorate([
 ], AvancesCreateWithoutProyectoInput.prototype, "descripcion", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => String, {
-        nullable: false
+        nullable: true
     }),
     tslib_1.__metadata("design:type", String)
 ], AvancesCreateWithoutProyectoInput.prototype, "observaciones", void 0);

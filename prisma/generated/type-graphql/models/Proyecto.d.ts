@@ -6,12 +6,12 @@ import { ProyectoCount } from "../resolvers/outputs/ProyectoCount";
 export declare class Proyecto {
     id: string;
     nombre: string;
-    presupuesto: string;
-    fechaInicio: Date;
+    presupuesto?: string | null;
+    fechaInicio?: Date | null;
     fechaFin?: Date | null;
     estado: "Activo" | "Inactivo";
     fase: "Iniciado" | "Desarollo" | "Terminado";
-    objetivoGeneral: string;
+    objetivoGeneral?: string | null;
     lider?: Usuario;
     usuarioId: string;
     avances?: Avances[];

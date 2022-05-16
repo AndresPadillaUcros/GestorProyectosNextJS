@@ -11,7 +11,7 @@ CREATE TYPE "Enum_EstadoProyecto" AS ENUM ('Activo', 'Inactivo');
 CREATE TYPE "Enum_FaseProyecto" AS ENUM ('Iniciado', 'Desarollo', 'Terminado');
 
 -- CreateEnum
-CREATE TYPE "Enum_EstadoInscripcion" AS ENUM ('Aceptado', 'Rechazado');
+CREATE TYPE "Enum_EstadoInscripcion" AS ENUM ('Aceptado', 'Rechazado', 'Pendiente');
 
 -- CreateTable
 CREATE TABLE "Usuario" (
@@ -30,11 +30,11 @@ CREATE TABLE "Usuario" (
 CREATE TABLE "Proyecto" (
     "id" TEXT NOT NULL,
     "nombre" TEXT NOT NULL,
-    "presupuesto" DOUBLE PRECISION NOT NULL,
-    "fechaInicio" TIMESTAMP(3) NOT NULL,
+    "presupuesto" TEXT,
+    "fechaInicio" TIMESTAMP(3),
     "fechaFin" TIMESTAMP(3),
-    "estado" "Enum_EstadoProyecto" NOT NULL,
-    "fase" "Enum_FaseProyecto" NOT NULL,
+    "estado" "Enum_EstadoProyecto" NOT NULL DEFAULT E'Activo',
+    "fase" "Enum_FaseProyecto" NOT NULL DEFAULT E'Iniciado',
     "objetivoGeneral" TEXT,
     "usuarioId" TEXT NOT NULL,
 
@@ -42,11 +42,20 @@ CREATE TABLE "Proyecto" (
 );
 
 -- CreateTable
+CREATE TABLE "ObjetivosEspecificos" (
+    "id" TEXT NOT NULL,
+    "descripcion" TEXT NOT NULL,
+    "proyectoId" TEXT NOT NULL,
+
+    CONSTRAINT "ObjetivosEspecificos_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Avances" (
     "id" TEXT NOT NULL,
-    "fecha" TIMESTAMP(3) NOT NULL,
+    "fecha" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "descripcion" TEXT NOT NULL,
-    "observaciones" TEXT NOT NULL,
+    "observaciones" TEXT,
     "proyectoId" TEXT NOT NULL,
     "usuarioId" TEXT NOT NULL,
 
@@ -56,9 +65,9 @@ CREATE TABLE "Avances" (
 -- CreateTable
 CREATE TABLE "Inscripcion" (
     "id" TEXT NOT NULL,
-    "estado" "Enum_EstadoInscripcion" NOT NULL,
-    "fechaIngreso" TIMESTAMP(3) NOT NULL,
-    "fechaEgreso" TIMESTAMP(3) NOT NULL,
+    "estado" "Enum_EstadoInscripcion" NOT NULL DEFAULT E'Pendiente',
+    "fechaIngreso" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "fechaEgreso" TIMESTAMP(3),
     "proyectoId" TEXT NOT NULL,
     "usuarioId" TEXT NOT NULL,
 
@@ -73,6 +82,9 @@ CREATE UNIQUE INDEX "Usuario_identificacion_key" ON "Usuario"("identificacion");
 
 -- AddForeignKey
 ALTER TABLE "Proyecto" ADD CONSTRAINT "Proyecto_usuarioId_fkey" FOREIGN KEY ("usuarioId") REFERENCES "Usuario"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "ObjetivosEspecificos" ADD CONSTRAINT "ObjetivosEspecificos_proyectoId_fkey" FOREIGN KEY ("proyectoId") REFERENCES "Proyecto"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Avances" ADD CONSTRAINT "Avances_usuarioId_fkey" FOREIGN KEY ("usuarioId") REFERENCES "Usuario"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

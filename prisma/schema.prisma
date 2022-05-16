@@ -42,6 +42,7 @@ enum Enum_FaseProyecto {
 enum Enum_EstadoInscripcion {
   Aceptado
   Rechazado
+  Pendiente
 }
 
 model Usuario {
@@ -93,7 +94,7 @@ model Avances {
 
 model Inscripcion {
   id           String                 @id @default(cuid())
-  estado       Enum_EstadoInscripcion 
+  estado       Enum_EstadoInscripcion  @default(Pendiente)
   fechaIngreso DateTime @default(now())
   fechaEgreso  DateTime?
   proyecto     Proyecto               @relation(fields: [proyectoId], references: [id])

@@ -1,4 +1,5 @@
 import { DateTimeFilter } from "../inputs/DateTimeFilter";
+import { DateTimeNullableFilter } from "../inputs/DateTimeNullableFilter";
 import { EnumEnum_EstadoInscripcionFilter } from "../inputs/EnumEnum_EstadoInscripcionFilter";
 import { StringFilter } from "../inputs/StringFilter";
 export declare class InscripcionScalarWhereInput {
@@ -8,7 +9,7 @@ export declare class InscripcionScalarWhereInput {
     id?: StringFilter | undefined;
     estado?: EnumEnum_EstadoInscripcionFilter | undefined;
     fechaIngreso?: DateTimeFilter | undefined;
-    fechaEgreso?: DateTimeFilter | undefined;
+    fechaEgreso?: DateTimeNullableFilter | undefined;
     proyectoId?: StringFilter | undefined;
     usuarioId?: StringFilter | undefined;
 }

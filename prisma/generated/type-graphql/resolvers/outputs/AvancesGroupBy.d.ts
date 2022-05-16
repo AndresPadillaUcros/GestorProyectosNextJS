@@ -5,7 +5,7 @@ export declare class AvancesGroupBy {
     id: string;
     fecha: Date;
     descripcion: string;
-    observaciones: string;
+    observaciones: string | null;
     proyectoId: string;
     usuarioId: string;
     _count: AvancesCountAggregate | null;

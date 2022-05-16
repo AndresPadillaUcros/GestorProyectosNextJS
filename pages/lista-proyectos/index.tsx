@@ -32,14 +32,14 @@ const Home: NextPage = () => {
                 <>
                   {data.proyectos.map((u:any) => {
                     return (
-                      <tr key={u._id}>
+                      <tr key={u.id}>
                         <td>{u.nombre}</td>
                         <td>{u.lider.nombre} {u.lider.apellido}</td>
                         <td>{Enum_EstadoProyecto[u.estado]}</td>
                         <td>{Enum_FaseProyecto[u.fase]}</td>
                         <td>
-                          <Link href={`/lista-proyectos/editarProyecto/${u._id}`}>
-                            <i className='fas fa-book-reader text-warning cursor-pointer' />
+                          <Link href={`/lista-proyectos/editarProyecto/${u.id}`}>
+                            <i className='fas fa-book-reader' role="button" />
                           </Link>
                         </td>
                       </tr>

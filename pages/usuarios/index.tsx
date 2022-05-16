@@ -42,7 +42,7 @@ const Home: NextPage = () => {
                               <td>{Enum_EstadoUsuario[u.estado]}
                                   <Link href={`/usuarios/editarUsuario/${u.id}`}>
                                     <Tooltip title='Editar'>
-                                      <i className='fas fa-pen text-warning cursor-pointer ' role="button"/>
+                                      <i className='fas fa-pen' role="button"/>
                                     </Tooltip>
                                   </Link>         
                               </td>

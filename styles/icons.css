@@ -1,5 +1,6 @@
 .fa-pen{
-    float:right
+    float:right;
+    color:orange
 }
 
 .fa-pen:hover {
@@ -25,6 +26,7 @@
 
 .fa-plus:hover {
     color: blue;
+    transform: scale(1.5);
 }
 
 .fa-minus{
@@ -33,5 +35,15 @@
 }
 
 .fa-minus:hover{
-    color:orange
+    color:orange;
+    transform: scale(1.5);
+}
+.fa-book-reader{
+    color: orange;
+}
+
+
+.fa-book-reader:hover{
+    color: blue !important;
+    transform: scale(1.5);
 }

@@ -42,6 +42,7 @@ enum Enum_FaseProyecto {
 enum Enum_EstadoInscripcion {
   Aceptado
   Rechazado
+  Pendiente
 }
 
 model Usuario {
@@ -60,12 +61,12 @@ model Usuario {
 model Proyecto {
   id                   String                 @id @default(cuid())
   nombre               String
-  presupuesto          String
-  fechaInicio          DateTime
+  presupuesto          String?
+  fechaInicio          DateTime?
   fechaFin             DateTime?
   estado               Enum_EstadoProyecto @default(Activo)
   fase                 Enum_FaseProyecto  @default(Iniciado)
-  objetivoGeneral      String
+  objetivoGeneral      String?
   lider                Usuario                @relation(fields: [usuarioId], references: [id])
   usuarioId            String
   avances              Avances[]
@@ -82,9 +83,9 @@ model ObjetivosEspecificos {
 
 model Avances {
   id            String   @id @default(cuid())
-  fecha         DateTime
+  fecha         DateTime @default(now())
   descripcion   String
-  observaciones String
+  observaciones String?
   proyecto      Proyecto @relation(fields: [proyectoId], references: [id])
   proyectoId    String
   creadoPor     Usuario  @relation(fields: [usuarioId], references: [id])
@@ -93,9 +94,9 @@ model Avances {
 
 model Inscripcion {
   id           String                 @id @default(cuid())
-  estado       Enum_EstadoInscripcion
-  fechaIngreso DateTime
-  fechaEgreso  DateTime
+  estado       Enum_EstadoInscripcion @default(Pendiente)
+  fechaIngreso DateTime @default(now())
+  fechaEgreso  DateTime?
   proyecto     Proyecto               @relation(fields: [proyectoId], references: [id])
   proyectoId   String
   estudiante   Usuario                @relation(fields: [usuarioId], references: [id])

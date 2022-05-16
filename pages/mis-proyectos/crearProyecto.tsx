@@ -11,8 +11,7 @@ import {toast } from 'react-toastify';
 import Input from '../../components/Input'
 import ButtonLoading from '../../components/ButtonLoading';
 import { nanoid } from 'nanoid';
-import { connect } from 'http2';
-import { DateTimeWithAggregatesFilter } from '../../prisma/generated/type-graphql';
+
 
 
 const Home: NextPage = () => {
@@ -29,16 +28,23 @@ const Home: NextPage = () => {
     e.preventDefault(); 
 
 
-    if (Object(formData)['objetivosEspecificos']){
-        Object(formData)['objetivosEspecificos'] = Object.values(Object(formData)['objetivosEspecificos']);
-    }  
     const estado = 'Activo'
     const fase = 'Iniciado'
-    const lider ={lider:userData.email}
+    const lider ={connect:{email:userData.email}}
+
+    if (Object(formData)['objetivosEspecificos']){
+ 
+        Object(formData)['objetivosEspecificos'] = Object.values(Object(formData)['objetivosEspecificos']);
+        console.log("antes de ejecutarme soy, porque esto remueve los ids de cada obj:",Object(formData)['objetivosEspecificos'])
+        const dataObj = Object(formData)['objetivosEspecificos']
+        const objetivosEspecificos={createMany:{data:dataObj}}
+        delete Object(formData)['objetivosEspecificos']
+        Object(formData)['objetivosEspecificos'] = objetivosEspecificos
+    } 
+
     const data={...formData,estado,fase,lider}
 
-    console.log("el email es;",lider)
-    console.log("la data es:",formData)
+    console.log("la data es:",data)
     crearProyecto({
         variables:{data}
       })
@@ -81,7 +87,7 @@ const Home: NextPage = () => {
                 />
                 <Input
                     label='Presupuesto:'
-                    type='number'
+                    type='text'
                     name='presupuesto'
                     defaultValue={''}
                     required={true}

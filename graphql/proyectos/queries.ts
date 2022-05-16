@@ -4,12 +4,14 @@ import {gql} from '@apollo/client'
 const GET_PROYECTOS= gql`
     query Proyectos($where: ProyectoWhereInput) {
         proyectos(where: $where) {
+            id
             nombre
             presupuesto
+            estado
+            fase
             lider {
-            email
-            nombre
-            apellido
+                nombre
+                apellido
             }
         }
     }
@@ -26,26 +28,26 @@ const GET_PROYECTO= gql`
             fase
             objetivoGeneral
             lider {
-            email
-            nombre
-            apellido
-            }
-            objetivosEspecificos {
-            descripcion
-            id
-            }
-            inscripciones {
-            estado
-            fechaIngreso
-            estudiante {
+                email
                 nombre
                 apellido
+            }
+            objetivosEspecificos {
+                descripcion
                 id
             }
+            inscripciones {
+                estado
+                fechaIngreso
+                estudiante {
+                        nombre
+                        apellido
+                        id
+                }
             }
             avances {
-            id
-            descripcion
+                id
+                descripcion
             }
         }
     }

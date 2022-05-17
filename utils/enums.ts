@@ -24,15 +24,10 @@ const Enum_FaseProyecto:any={
     Terminado:'Terminado',
 }
 
-const Enum_TipoObjetivo:any={
-  GENERAL:'General',
-  ESPECIFICO:'Especifico',
-}
-
 const Enum_EstadoInscripcion:any={
-  ACEPTADO:'Aceptado',
-  RECHAZADO:'Rechazado',
-  PENDIENTE:'Pendiente',
+  Aceptado:'Aceptado',
+  Rechazado:'Rechazado',
+  Pendiente:'Pendiente',
 }
 
-  export { Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto , Enum_FaseProyecto,Enum_TipoObjetivo,Enum_EstadoInscripcion};
+  export { Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto , Enum_FaseProyecto,Enum_EstadoInscripcion};

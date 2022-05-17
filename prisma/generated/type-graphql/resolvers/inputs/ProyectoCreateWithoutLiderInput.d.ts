@@ -8,7 +8,7 @@ export declare class ProyectoCreateWithoutLiderInput {
     fechaInicio?: Date | undefined;
     fechaFin?: Date | undefined;
     estado?: "Activo" | "Inactivo" | undefined;
-    fase?: "Iniciado" | "Desarollo" | "Terminado" | undefined;
+    fase?: "Iniciado" | "Desarrollo" | "Terminado" | undefined;
     objetivoGeneral?: string | undefined;
     avances?: AvancesCreateNestedManyWithoutProyectoInput | undefined;
     inscripciones?: InscripcionCreateNestedManyWithoutProyectoInput | undefined;

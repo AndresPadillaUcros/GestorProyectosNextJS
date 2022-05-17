@@ -7,6 +7,7 @@ const GET_AVANCES=gql`
         id
         descripcion
         observaciones
+        fecha
         creadoPor {
             nombre
             apellido

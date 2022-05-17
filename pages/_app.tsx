@@ -5,6 +5,8 @@ import '../styles/style.css'
 import '../styles/tabla.css'
 import '../styles/icons.css'
 import '../styles/components.css'
+import 'react-toastify/dist/ReactToastify.css';
+
 import {ApolloProvider} from '@apollo/react-hooks'
 
 import {ApolloClient,HttpLink,InMemoryCache, from} from "@apollo/client";
@@ -17,8 +19,8 @@ const client= new ApolloClient({
     new HttpLink({
       uri:
         process.env.NODE_ENV === 'production'
-          ?'https://gestor-proyectos.vercel.app/api/graphql'
-          :'https:/gestor-proyectos.vercel.app/api/graphql',
+          ?'http://localhost:3000/api/graphql'
+          :'http://localhost:3000/api/graphql',
     })
   ])
 })
@@ -29,7 +31,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [userData, setUserData] = useState({})
   useEffect(() => {
     setUserData({
-      id:"cl31ph66u0002bkdjhqbx38c3",
+      id:"cl385y5470002hgdjb84f5lql",
+      nombre:"Andres",
+      apellido:"Padilla",
       email:"andres@hotmail.com"
     })
   },[])

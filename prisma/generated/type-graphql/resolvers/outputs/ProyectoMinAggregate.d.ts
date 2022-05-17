@@ -5,7 +5,7 @@ export declare class ProyectoMinAggregate {
     fechaInicio: Date | null;
     fechaFin: Date | null;
     estado: "Activo" | "Inactivo" | null;
-    fase: "Iniciado" | "Desarollo" | "Terminado" | null;
+    fase: "Iniciado" | "Desarrollo" | "Terminado" | null;
     objetivoGeneral: string | null;
     usuarioId: string | null;
 }

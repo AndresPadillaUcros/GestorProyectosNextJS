@@ -1,13 +1,15 @@
+import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import React,{useEffect,useState} from 'react'
-import {useParams,useNavigate} from 'react-router-dom'
+import {useEffect,useState} from 'react'
 import { useQuery, useMutation } from '@apollo/client';
 import useFormData from '../../../hook/useFormData';
 import {toast } from 'react-toastify';
+import Link from 'next/link'
 
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import { Dialog } from '@mui/material';
+import { Loading } from 'react-loading-dot'
 
 import Input from '../../../components/Input'
 import ButtonLoading from '../../../components/ButtonLoading';
@@ -15,27 +17,18 @@ import DropDown from '../../../components/Dropdown';
 
 import { Enum_EstadoProyecto , Enum_FaseProyecto} from '../../../utils/enums';
 import { GET_PROYECTO,GET_PROYECTOS} from '../../../graphql/proyectos/queries';
-
 import {EDITAR_OBJETIVO,CREAR_OBJETIVO,ELIMINAR_OBJETIVO,EDITAR_PROYECTO} from '../../../graphql/proyectos/mutations';
-
 import { CREAR_INSCRIPCION } from '../../../graphql/inscripcion/mutations';
-
 import { CREAR_AVANCE } from '../../../graphql/avances/mutations'; 
 import { GET_AVANCES } from '../../../graphql/avances/queries'; 
 
-
 import { useUser } from '../../../context/userContext.js'
 
-/* import { useUser } from 'context/userContext'; */
 
-
-function EditarProyecto() {        
+const EditarProyecto:NextPage=()=> {        
 
     const router = useRouter()
     const { idProyecto } = router.query
-
-    const { userData } = useUser();
-  
 
     const{form, formData,updateFormData} = useFormData(null);
     
@@ -50,15 +43,15 @@ function EditarProyecto() {
         console.log('datos enviados;', formData)
         const data={
             nombre:{set:  Object(formData)['nombre']},
+            objetivoGeneral:{set: Object(formData)['objetivoGeneral']},
             presupuesto:{set:  Object(formData)['presupuesto']},
             fechaInicio:{set:  Object(formData)['fechaInicio']},
-            fechaFin:{set:  Object(formData)['fechaFin']},
             estado:{set:  Object(formData)['estado']},
             fase:{set:  Object(formData)['fase']},
 
         }
         editarProyecto(
-                { variables:{data,where:idProyecto} } 
+                { variables:{data,where:{id:idProyecto}} } 
             )    
     };
 
@@ -79,13 +72,16 @@ function EditarProyecto() {
     
 
 
-    if (queryLoadingProyecto) return <div> Cargando...</div>
+    if (queryLoadingProyecto) return <div> <Loading background="blue" /> </div>
     console.log('datos proyecto:', queryDataProyecto)
 
 
-    if (queryDataProyecto.proyecto) {
+   
     return (
         <div className='d-flex flex-column w-100 h-100 p-3 '>
+            <Link href="/lista-proyectos" passHref>
+              <i className='fas fa-arrow-left fa-2x' />
+            </Link>
 
 
             <h1 className='text-center'>Informacion del Proyecto</h1>
@@ -142,7 +138,7 @@ function EditarProyecto() {
                         name='fechaInicio'
                         defaultValue={queryDataProyecto.proyecto.fechaInicio.slice(0,-14)}
                         required={true}
-                        disabled={true}
+                        disabled={false}
                       />
 
                       <Input
@@ -204,15 +200,15 @@ function EditarProyecto() {
                         /> 
       
             </form>
-
+            <div className='d-flex flex-column justify-content-center align-items-center mt-3'>
                 <InscricpionProyecto
                     idProyecto={idProyecto}
                     estado={queryDataProyecto.proyecto.estado}
                     inscripciones={queryDataProyecto.proyecto.inscripciones}
                 />
+            </div>                   
         </div>
-     )};
-    return <></>;
+     );
 };
 
 
@@ -232,20 +228,20 @@ const VerObjetivosEspecificos= ({objetivos,idProyecto}:{objetivos:any;idProyecto
                         </tr>
                         </thead>
                         <tbody>
-                        {objetivos.map((u:any,i:any) =>(
-                            <Objetivo 
-                                idObjetivo={u._id}
-                                descripcion={u.descripcion}
-                                index={i}
-                                idProyecto={idProyecto}          
-                            />
-                        ))}
+                            {objetivos.map((u:any,i:any) =>(
+                                <Objetivo key={u.id}
+                                    idObjetivo={u.id}
+                                    descripcion={u.descripcion}
+                                    index={i}
+                                    idProyecto={idProyecto}          
+                                />
+                            ))}                      
                         </tbody>
                     </table>   
 
                         <i
                             onClick={()=>setShowEditDialog(true)}
-                            className='fas fa-plus p-2 mx-20 cursor-pointer d-flex flex-column justify-content-center align-items-center '
+                            className='fas fa-plus p-2 mx-20 d-flex flex-column justify-content-center align-items-center '
                             role="button"
                         />
                         <Dialog open={showEditDialog} onClose={()=>setShowEditDialog(false)}>
@@ -279,14 +275,17 @@ const Objetivo =({idObjetivo,descripcion,index,idProyecto}:{idObjetivo:any;descr
                     <i 
                         onClick={()=>setShowEditDialog(true)}
                         className='fas fa-pen px-3' 
+                        role="button"
                         />
                     <i
                         onClick={()=>setShowEditDialogDelete(true)}
-                        className='fas fa-trash px-2 '
+                        className='fas fa-trash '
+                        role="button"
                     />   
                     <Dialog open={showEditDialog} onClose={()=>setShowEditDialog(false)}>
                         <EditarObjetivo 
                             descripcion={descripcion}
+                            idObjetivo={idObjetivo}
                             index={index}
                             idProyecto={idProyecto}
                             setShowEditDialog={setShowEditDialog}
@@ -310,7 +309,7 @@ const AgregarObjetivo=({idProyecto,setShowEditDialog}:{idProyecto:any;setShowEdi
     const{form, formData,updateFormData} = useFormData(null);
 
     const [crearObjetivo, {loading:mutationLoadingObjetivoNuevo}] = useMutation(CREAR_OBJETIVO,
-        {refetchQueries:[{query:GET_PROYECTO,variables:{id:idProyecto} } ] });
+        {refetchQueries:[{query:GET_PROYECTO,variables:{where:{id:idProyecto}} } ] });
 
     const submitForm = (e:any)=>{
         e.preventDefault() 
@@ -358,21 +357,22 @@ const AgregarObjetivo=({idProyecto,setShowEditDialog}:{idProyecto:any;setShowEdi
 }
 
 
-const EditarObjetivo=({descripcion,index,idProyecto,setShowEditDialog}:{descripcion:any,index:any,idProyecto:any,setShowEditDialog:any})=>{
+const EditarObjetivo=({idObjetivo,descripcion,index,idProyecto,setShowEditDialog}:{idObjetivo:any,descripcion:any,index:any,idProyecto:any,setShowEditDialog:any})=>{
 
     const{form, formData,updateFormData} = useFormData(null);
 
     const [editarObjetivo, {loading:mutationLoadingObjetivo}] = useMutation(EDITAR_OBJETIVO,
-        {refetchQueries:[{query:GET_PROYECTO,variables:{_id:idProyecto} } ] });
+        {refetchQueries:[{query:GET_PROYECTO,variables:{where:{id:idProyecto} }} ] });
 
     const submitForm = (e:any)=>{
         e.preventDefault() 
+        console.log("el index del objetivo es:",idObjetivo)
         console.log('fm',formData)
         editarObjetivo({ 
             variables:{
-                idProyecto:idProyecto, 
-                indexObjetivo:index, 
-                descripcion:Object(formData)['descripcion']
+                data:{descripcion:{set:Object(formData)['descripcion']}},
+                where:{id:idObjetivo}
+
             } 
         } )    
     };
@@ -414,10 +414,10 @@ const EditarObjetivo=({descripcion,index,idProyecto,setShowEditDialog}:{descripc
 const EliminarObjetivo=({idObjetivo,idProyecto,setShowEditDialogDelete}:{idObjetivo:any,idProyecto:any,setShowEditDialogDelete:any})=>{
 
     const [eliminarObjetivo, {loading:mutationLoadingObjetivoEliminar}] = useMutation(ELIMINAR_OBJETIVO,
-        {refetchQueries:[{query:GET_PROYECTO,variables:{_id:idProyecto} } ] });
+        {refetchQueries:[{query:GET_PROYECTO,variables:{where:{id:idProyecto}} } ] });
 
     const confirmarEliminacion=()=>{
-        eliminarObjetivo({variables:{idObjetivo,idProyecto}})  
+        eliminarObjetivo({variables:{where:{id:idObjetivo}}})  
     }
 
     useEffect(() => {
@@ -442,8 +442,11 @@ const EliminarObjetivo=({idObjetivo,idProyecto,setShowEditDialogDelete}:{idObjet
 }
 
 const VerEstudiantes= ({inscripciones}:{inscripciones:any})=>{
-    const inscripcionesAceptadas = inscripciones.filter((el:any)=>el.estado==='ACEPTADO')
+
+
+    const inscripcionesAceptadas = inscripciones.filter((u:any)=>u.estado==='Aceptado')
     
+
     return(
         <>                    
             <Accordion className='mt-3'>
@@ -458,7 +461,7 @@ const VerEstudiantes= ({inscripciones}:{inscripciones:any})=>{
                         <tbody>
                         {inscripcionesAceptadas.map((u:any) => {
                             return (
-                                <tr key={u._id}>
+                                <tr key={u.id}>
                                     <td>{u.estudiante.nombre} {u.estudiante.apellido}</td>
                                     <td>{u.fechaIngreso.slice(0,-14)} </td>
                                 </tr>
@@ -477,7 +480,7 @@ const VerAvancesProyecto= ({idProyecto}:{idProyecto:any})=>{
     const [showEditDialog, setShowEditDialog]=useState(false);
 
     
-    const{data:queryDataAvances,loading:queryLoadingAvances}=useQuery(GET_AVANCES,{variables:{proyectoId:idProyecto} } );
+    const{data:queryDataAvances,loading:queryLoadingAvances}=useQuery(GET_AVANCES,{variables:{where:{proyectoId:{equals:idProyecto} }}} );
     
     if (queryLoadingAvances) return <div> Cargando...</div>
     console.log("los avances son:",queryDataAvances)
@@ -498,11 +501,11 @@ const VerAvancesProyecto= ({idProyecto}:{idProyecto:any})=>{
                         <tbody>
                         {queryDataAvances.findManyAvances.map((u:any,i:any) => {
                             return (
-                                <tr key={u._id}>
+                                <tr key={u.id}>
                                     <td>{i+1}</td>
                                     <td>{u.descripcion}</td>
                                     <td>{u.creadoPor.nombre} {u.creadoPor.apellido}</td>
-                                    <td>{u.fecha}</td>
+                                    <td>{u.fecha.slice(0,-14)}</td>
                                 </tr>
                             )
                         })}
@@ -510,11 +513,13 @@ const VerAvancesProyecto= ({idProyecto}:{idProyecto:any})=>{
                     </table>
                     <i
                         onClick={()=>setShowEditDialog(true)}
-                        className='fas fa-plus rounded-full bg-green-500 hover:bg-green-400 text-white p-2 mx-20 cursor-pointer flex flex-col items-center justify-center '
-                        />
+                        className='fas fa-plus p-2 mx-20  d-flex flex-column align-items-center justify-content-center '
+                        role="button"
+                    />
                     <Dialog open={showEditDialog} onClose={()=>setShowEditDialog(false)}>
                         <AgregarAvance
                             idProyecto={idProyecto}  
+                            setShowEditDialog={setShowEditDialog}
                         />
                         </Dialog>
 
@@ -525,27 +530,40 @@ const VerAvancesProyecto= ({idProyecto}:{idProyecto:any})=>{
 
 }
 
-const AgregarAvance=({idProyecto}:{idProyecto:any})=>{
+const AgregarAvance=({idProyecto,setShowEditDialog}:{idProyecto:any;setShowEditDialog:any})=>{
 
     const { userData } = useUser();
-    const idEstudiante=userData._id
+    const idEstudiante=userData.id
 
     const{form, formData,updateFormData} = useFormData(null);
 
     const [crearAvance, {loading:mutationLoadingAvance}] = useMutation(CREAR_AVANCE,
-        {refetchQueries:[{query:GET_AVANCES,variables:{_id:idProyecto} } ] });
+        {refetchQueries:[{query:GET_PROYECTO,variables:{where:{id:idProyecto}} },
+                        {query:GET_AVANCES,variables:{where:{proyectoId:{equals:idProyecto} }} }
+                        ]                
+    });
 
     const submitForm = (e:any)=>{
         e.preventDefault() 
-        crearAvance({ 
-            variables:{
-                proyecto:idProyecto, 
-                creadoPor:idEstudiante,
-                descripcion:Object(formData)['descripcion']
 
-            } 
+        const data={...formData,
+            creadoPor:{connect:{id:idEstudiante}},
+            proyecto:{connect:{id:idProyecto}}
+        }
+
+        crearAvance({ 
+            variables:{data} 
         } )    
+    
+
     };
+
+    useEffect(() => {
+        if(mutationLoadingAvance){
+            setShowEditDialog(false);
+        }
+    }, [mutationLoadingAvance,setShowEditDialog])
+
 
     return(
         <div className='p-4'>
@@ -554,7 +572,7 @@ const AgregarAvance=({idProyecto}:{idProyecto:any})=>{
                 onSubmit={submitForm}
                 onChange={updateFormData}
                 ref={form} 
-                className='flex flex-col items-center justify-center'
+                className='d-flex flex-column align-items-center justify-conent-center'
             >    
                 <Input
                         label='Descripcion:'
@@ -584,19 +602,25 @@ const InscricpionProyecto= ({ idProyecto,estado, inscripciones }:{ idProyecto:an
     
     const [crearInscripcion, {data:mutationDataInscripcion, loading:mutationLoadingInscripcion}] = useMutation(CREAR_INSCRIPCION);
 
-    /* const{data:queryDataUsuario,error:queryErrorUsuario,loading:queryLoadingUsuario}=useQuery(GET_USUARIO,{variables:{_id:_idUsuario} } );  */
+    /* const{data:queryDataUsuario,error:queryErrorUsuario,loading:queryLoadingUsuario}=useQuery(GET_USUARIO,{variables:{id:idUsuario} } );  */
 
     useEffect(() => {
         if (inscripciones) {
-            const flt = inscripciones.filter((el:any) => el.estudiante._id === userData._id);
+            const flt = inscripciones.filter((el:any) => el.estudiante.id === userData.id);
             if (flt.length > 0) {
             setEstadoInscripcion(flt[0].estado);
             }
         }
-        }, [inscripciones]);
+        }, [inscripciones,userData.id]);
 
     const confirmarInscripcion=()=>{
-        crearInscripcion({variables:{estudiante:userData._id, proyecto: idProyecto}})  
+
+        const data={
+            proyecto:{connect:{id:idProyecto}},
+            estudiante:{connect:{id:userData.id}}
+             }
+
+        crearInscripcion({variables:{data}})  
     }
 
     useEffect(()=>{

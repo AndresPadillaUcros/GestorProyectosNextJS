@@ -35,7 +35,7 @@ enum Enum_EstadoProyecto {
 
 enum Enum_FaseProyecto {
   Iniciado
-  Desarollo
+  Desarrollo
   Terminado
 }
 

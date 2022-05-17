@@ -1,15 +1,17 @@
 import type { NextPage } from 'next'
-import { Enum_EstadoProyecto , Enum_FaseProyecto } from '../../utils/enums'
 import Link from 'next/link'
+import { useQuery} from '@apollo/client';
+import { Loading } from 'react-loading-dot'
+
+import { Enum_EstadoProyecto , Enum_FaseProyecto } from '../../utils/enums'
 import { GET_PROYECTOS } from '../../graphql/proyectos/queries';
-import { useQuery, useMutation } from '@apollo/client';
 
 const Home: NextPage = () => {
 
   const {data,loading}=useQuery(GET_PROYECTOS);
 
 
-  if (loading) return <div> Cargando usuarios...</div>
+  if (loading) return <div> <Loading background="blue" /> </div>
 
   console.log(data)
 
@@ -38,7 +40,7 @@ const Home: NextPage = () => {
                         <td>{Enum_EstadoProyecto[u.estado]}</td>
                         <td>{Enum_FaseProyecto[u.fase]}</td>
                         <td>
-                          <Link href={`/lista-proyectos/editarProyecto/${u.id}`}>
+                          <Link href={`/lista-proyectos/editarProyecto/${u.id}`} passHref>
                             <i className='fas fa-book-reader' role="button" />
                           </Link>
                         </td>

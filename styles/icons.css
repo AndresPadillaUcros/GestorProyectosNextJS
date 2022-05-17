@@ -8,6 +8,11 @@
     transform: scale(1.5);
 }
 
+.fa-trash {
+    float:right;
+    color: red !important;
+}
+
 .fa-trash:hover {
     color: red !important;
     transform: scale(1.5);

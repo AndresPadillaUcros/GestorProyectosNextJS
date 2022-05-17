@@ -6,7 +6,7 @@ const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
 var Enum_FaseProyecto;
 (function (Enum_FaseProyecto) {
     Enum_FaseProyecto["Iniciado"] = "Iniciado";
-    Enum_FaseProyecto["Desarollo"] = "Desarollo";
+    Enum_FaseProyecto["Desarrollo"] = "Desarrollo";
     Enum_FaseProyecto["Terminado"] = "Terminado";
 })(Enum_FaseProyecto = exports.Enum_FaseProyecto || (exports.Enum_FaseProyecto = {}));
 TypeGraphQL.registerEnumType(Enum_FaseProyecto, {

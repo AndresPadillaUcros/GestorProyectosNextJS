@@ -1,28 +1,28 @@
 import type { NextPage } from 'next'
 import React,{useEffect} from 'react'
+import {toast } from 'react-toastify'
+import { Loading } from 'react-loading-dot'
+import { useQuery, useMutation } from '@apollo/client';
+
 import useFormData from '../../hook/useFormData'
 import Input from '../../components/Input'
 import ButtonLoading from '../../components/ButtonLoading'
 import DropDown from '../../components/Dropdown'
-import {toast } from 'react-toastify'
 
-import { useQuery, useMutation } from '@apollo/client';
 import { Enum_EstadoUsuario , Enum_Rol} from '../../utils/enums'
 import { GET_USUARIO } from '../../graphql/usuarios/queries'
 import { EDITAR_USUARIO} from '../../graphql/usuarios/mutations'
-
 
 import { useUser } from '../../context/userContext.js';
 
 const Home: NextPage = () => {
 
     const { userData } = useUser()
-    const  id = userData.id
 
     const{form, formData,updateFormData} = useFormData(null);
 
 
-    const{data:queryData,error:queryError,loading:queryLoading}=useQuery(GET_USUARIO,{ variables:{where:{id}}});
+    const{data:queryData,error:queryError,loading:queryLoading}=useQuery(GET_USUARIO,{ variables:{where:{id:userData.id}}});
 
     const [editarUsuario, {data:mutationData, loading:mutationLoading, error:mutationError}] = useMutation(EDITAR_USUARIO,
         {refetchQueries:[{query:GET_USUARIO} ] } );
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         e.preventDefault(); 
         editarUsuario({
             variables:{
-                      where:{id}, 
+                      where:{id:userData.id}, 
                       data:{
                         nombre:{set:  Object(formData)['nombre']},
                         apellido:{set:  Object(formData)['apellido']},
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         }
     }, [mutationData])
 
-    if (queryLoading) return <div> Cargando usuarios...</div>
+    if (queryLoading) return <div> <Loading background="blue" /> </div>
 
 
     return (

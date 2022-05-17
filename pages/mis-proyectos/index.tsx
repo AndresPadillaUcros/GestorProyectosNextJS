@@ -1,7 +1,10 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
+
 import { Enum_EstadoProyecto , Enum_FaseProyecto } from '../../utils/enums'
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery} from '@apollo/client';
+import { Loading } from 'react-loading-dot'
+
 import { GET_PROYECTOS_LIDER } from '../../graphql/proyectos/queries'
 import { useUser } from '../../context/userContext.js'
 
@@ -12,7 +15,7 @@ const Home: NextPage = () => {
 
   const{data:queryData,loading:queryLoading}=useQuery(GET_PROYECTOS_LIDER,{variables:{where:{id:userData._id}}});
 
-  if (queryLoading) return <div> Cargando ...</div>
+  if (queryLoading) return <div> <Loading background="blue" /> </div>
 
 
   return (
@@ -34,7 +37,7 @@ const Home: NextPage = () => {
                   return (
                     <tr key={u._id}>
                       <td>{u.nombre}
-                        <Link href={`/lista-proyectos/editarProyecto/${u._id}`}>
+                        <Link href={`/lista-proyectos/editarProyecto/${u.id}`} passHref>
                           <i className='fas fa-book-reader text-yellow-600 hover:text-yellow-400 cursor-pointer px-3' />
                         </Link> 
                       </td>

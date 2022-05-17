@@ -5,6 +5,6 @@ export declare class ProyectoCreateManyLiderInput {
     fechaInicio?: Date | undefined;
     fechaFin?: Date | undefined;
     estado?: "Activo" | "Inactivo" | undefined;
-    fase?: "Iniciado" | "Desarollo" | "Terminado" | undefined;
+    fase?: "Iniciado" | "Desarrollo" | "Terminado" | undefined;
     objetivoGeneral?: string | undefined;
 }

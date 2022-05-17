@@ -42,7 +42,11 @@ const SideBar = () => {
                         </li>
 
                         <li>
-                            <Link href="/mis-proyectos/solicitudesEstudiantes"> Solicitudes de estudiantes</Link>
+                            <Link href="/mis-proyectos/solicitudesEstudiantes/"> Solicitudes de estudiantes</Link>
+                        </li>
+
+                        <li>
+                            <Link href="/mis-proyectos/misInscripciones"> Mis inscripciones</Link>
                         </li>
 
                     </ul>

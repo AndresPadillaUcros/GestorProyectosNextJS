@@ -1,6 +1,6 @@
 export declare class NestedEnumEnum_FaseProyectoFilter {
-    equals?: "Iniciado" | "Desarollo" | "Terminado" | undefined;
-    in?: Array<"Iniciado" | "Desarollo" | "Terminado"> | undefined;
-    notIn?: Array<"Iniciado" | "Desarollo" | "Terminado"> | undefined;
+    equals?: "Iniciado" | "Desarrollo" | "Terminado" | undefined;
+    in?: Array<"Iniciado" | "Desarrollo" | "Terminado"> | undefined;
+    notIn?: Array<"Iniciado" | "Desarrollo" | "Terminado"> | undefined;
     not?: NestedEnumEnum_FaseProyectoFilter | undefined;
 }

@@ -2,9 +2,9 @@ import { NestedEnumEnum_FaseProyectoFilter } from "../inputs/NestedEnumEnum_Fase
 import { NestedEnumEnum_FaseProyectoWithAggregatesFilter } from "../inputs/NestedEnumEnum_FaseProyectoWithAggregatesFilter";
 import { NestedIntFilter } from "../inputs/NestedIntFilter";
 export declare class EnumEnum_FaseProyectoWithAggregatesFilter {
-    equals?: "Iniciado" | "Desarollo" | "Terminado" | undefined;
-    in?: Array<"Iniciado" | "Desarollo" | "Terminado"> | undefined;
-    notIn?: Array<"Iniciado" | "Desarollo" | "Terminado"> | undefined;
+    equals?: "Iniciado" | "Desarrollo" | "Terminado" | undefined;
+    in?: Array<"Iniciado" | "Desarrollo" | "Terminado"> | undefined;
+    notIn?: Array<"Iniciado" | "Desarrollo" | "Terminado"> | undefined;
     not?: NestedEnumEnum_FaseProyectoWithAggregatesFilter | undefined;
     _count?: NestedIntFilter | undefined;
     _min?: NestedEnumEnum_FaseProyectoFilter | undefined;

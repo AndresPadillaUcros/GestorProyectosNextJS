@@ -20,6 +20,7 @@ const GET_PROYECTOS= gql`
 const GET_PROYECTO= gql`
     query Proyecto($where: ProyectoWhereUniqueInput!) {
         proyecto(where: $where) {
+            id
             nombre
             presupuesto
             fechaInicio
@@ -37,6 +38,7 @@ const GET_PROYECTO= gql`
                 id
             }
             inscripciones {
+                id
                 estado
                 fechaIngreso
                 estudiante {

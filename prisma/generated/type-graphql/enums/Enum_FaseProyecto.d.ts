@@ -1,5 +1,5 @@
 export declare enum Enum_FaseProyecto {
     Iniciado = "Iniciado",
-    Desarollo = "Desarollo",
+    Desarrollo = "Desarrollo",
     Terminado = "Terminado"
 }

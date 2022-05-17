@@ -1,9 +1,12 @@
 import { useRouter } from 'next/router'
-import React,{useEffect} from 'react'
+import type { NextPage } from 'next'
+import {useEffect} from 'react'
 import Link from 'next/link'
 import { useQuery, useMutation } from '@apollo/client'
 import useFormData from '../../../hook/useFormData'
 import {toast } from 'react-toastify'
+import { Loading } from 'react-loading-dot'
+
 
 import { GET_USUARIO } from '../../../graphql/usuarios/queries'
 import { GET_USUARIOS } from '../../../graphql/usuarios/queries'
@@ -16,7 +19,7 @@ import DropDown from '../../../components/Dropdown'
 
 
 
-const Post = () => {
+const Post:NextPage = () => {
   const router = useRouter()
   const { id } = router.query
 
@@ -55,11 +58,11 @@ const Post = () => {
     },[queryError,mutationError]);
 
 
-  if (queryLoading) return <div> Cargando...</div>
+  if (queryLoading) return <div> <Loading background="blue" /> </div>
 
   return (
       <div className='d-flex flex-column w-100 h-100 p-3  '>
-          <Link href="/usuarios">
+          <Link href="/usuarios" passHref>
               <i className='fas fa-arrow-left fa-2x' />
           </Link>
           <h1 className='text-center'>Editar Usuario</h1>

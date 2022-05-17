@@ -1,16 +1,19 @@
 import type { NextPage } from 'next'
 import { useQuery, useMutation } from '@apollo/client';
-import React,{useEffect,useState} from 'react'
+import {useEffect,useState} from 'react'
 import useFormData from '../../hook/useFormData';
+import {toast } from 'react-toastify';
+import { nanoid } from 'nanoid';
+import { Loading } from 'react-loading-dot'
+
+import Input from '../../components/Input'
+import ButtonLoading from '../../components/ButtonLoading';
+
 import { useUser } from '../../context/userContext.js'
 import { useObj,ObjContext } from '../../context/objectContext.js'
 
 import { GET_USUARIO } from '../../graphql/usuarios/queries';
 import { CREAR_PROYECTO } from '../../graphql/proyectos/mutations';
-import {toast } from 'react-toastify';
-import Input from '../../components/Input'
-import ButtonLoading from '../../components/ButtonLoading';
-import { nanoid } from 'nanoid';
 
 
 
@@ -28,8 +31,6 @@ const Home: NextPage = () => {
     e.preventDefault(); 
 
 
-    const estado = 'Activo'
-    const fase = 'Iniciado'
     const lider ={connect:{email:userData.email}}
 
     if (Object(formData)['objetivosEspecificos']){
@@ -42,7 +43,7 @@ const Home: NextPage = () => {
         Object(formData)['objetivosEspecificos'] = objetivosEspecificos
     } 
 
-    const data={...formData,estado,fase,lider}
+    const data={...formData,lider}
 
     console.log("la data es:",data)
     crearProyecto({
@@ -61,7 +62,7 @@ const Home: NextPage = () => {
         }
     }, [mutationData])
     
-    if (queryLoading) return <div> Cargando ...</div>
+    if (queryLoading) return <div> <Loading background="blue" /> </div>
 
     console.log(queryData)
 
@@ -106,7 +107,7 @@ const Home: NextPage = () => {
                     type='text'
                     name='objetivoGeneral'
                     defaultValue={''}
-                    required={true}
+                    required={false}
                     className='input widthInput '
                     disabled={false}
                 />

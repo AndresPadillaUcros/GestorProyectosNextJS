@@ -1,3 +1,3 @@
 export declare class EnumEnum_FaseProyectoFieldUpdateOperationsInput {
-    set?: "Iniciado" | "Desarollo" | "Terminado" | undefined;
+    set?: "Iniciado" | "Desarrollo" | "Terminado" | undefined;
 }

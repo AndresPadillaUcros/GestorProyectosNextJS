@@ -7,5 +7,5 @@ export declare class FindFirstAvancesArgs {
     cursor?: AvancesWhereUniqueInput | undefined;
     take?: number | undefined;
     skip?: number | undefined;
-    distinct?: Array<"id" | "fecha" | "descripcion" | "observaciones" | "proyectoId" | "usuarioId"> | undefined;
+    distinct?: Array<"id" | "fecha" | "descripcion" | "observaciones" | "proyectoId" | "UserId"> | undefined;
 }

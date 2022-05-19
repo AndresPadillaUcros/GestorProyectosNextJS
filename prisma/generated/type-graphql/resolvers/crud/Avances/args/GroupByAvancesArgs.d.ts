@@ -4,7 +4,7 @@ import { AvancesWhereInput } from "../../../inputs/AvancesWhereInput";
 export declare class GroupByAvancesArgs {
     where?: AvancesWhereInput | undefined;
     orderBy?: AvancesOrderByWithAggregationInput[] | undefined;
-    by: Array<"id" | "fecha" | "descripcion" | "observaciones" | "proyectoId" | "usuarioId">;
+    by: Array<"id" | "fecha" | "descripcion" | "observaciones" | "proyectoId" | "UserId">;
     having?: AvancesScalarWhereWithAggregatesInput | undefined;
     take?: number | undefined;
     skip?: number | undefined;

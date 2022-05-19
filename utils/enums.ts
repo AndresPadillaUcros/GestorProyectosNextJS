@@ -6,7 +6,7 @@ const Enum_Rol:any = {
     Lider: 'Líder',
   };
   
-const Enum_EstadoUsuario:any= {
+const Enum_EstadoUser:any= {
     Pendiente: 'Pendiente',
     Autorizado: 'Autorizado',
     NoAutorizado: 'No autorizado',
@@ -30,4 +30,4 @@ const Enum_EstadoInscripcion:any={
   Pendiente:'Pendiente',
 }
 
-  export { Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto , Enum_FaseProyecto,Enum_EstadoInscripcion};
+  export { Enum_Rol, Enum_EstadoUser, Enum_EstadoProyecto , Enum_FaseProyecto,Enum_EstadoInscripcion};

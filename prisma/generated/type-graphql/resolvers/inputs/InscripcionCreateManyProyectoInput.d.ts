@@ -3,5 +3,5 @@ export declare class InscripcionCreateManyProyectoInput {
     estado?: "Aceptado" | "Rechazado" | "Pendiente" | undefined;
     fechaIngreso?: Date | undefined;
     fechaEgreso?: Date | undefined;
-    usuarioId: string;
+    UserId: string;
 }

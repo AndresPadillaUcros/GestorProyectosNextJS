@@ -10,7 +10,7 @@ export declare class ProyectoOrderByWithAggregationInput {
     estado?: "asc" | "desc" | undefined;
     fase?: "asc" | "desc" | undefined;
     objetivoGeneral?: "asc" | "desc" | undefined;
-    usuarioId?: "asc" | "desc" | undefined;
+    UserId?: "asc" | "desc" | undefined;
     _count?: ProyectoCountOrderByAggregateInput | undefined;
     _max?: ProyectoMaxOrderByAggregateInput | undefined;
     _min?: ProyectoMinOrderByAggregateInput | undefined;

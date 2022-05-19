@@ -63,7 +63,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
-], InscripcionScalarWhereInput.prototype, "usuarioId", void 0);
+], InscripcionScalarWhereInput.prototype, "UserId", void 0);
 InscripcionScalarWhereInput = InscripcionScalarWhereInput_1 = tslib_1.__decorate([
     TypeGraphQL.InputType("InscripcionScalarWhereInput", {
         isAbstract: true

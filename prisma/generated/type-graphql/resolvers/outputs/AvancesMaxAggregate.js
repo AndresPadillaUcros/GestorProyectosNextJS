@@ -40,7 +40,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", String)
-], AvancesMaxAggregate.prototype, "usuarioId", void 0);
+], AvancesMaxAggregate.prototype, "UserId", void 0);
 AvancesMaxAggregate = tslib_1.__decorate([
     TypeGraphQL.ObjectType("AvancesMaxAggregate", {
         isAbstract: true

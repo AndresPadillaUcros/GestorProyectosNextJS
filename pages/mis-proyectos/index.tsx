@@ -43,7 +43,7 @@ const Home: NextPage = () => {
                       </td>
                       <td>{Enum_EstadoProyecto[u.estado]}</td>
                       <td>{Enum_FaseProyecto[u.fase]}</td>
-                      <td>{u.lider.nombre} {u.lider.apellido}</td>
+                      <td>{u.lider.name} {u.lider.apellido}</td>
                     </tr>
                   );
                 })}

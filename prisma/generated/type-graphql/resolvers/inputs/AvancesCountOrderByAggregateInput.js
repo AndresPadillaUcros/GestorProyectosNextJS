@@ -41,7 +41,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", String)
-], AvancesCountOrderByAggregateInput.prototype, "usuarioId", void 0);
+], AvancesCountOrderByAggregateInput.prototype, "UserId", void 0);
 AvancesCountOrderByAggregateInput = tslib_1.__decorate([
     TypeGraphQL.InputType("AvancesCountOrderByAggregateInput", {
         isAbstract: true

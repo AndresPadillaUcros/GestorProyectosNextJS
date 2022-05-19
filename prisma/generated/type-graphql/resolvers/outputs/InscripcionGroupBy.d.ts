@@ -7,7 +7,7 @@ export declare class InscripcionGroupBy {
     fechaIngreso: Date;
     fechaEgreso: Date | null;
     proyectoId: string;
-    usuarioId: string;
+    UserId: string;
     _count: InscripcionCountAggregate | null;
     _min: InscripcionMinAggregate | null;
     _max: InscripcionMaxAggregate | null;

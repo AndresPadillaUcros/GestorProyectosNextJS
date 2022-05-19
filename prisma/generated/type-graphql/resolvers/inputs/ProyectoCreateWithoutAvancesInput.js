@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
 const InscripcionCreateNestedManyWithoutProyectoInput_1 = require("../inputs/InscripcionCreateNestedManyWithoutProyectoInput");
 const ObjetivosEspecificosCreateNestedManyWithoutProyectoInput_1 = require("../inputs/ObjetivosEspecificosCreateNestedManyWithoutProyectoInput");
-const UsuarioCreateNestedOneWithoutProyectosLideradosInput_1 = require("../inputs/UsuarioCreateNestedOneWithoutProyectosLideradosInput");
+const UserCreateNestedOneWithoutProyectosLideradosInput_1 = require("../inputs/UserCreateNestedOneWithoutProyectosLideradosInput");
 const Enum_EstadoProyecto_1 = require("../../enums/Enum_EstadoProyecto");
 const Enum_FaseProyecto_1 = require("../../enums/Enum_FaseProyecto");
 let ProyectoCreateWithoutAvancesInput = class ProyectoCreateWithoutAvancesInput {
@@ -59,10 +59,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", String)
 ], ProyectoCreateWithoutAvancesInput.prototype, "objetivoGeneral", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => UsuarioCreateNestedOneWithoutProyectosLideradosInput_1.UsuarioCreateNestedOneWithoutProyectosLideradosInput, {
+    TypeGraphQL.Field(_type => UserCreateNestedOneWithoutProyectosLideradosInput_1.UserCreateNestedOneWithoutProyectosLideradosInput, {
         nullable: false
     }),
-    tslib_1.__metadata("design:type", UsuarioCreateNestedOneWithoutProyectosLideradosInput_1.UsuarioCreateNestedOneWithoutProyectosLideradosInput)
+    tslib_1.__metadata("design:type", UserCreateNestedOneWithoutProyectosLideradosInput_1.UserCreateNestedOneWithoutProyectosLideradosInput)
 ], ProyectoCreateWithoutAvancesInput.prototype, "lider", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => InscripcionCreateNestedManyWithoutProyectoInput_1.InscripcionCreateNestedManyWithoutProyectoInput, {

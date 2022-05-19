@@ -42,7 +42,7 @@ const MisInscripciones= () => {
                             />
                         </Link>
                         </td>    
-                        <td>{u.proyecto.lider.nombre} {u.proyecto.lider.apellido}</td>
+                        <td>{u.proyecto.lider.name} {u.proyecto.lider.apellido}</td>
                         <td>{Enum_EstadoInscripcion[u.estado]}</td>
                         <td>
                           {u.fechaIngreso ?(

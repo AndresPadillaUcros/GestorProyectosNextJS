@@ -5,7 +5,10 @@ import * as models from "./models";
 import * as outputTypes from "./resolvers/outputs";
 import * as inputTypes from "./resolvers/inputs";
 declare const crudResolversMap: {
-    Usuario: typeof crudResolvers.UsuarioCrudResolver;
+    Account: typeof crudResolvers.AccountCrudResolver;
+    Session: typeof crudResolvers.SessionCrudResolver;
+    User: typeof crudResolvers.UserCrudResolver;
+    VerificationToken: typeof crudResolvers.VerificationTokenCrudResolver;
     Proyecto: typeof crudResolvers.ProyectoCrudResolver;
     ObjetivosEspecificos: typeof crudResolvers.ObjetivosEspecificosCrudResolver;
     Avances: typeof crudResolvers.AvancesCrudResolver;
@@ -30,7 +33,9 @@ export declare type ArgsTypesEnhanceMap = {
 };
 export declare function applyArgsTypesEnhanceMap(argsTypesEnhanceMap: ArgsTypesEnhanceMap): void;
 declare const relationResolversMap: {
-    Usuario: typeof relationResolvers.UsuarioRelationsResolver;
+    Account: typeof relationResolvers.AccountRelationsResolver;
+    Session: typeof relationResolvers.SessionRelationsResolver;
+    User: typeof relationResolvers.UserRelationsResolver;
     Proyecto: typeof relationResolvers.ProyectoRelationsResolver;
     ObjetivosEspecificos: typeof relationResolvers.ObjetivosEspecificosRelationsResolver;
     Avances: typeof relationResolvers.AvancesRelationsResolver;

@@ -4,6 +4,6 @@ export declare class InscripcionCountAggregate {
     fechaIngreso: number;
     fechaEgreso: number;
     proyectoId: number;
-    usuarioId: number;
+    UserId: number;
     _all: number;
 }

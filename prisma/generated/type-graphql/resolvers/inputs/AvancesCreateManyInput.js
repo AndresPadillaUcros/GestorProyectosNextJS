@@ -40,7 +40,7 @@ tslib_1.__decorate([
         nullable: false
     }),
     tslib_1.__metadata("design:type", String)
-], AvancesCreateManyInput.prototype, "usuarioId", void 0);
+], AvancesCreateManyInput.prototype, "UserId", void 0);
 AvancesCreateManyInput = tslib_1.__decorate([
     TypeGraphQL.InputType("AvancesCreateManyInput", {
         isAbstract: true

@@ -4,5 +4,5 @@ export declare class AvancesMaxOrderByAggregateInput {
     descripcion?: "asc" | "desc" | undefined;
     observaciones?: "asc" | "desc" | undefined;
     proyectoId?: "asc" | "desc" | undefined;
-    usuarioId?: "asc" | "desc" | undefined;
+    UserId?: "asc" | "desc" | undefined;
 }

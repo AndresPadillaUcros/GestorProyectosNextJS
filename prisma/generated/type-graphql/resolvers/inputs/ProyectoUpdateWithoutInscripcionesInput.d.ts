@@ -5,7 +5,7 @@ import { NullableDateTimeFieldUpdateOperationsInput } from "../inputs/NullableDa
 import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
 import { ObjetivosEspecificosUpdateManyWithoutProyectoInput } from "../inputs/ObjetivosEspecificosUpdateManyWithoutProyectoInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
-import { UsuarioUpdateOneRequiredWithoutProyectosLideradosInput } from "../inputs/UsuarioUpdateOneRequiredWithoutProyectosLideradosInput";
+import { UserUpdateOneRequiredWithoutProyectosLideradosInput } from "../inputs/UserUpdateOneRequiredWithoutProyectosLideradosInput";
 export declare class ProyectoUpdateWithoutInscripcionesInput {
     id?: StringFieldUpdateOperationsInput | undefined;
     nombre?: StringFieldUpdateOperationsInput | undefined;
@@ -15,7 +15,7 @@ export declare class ProyectoUpdateWithoutInscripcionesInput {
     estado?: EnumEnum_EstadoProyectoFieldUpdateOperationsInput | undefined;
     fase?: EnumEnum_FaseProyectoFieldUpdateOperationsInput | undefined;
     objetivoGeneral?: NullableStringFieldUpdateOperationsInput | undefined;
-    lider?: UsuarioUpdateOneRequiredWithoutProyectosLideradosInput | undefined;
+    lider?: UserUpdateOneRequiredWithoutProyectosLideradosInput | undefined;
     avances?: AvancesUpdateManyWithoutProyectoInput | undefined;
     objetivosEspecificos?: ObjetivosEspecificosUpdateManyWithoutProyectoInput | undefined;
 }

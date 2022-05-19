@@ -7,6 +7,6 @@ export declare class ProyectoCountAggregate {
     estado: number;
     fase: number;
     objetivoGeneral: number;
-    usuarioId: number;
+    UserId: number;
     _all: number;
 }

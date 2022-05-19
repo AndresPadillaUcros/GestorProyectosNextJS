@@ -1,11 +1,11 @@
 import {gql} from '@apollo/client'
 
 const EDITAR_USUARIO = gql`
-  mutation UpdateUsuario(
-    $where: UsuarioWhereUniqueInput!, 
-    $data: UsuarioUpdateInput!
+  mutation UpdateUser(
+    $where: UserWhereUniqueInput!, 
+    $data: UserUpdateInput!
     ) {
-    updateUsuario(
+    updateUser(
       where: $where, 
       data: $data
       ) {
@@ -36,9 +36,9 @@ const ELIMINAR_USUARIO = gql`
 
 const CREAR_USUARIO = gql`
     mutation CreateUsuario(
-    $data: UsuarioCreateInput!
+    $data: UserCreateInput!
     ) {
-    createUsuario(
+    createUser(
         data: $data
         ) {
         id

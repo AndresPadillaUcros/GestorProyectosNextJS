@@ -52,3 +52,18 @@
     color: blue !important;
     transform: scale(1.5);
 }
+
+.Sign{
+    border-radius: 15px;
+    color:blue;
+    background-color: white;
+  
+    
+
+}
+
+.Sign:hover{
+    background-color: greenyellow;
+    transform: scale(1.1);
+
+}

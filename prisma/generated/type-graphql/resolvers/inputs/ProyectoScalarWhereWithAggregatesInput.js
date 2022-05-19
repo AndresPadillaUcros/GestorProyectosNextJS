@@ -82,7 +82,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", StringWithAggregatesFilter_1.StringWithAggregatesFilter)
-], ProyectoScalarWhereWithAggregatesInput.prototype, "usuarioId", void 0);
+], ProyectoScalarWhereWithAggregatesInput.prototype, "UserId", void 0);
 ProyectoScalarWhereWithAggregatesInput = ProyectoScalarWhereWithAggregatesInput_1 = tslib_1.__decorate([
     TypeGraphQL.InputType("ProyectoScalarWhereWithAggregatesInput", {
         isAbstract: true

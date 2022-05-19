@@ -1,5 +1,5 @@
 import { ProyectoOrderByWithRelationInput } from "../inputs/ProyectoOrderByWithRelationInput";
-import { UsuarioOrderByWithRelationInput } from "../inputs/UsuarioOrderByWithRelationInput";
+import { UserOrderByWithRelationInput } from "../inputs/UserOrderByWithRelationInput";
 export declare class InscripcionOrderByWithRelationInput {
     id?: "asc" | "desc" | undefined;
     estado?: "asc" | "desc" | undefined;
@@ -7,6 +7,6 @@ export declare class InscripcionOrderByWithRelationInput {
     fechaEgreso?: "asc" | "desc" | undefined;
     proyecto?: ProyectoOrderByWithRelationInput | undefined;
     proyectoId?: "asc" | "desc" | undefined;
-    estudiante?: UsuarioOrderByWithRelationInput | undefined;
-    usuarioId?: "asc" | "desc" | undefined;
+    estudiante?: UserOrderByWithRelationInput | undefined;
+    UserId?: "asc" | "desc" | undefined;
 }

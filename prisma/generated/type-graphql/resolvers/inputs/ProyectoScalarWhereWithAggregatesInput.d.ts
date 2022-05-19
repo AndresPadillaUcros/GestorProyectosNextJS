@@ -15,5 +15,5 @@ export declare class ProyectoScalarWhereWithAggregatesInput {
     estado?: EnumEnum_EstadoProyectoWithAggregatesFilter | undefined;
     fase?: EnumEnum_FaseProyectoWithAggregatesFilter | undefined;
     objetivoGeneral?: StringNullableWithAggregatesFilter | undefined;
-    usuarioId?: StringWithAggregatesFilter | undefined;
+    UserId?: StringWithAggregatesFilter | undefined;
 }

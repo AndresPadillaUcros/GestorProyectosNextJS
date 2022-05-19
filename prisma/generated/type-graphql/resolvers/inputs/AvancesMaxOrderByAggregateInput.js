@@ -41,7 +41,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", String)
-], AvancesMaxOrderByAggregateInput.prototype, "usuarioId", void 0);
+], AvancesMaxOrderByAggregateInput.prototype, "UserId", void 0);
 AvancesMaxOrderByAggregateInput = tslib_1.__decorate([
     TypeGraphQL.InputType("AvancesMaxOrderByAggregateInput", {
         isAbstract: true

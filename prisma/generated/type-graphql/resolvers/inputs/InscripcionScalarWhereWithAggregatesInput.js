@@ -63,7 +63,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", StringWithAggregatesFilter_1.StringWithAggregatesFilter)
-], InscripcionScalarWhereWithAggregatesInput.prototype, "usuarioId", void 0);
+], InscripcionScalarWhereWithAggregatesInput.prototype, "UserId", void 0);
 InscripcionScalarWhereWithAggregatesInput = InscripcionScalarWhereWithAggregatesInput_1 = tslib_1.__decorate([
     TypeGraphQL.InputType("InscripcionScalarWhereWithAggregatesInput", {
         isAbstract: true

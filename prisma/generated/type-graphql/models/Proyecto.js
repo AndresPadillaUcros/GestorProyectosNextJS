@@ -61,7 +61,7 @@ tslib_1.__decorate([
         nullable: false
     }),
     tslib_1.__metadata("design:type", String)
-], Proyecto.prototype, "usuarioId", void 0);
+], Proyecto.prototype, "UserId", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => ProyectoCount_1.ProyectoCount, {
         nullable: true

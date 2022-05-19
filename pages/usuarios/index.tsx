@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Enum_Rol , Enum_EstadoUsuario } from '../../utils/enums'
+import { Enum_Rol , Enum_EstadoUser } from '../../utils/enums'
 import Link from 'next/link'
 import { useQuery, } from '@apollo/client';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -31,17 +31,17 @@ const Home: NextPage = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {data && data.usuarios ? (
+                    {data && data.users ? (
                       <>
-                        {data.usuarios.map((u:any) => {
+                        {data.users.map((u:any) => {
                           return (
                             <tr key={u.id}>
-                              <td>{u.nombre}</td>
+                              <td>{u.name}</td>
                               <td>{u.apellido}</td>
                               <td>{u.email}</td>
                               <td>{u.identificacion}</td>
                               <td>{Enum_Rol[u.rol]}</td>
-                              <td>{Enum_EstadoUsuario[u.estado]}
+                              <td>{Enum_EstadoUser[u.estado]}
                                   <Link href={`/usuarios/editarUsuario/${u.id}`} passHref>
                                     <Tooltip title='Editar'>
                                       <i className='fas fa-pen' role="button"/>

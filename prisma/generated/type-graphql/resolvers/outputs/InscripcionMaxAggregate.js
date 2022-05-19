@@ -41,7 +41,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", String)
-], InscripcionMaxAggregate.prototype, "usuarioId", void 0);
+], InscripcionMaxAggregate.prototype, "UserId", void 0);
 InscripcionMaxAggregate = tslib_1.__decorate([
     TypeGraphQL.ObjectType("InscripcionMaxAggregate", {
         isAbstract: true

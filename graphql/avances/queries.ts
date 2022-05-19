@@ -9,7 +9,7 @@ const GET_AVANCES=gql`
         observaciones
         fecha
         creadoPor {
-            nombre
+            name
             apellido
         }
     }

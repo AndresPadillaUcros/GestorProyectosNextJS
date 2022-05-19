@@ -7,7 +7,7 @@ export declare class AvancesGroupBy {
     descripcion: string;
     observaciones: string | null;
     proyectoId: string;
-    usuarioId: string;
+    UserId: string;
     _count: AvancesCountAggregate | null;
     _min: AvancesMinAggregate | null;
     _max: AvancesMaxAggregate | null;

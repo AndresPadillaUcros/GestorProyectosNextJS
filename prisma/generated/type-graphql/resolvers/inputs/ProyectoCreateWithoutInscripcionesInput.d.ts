@@ -1,6 +1,6 @@
 import { AvancesCreateNestedManyWithoutProyectoInput } from "../inputs/AvancesCreateNestedManyWithoutProyectoInput";
 import { ObjetivosEspecificosCreateNestedManyWithoutProyectoInput } from "../inputs/ObjetivosEspecificosCreateNestedManyWithoutProyectoInput";
-import { UsuarioCreateNestedOneWithoutProyectosLideradosInput } from "../inputs/UsuarioCreateNestedOneWithoutProyectosLideradosInput";
+import { UserCreateNestedOneWithoutProyectosLideradosInput } from "../inputs/UserCreateNestedOneWithoutProyectosLideradosInput";
 export declare class ProyectoCreateWithoutInscripcionesInput {
     id?: string | undefined;
     nombre: string;
@@ -10,7 +10,7 @@ export declare class ProyectoCreateWithoutInscripcionesInput {
     estado?: "Activo" | "Inactivo" | undefined;
     fase?: "Iniciado" | "Desarrollo" | "Terminado" | undefined;
     objetivoGeneral?: string | undefined;
-    lider: UsuarioCreateNestedOneWithoutProyectosLideradosInput;
+    lider: UserCreateNestedOneWithoutProyectosLideradosInput;
     avances?: AvancesCreateNestedManyWithoutProyectoInput | undefined;
     objetivosEspecificos?: ObjetivosEspecificosCreateNestedManyWithoutProyectoInput | undefined;
 }

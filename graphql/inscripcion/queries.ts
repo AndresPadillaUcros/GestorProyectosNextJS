@@ -7,7 +7,7 @@ const GET_INSCRIPCIONES= gql`
                 nombre
             }
             estudiante {
-                nombre
+                name
                 apellido
             }
     }
@@ -24,7 +24,7 @@ const GET_INSCRIPCIONES_DEL_LIDER= gql`
         }
         estudiante {
             email
-            nombre
+            name
             apellido
         }
     }
@@ -42,12 +42,12 @@ const GET_INSCRIPCIONES_ESTUDIANTE= gql`
                 id
                 nombre
                 lider{
-                    nombre
+                    name
                     apellido
                 }
             }
             estudiante {
-                nombre
+                name
                 apellido
             }
     }
@@ -59,9 +59,9 @@ const GET_INSCRIPCION= gql`
     inscripcion(where: $where) {
         estado
         estudiante {
-        nombre
-        apellido
-        email
+            name
+            apellido
+            email
         inscripciones {
             estado
             proyecto {

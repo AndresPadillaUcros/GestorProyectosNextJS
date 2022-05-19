@@ -9,7 +9,7 @@ const DateTimeNullableFilter_1 = require("../inputs/DateTimeNullableFilter");
 const EnumEnum_EstadoInscripcionFilter_1 = require("../inputs/EnumEnum_EstadoInscripcionFilter");
 const ProyectoRelationFilter_1 = require("../inputs/ProyectoRelationFilter");
 const StringFilter_1 = require("../inputs/StringFilter");
-const UsuarioRelationFilter_1 = require("../inputs/UsuarioRelationFilter");
+const UserRelationFilter_1 = require("../inputs/UserRelationFilter");
 let InscripcionWhereInput = InscripcionWhereInput_1 = class InscripcionWhereInput {
 };
 tslib_1.__decorate([
@@ -67,17 +67,17 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
 ], InscripcionWhereInput.prototype, "proyectoId", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => UsuarioRelationFilter_1.UsuarioRelationFilter, {
+    TypeGraphQL.Field(_type => UserRelationFilter_1.UserRelationFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", UsuarioRelationFilter_1.UsuarioRelationFilter)
+    tslib_1.__metadata("design:type", UserRelationFilter_1.UserRelationFilter)
 ], InscripcionWhereInput.prototype, "estudiante", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => StringFilter_1.StringFilter, {
         nullable: true
     }),
     tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
-], InscripcionWhereInput.prototype, "usuarioId", void 0);
+], InscripcionWhereInput.prototype, "UserId", void 0);
 InscripcionWhereInput = InscripcionWhereInput_1 = tslib_1.__decorate([
     TypeGraphQL.InputType("InscripcionWhereInput", {
         isAbstract: true

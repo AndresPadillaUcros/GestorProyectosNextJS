@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UsuarioCrudResolver = exports.ProyectoCrudResolver = exports.ObjetivosEspecificosCrudResolver = exports.InscripcionCrudResolver = exports.AvancesCrudResolver = void 0;
+exports.VerificationTokenCrudResolver = exports.UserCrudResolver = exports.SessionCrudResolver = exports.ProyectoCrudResolver = exports.ObjetivosEspecificosCrudResolver = exports.InscripcionCrudResolver = exports.AvancesCrudResolver = exports.AccountCrudResolver = void 0;
+var AccountCrudResolver_1 = require("./Account/AccountCrudResolver");
+Object.defineProperty(exports, "AccountCrudResolver", { enumerable: true, get: function () { return AccountCrudResolver_1.AccountCrudResolver; } });
 var AvancesCrudResolver_1 = require("./Avances/AvancesCrudResolver");
 Object.defineProperty(exports, "AvancesCrudResolver", { enumerable: true, get: function () { return AvancesCrudResolver_1.AvancesCrudResolver; } });
 var InscripcionCrudResolver_1 = require("./Inscripcion/InscripcionCrudResolver");
@@ -9,5 +11,9 @@ var ObjetivosEspecificosCrudResolver_1 = require("./ObjetivosEspecificos/Objetiv
 Object.defineProperty(exports, "ObjetivosEspecificosCrudResolver", { enumerable: true, get: function () { return ObjetivosEspecificosCrudResolver_1.ObjetivosEspecificosCrudResolver; } });
 var ProyectoCrudResolver_1 = require("./Proyecto/ProyectoCrudResolver");
 Object.defineProperty(exports, "ProyectoCrudResolver", { enumerable: true, get: function () { return ProyectoCrudResolver_1.ProyectoCrudResolver; } });
-var UsuarioCrudResolver_1 = require("./Usuario/UsuarioCrudResolver");
-Object.defineProperty(exports, "UsuarioCrudResolver", { enumerable: true, get: function () { return UsuarioCrudResolver_1.UsuarioCrudResolver; } });
+var SessionCrudResolver_1 = require("./Session/SessionCrudResolver");
+Object.defineProperty(exports, "SessionCrudResolver", { enumerable: true, get: function () { return SessionCrudResolver_1.SessionCrudResolver; } });
+var UserCrudResolver_1 = require("./User/UserCrudResolver");
+Object.defineProperty(exports, "UserCrudResolver", { enumerable: true, get: function () { return UserCrudResolver_1.UserCrudResolver; } });
+var VerificationTokenCrudResolver_1 = require("./VerificationToken/VerificationTokenCrudResolver");
+Object.defineProperty(exports, "VerificationTokenCrudResolver", { enumerable: true, get: function () { return VerificationTokenCrudResolver_1.VerificationTokenCrudResolver; } });

@@ -59,7 +59,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", String)
-], ProyectoMaxOrderByAggregateInput.prototype, "usuarioId", void 0);
+], ProyectoMaxOrderByAggregateInput.prototype, "UserId", void 0);
 ProyectoMaxOrderByAggregateInput = tslib_1.__decorate([
     TypeGraphQL.InputType("ProyectoMaxOrderByAggregateInput", {
         isAbstract: true

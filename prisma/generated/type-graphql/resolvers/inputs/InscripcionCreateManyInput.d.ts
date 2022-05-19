@@ -4,5 +4,5 @@ export declare class InscripcionCreateManyInput {
     fechaIngreso?: Date | undefined;
     fechaEgreso?: Date | undefined;
     proyectoId: string;
-    usuarioId: string;
+    UserId: string;
 }

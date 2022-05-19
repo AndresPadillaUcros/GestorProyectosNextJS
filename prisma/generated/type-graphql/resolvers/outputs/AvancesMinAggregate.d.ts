@@ -4,5 +4,5 @@ export declare class AvancesMinAggregate {
     descripcion: string | null;
     observaciones: string | null;
     proyectoId: string | null;
-    usuarioId: string | null;
+    UserId: string | null;
 }

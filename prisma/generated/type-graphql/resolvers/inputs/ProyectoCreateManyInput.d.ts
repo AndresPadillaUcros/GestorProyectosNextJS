@@ -7,5 +7,5 @@ export declare class ProyectoCreateManyInput {
     estado?: "Activo" | "Inactivo" | undefined;
     fase?: "Iniciado" | "Desarrollo" | "Terminado" | undefined;
     objetivoGeneral?: string | undefined;
-    usuarioId: string;
+    UserId: string;
 }

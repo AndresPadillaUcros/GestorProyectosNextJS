@@ -11,5 +11,5 @@ export declare class InscripcionScalarWhereWithAggregatesInput {
     fechaIngreso?: DateTimeWithAggregatesFilter | undefined;
     fechaEgreso?: DateTimeNullableWithAggregatesFilter | undefined;
     proyectoId?: StringWithAggregatesFilter | undefined;
-    usuarioId?: StringWithAggregatesFilter | undefined;
+    UserId?: StringWithAggregatesFilter | undefined;
 }

@@ -1,8 +1,8 @@
-import { UsuarioCreateNestedOneWithoutAvancesInput } from "../inputs/UsuarioCreateNestedOneWithoutAvancesInput";
+import { UserCreateNestedOneWithoutAvancesInput } from "../inputs/UserCreateNestedOneWithoutAvancesInput";
 export declare class AvancesCreateWithoutProyectoInput {
     id?: string | undefined;
     fecha?: Date | undefined;
     descripcion: string;
     observaciones?: string | undefined;
-    creadoPor: UsuarioCreateNestedOneWithoutAvancesInput;
+    creadoPor: UserCreateNestedOneWithoutAvancesInput;
 }

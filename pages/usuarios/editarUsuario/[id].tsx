@@ -11,7 +11,7 @@ import { Loading } from 'react-loading-dot'
 import { GET_USUARIO } from '../../../graphql/usuarios/queries'
 import { GET_USUARIOS } from '../../../graphql/usuarios/queries'
 import { EDITAR_USUARIO} from '../../../graphql/usuarios/mutations'
-import { Enum_EstadoUsuario } from '../../../utils/enums'
+import { Enum_EstadoUser } from '../../../utils/enums'
 
 import Input from '../../../components/Input'
 import ButtonLoading from '../../../components/ButtonLoading'
@@ -75,8 +75,8 @@ const Post:NextPage = () => {
               <Input
                   label='Nombre de la persona:'
                   type='text'
-                  name='nombre'
-                  defaultValue={queryData.usuario.nombre}
+                  name='name'
+                  defaultValue={queryData.user.name}
                   required={true}
                   disabled={true}
               />
@@ -84,7 +84,7 @@ const Post:NextPage = () => {
                   label='Apellido de la persona:'
                   type='text'
                   name='apellido'
-                  defaultValue={queryData.usuario.apellido}
+                  defaultValue={queryData.user.apellido}
                   required={true}
                   disabled={true}
               />
@@ -92,7 +92,7 @@ const Post:NextPage = () => {
                   label='Correo de la persona:'
                   type='email'
                   name='correo'
-                  defaultValue={queryData.usuario.email}
+                  defaultValue={queryData.user.email}
                   required={true}
                   disabled={true}
               />
@@ -100,19 +100,19 @@ const Post:NextPage = () => {
                   label='Identificación de la persona:'
                   type='text'
                   name='identificacion'
-                  defaultValue={queryData.usuario.identificacion}
+                  defaultValue={queryData.user.identificacion}
                   required={true}
                   disabled={true}
               />
               <DropDown
                   label='Estado de la persona:'
                   name='estado'
-                  defaultValue={queryData.usuario.estado}
+                  defaultValue={queryData.user.estado}
                   required={true}
                   disabled={false}
-                  options={Enum_EstadoUsuario}
+                  options={Enum_EstadoUser}
               />
-               <span>Rol del usuario: {queryData.usuario.rol}</span>
+               <span>Rol del usuario: {queryData.user.rol}</span>
               <ButtonLoading
                   disabled={Object.keys(formData).length === 0}
                   loading={mutationLoading}

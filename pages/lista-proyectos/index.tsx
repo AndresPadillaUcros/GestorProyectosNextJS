@@ -35,8 +35,8 @@ const Home: NextPage = () => {
                   {data.proyectos.map((u:any) => {
                     return (
                       <tr key={u.id}>
-                        <td>{u.nombre}</td>
-                        <td>{u.lider.nombre} {u.lider.apellido}</td>
+                        <td>{u.name}</td>
+                        <td>{u.lider.name} {u.lider.apellido}</td>
                         <td>{Enum_EstadoProyecto[u.estado]}</td>
                         <td>{Enum_FaseProyecto[u.fase]}</td>
                         <td>

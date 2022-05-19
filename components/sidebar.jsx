@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 
+import ButtonAuth from "../components/Login-btn"
+
 const SideBar = () => {
   return (
     <div className="d-flex flex-column h-100 flex-md-row flex-nowrap "> 
@@ -54,16 +56,9 @@ const SideBar = () => {
 
 
             </ul>
-
+            <ButtonAuth />
+            
         </nav>   
-        
-{/*         <div >
-                <div >
-                    <button type="button" id="sidebarCollapse" className="btn btn-info">
-                        <i className="fas fa-arrow-left"></i>
-                    </button>
-                </div>
-        </div> */}
 
 
     </div>

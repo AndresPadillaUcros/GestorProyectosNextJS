@@ -7,7 +7,7 @@ const DateTimeFieldUpdateOperationsInput_1 = require("../inputs/DateTimeFieldUpd
 const NullableStringFieldUpdateOperationsInput_1 = require("../inputs/NullableStringFieldUpdateOperationsInput");
 const ProyectoUpdateOneRequiredWithoutAvancesInput_1 = require("../inputs/ProyectoUpdateOneRequiredWithoutAvancesInput");
 const StringFieldUpdateOperationsInput_1 = require("../inputs/StringFieldUpdateOperationsInput");
-const UsuarioUpdateOneRequiredWithoutAvancesInput_1 = require("../inputs/UsuarioUpdateOneRequiredWithoutAvancesInput");
+const UserUpdateOneRequiredWithoutAvancesInput_1 = require("../inputs/UserUpdateOneRequiredWithoutAvancesInput");
 let AvancesUpdateInput = class AvancesUpdateInput {
 };
 tslib_1.__decorate([
@@ -41,10 +41,10 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", ProyectoUpdateOneRequiredWithoutAvancesInput_1.ProyectoUpdateOneRequiredWithoutAvancesInput)
 ], AvancesUpdateInput.prototype, "proyecto", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => UsuarioUpdateOneRequiredWithoutAvancesInput_1.UsuarioUpdateOneRequiredWithoutAvancesInput, {
+    TypeGraphQL.Field(_type => UserUpdateOneRequiredWithoutAvancesInput_1.UserUpdateOneRequiredWithoutAvancesInput, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", UsuarioUpdateOneRequiredWithoutAvancesInput_1.UsuarioUpdateOneRequiredWithoutAvancesInput)
+    tslib_1.__metadata("design:type", UserUpdateOneRequiredWithoutAvancesInput_1.UserUpdateOneRequiredWithoutAvancesInput)
 ], AvancesUpdateInput.prototype, "creadoPor", void 0);
 AvancesUpdateInput = tslib_1.__decorate([
     TypeGraphQL.InputType("AvancesUpdateInput", {

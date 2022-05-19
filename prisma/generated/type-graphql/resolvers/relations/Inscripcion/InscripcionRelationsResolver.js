@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
 const Inscripcion_1 = require("../../../models/Inscripcion");
 const Proyecto_1 = require("../../../models/Proyecto");
-const Usuario_1 = require("../../../models/Usuario");
+const User_1 = require("../../../models/User");
 const helpers_1 = require("../../../helpers");
 let InscripcionRelationsResolver = class InscripcionRelationsResolver {
     async proyecto(inscripcion, ctx) {
@@ -34,7 +34,7 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:returntype", Promise)
 ], InscripcionRelationsResolver.prototype, "proyecto", null);
 tslib_1.__decorate([
-    TypeGraphQL.FieldResolver(_type => Usuario_1.Usuario, {
+    TypeGraphQL.FieldResolver(_type => User_1.User, {
         nullable: false
     }),
     tslib_1.__param(0, TypeGraphQL.Root()),

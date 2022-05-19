@@ -41,7 +41,7 @@ tslib_1.__decorate([
         nullable: false
     }),
     tslib_1.__metadata("design:type", String)
-], Inscripcion.prototype, "usuarioId", void 0);
+], Inscripcion.prototype, "UserId", void 0);
 Inscripcion = tslib_1.__decorate([
     TypeGraphQL.ObjectType("Inscripcion", {
         isAbstract: true

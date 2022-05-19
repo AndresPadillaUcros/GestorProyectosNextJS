@@ -10,5 +10,5 @@ export declare class AvancesScalarWhereWithAggregatesInput {
     descripcion?: StringWithAggregatesFilter | undefined;
     observaciones?: StringNullableWithAggregatesFilter | undefined;
     proyectoId?: StringWithAggregatesFilter | undefined;
-    usuarioId?: StringWithAggregatesFilter | undefined;
+    UserId?: StringWithAggregatesFilter | undefined;
 }

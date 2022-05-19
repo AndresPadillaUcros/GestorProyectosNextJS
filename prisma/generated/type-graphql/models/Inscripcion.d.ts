@@ -1,5 +1,5 @@
 import { Proyecto } from "../models/Proyecto";
-import { Usuario } from "../models/Usuario";
+import { User } from "../models/User";
 export declare class Inscripcion {
     id: string;
     estado: "Aceptado" | "Rechazado" | "Pendiente";
@@ -7,6 +7,6 @@ export declare class Inscripcion {
     fechaEgreso?: Date | null;
     proyecto?: Proyecto;
     proyectoId: string;
-    estudiante?: Usuario;
-    usuarioId: string;
+    estudiante?: User;
+    UserId: string;
 }

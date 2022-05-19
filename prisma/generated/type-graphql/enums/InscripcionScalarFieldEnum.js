@@ -10,7 +10,7 @@ var InscripcionScalarFieldEnum;
     InscripcionScalarFieldEnum["fechaIngreso"] = "fechaIngreso";
     InscripcionScalarFieldEnum["fechaEgreso"] = "fechaEgreso";
     InscripcionScalarFieldEnum["proyectoId"] = "proyectoId";
-    InscripcionScalarFieldEnum["usuarioId"] = "usuarioId";
+    InscripcionScalarFieldEnum["UserId"] = "UserId";
 })(InscripcionScalarFieldEnum = exports.InscripcionScalarFieldEnum || (exports.InscripcionScalarFieldEnum = {}));
 TypeGraphQL.registerEnumType(InscripcionScalarFieldEnum, {
     name: "InscripcionScalarFieldEnum",

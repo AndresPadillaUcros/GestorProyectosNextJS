@@ -43,7 +43,7 @@ tslib_1.__decorate([
         nullable: false
     }),
     tslib_1.__metadata("design:type", String)
-], AvancesGroupBy.prototype, "usuarioId", void 0);
+], AvancesGroupBy.prototype, "UserId", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => AvancesCountAggregate_1.AvancesCountAggregate, {
         nullable: true

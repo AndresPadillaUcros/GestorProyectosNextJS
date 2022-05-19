@@ -15,5 +15,5 @@ export declare class ProyectoScalarWhereInput {
     estado?: EnumEnum_EstadoProyectoFilter | undefined;
     fase?: EnumEnum_FaseProyectoFilter | undefined;
     objetivoGeneral?: StringNullableFilter | undefined;
-    usuarioId?: StringFilter | undefined;
+    UserId?: StringFilter | undefined;
 }

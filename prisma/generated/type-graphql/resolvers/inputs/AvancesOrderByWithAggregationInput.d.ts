@@ -7,7 +7,7 @@ export declare class AvancesOrderByWithAggregationInput {
     descripcion?: "asc" | "desc" | undefined;
     observaciones?: "asc" | "desc" | undefined;
     proyectoId?: "asc" | "desc" | undefined;
-    usuarioId?: "asc" | "desc" | undefined;
+    UserId?: "asc" | "desc" | undefined;
     _count?: AvancesCountOrderByAggregateInput | undefined;
     _max?: AvancesMaxOrderByAggregateInput | undefined;
     _min?: AvancesMinOrderByAggregateInput | undefined;

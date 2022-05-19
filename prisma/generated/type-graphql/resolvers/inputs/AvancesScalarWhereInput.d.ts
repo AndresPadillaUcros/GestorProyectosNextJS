@@ -10,5 +10,5 @@ export declare class AvancesScalarWhereInput {
     descripcion?: StringFilter | undefined;
     observaciones?: StringNullableFilter | undefined;
     proyectoId?: StringFilter | undefined;
-    usuarioId?: StringFilter | undefined;
+    UserId?: StringFilter | undefined;
 }

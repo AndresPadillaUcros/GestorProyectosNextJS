@@ -1,11 +1,11 @@
 import {gql} from '@apollo/client'
 
 const GET_USUARIOS = gql`
-    query Usuario($where: UsuarioWhereInput) {
-        usuarios(where: $where) {
+    query Usuario($where: UserWhereInput) {
+        users(where: $where) {
             id
             email
-            nombre
+            name
             apellido
             identificacion
             rol
@@ -15,11 +15,11 @@ const GET_USUARIOS = gql`
 `;
 
 const GET_USUARIO=gql`
-    query Usuario($where: UsuarioWhereUniqueInput!) {
-    usuario(where: $where) {
+    query Usuario($where: UserWhereUniqueInput!) {
+    user(where: $where) {
         id
         email
-        nombre
+        name
         apellido
         identificacion
         rol
@@ -31,7 +31,7 @@ const GET_USUARIO=gql`
 const GET_ESTUDIANTES=gql`
     query BuscarEstudiantes($rol: Enum_Rol!){
     Estudiantes(rol: $rol) {
-        nombre
+        name
         apellido
         identificacion
         correo

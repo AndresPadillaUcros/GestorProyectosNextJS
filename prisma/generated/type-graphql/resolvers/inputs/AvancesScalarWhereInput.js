@@ -62,7 +62,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
-], AvancesScalarWhereInput.prototype, "usuarioId", void 0);
+], AvancesScalarWhereInput.prototype, "UserId", void 0);
 AvancesScalarWhereInput = AvancesScalarWhereInput_1 = tslib_1.__decorate([
     TypeGraphQL.InputType("AvancesScalarWhereInput", {
         isAbstract: true

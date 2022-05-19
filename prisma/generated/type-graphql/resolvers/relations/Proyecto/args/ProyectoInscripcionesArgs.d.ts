@@ -7,5 +7,5 @@ export declare class ProyectoInscripcionesArgs {
     cursor?: InscripcionWhereUniqueInput | undefined;
     take?: number | undefined;
     skip?: number | undefined;
-    distinct?: Array<"id" | "estado" | "fechaIngreso" | "fechaEgreso" | "proyectoId" | "usuarioId"> | undefined;
+    distinct?: Array<"id" | "estado" | "fechaIngreso" | "fechaEgreso" | "proyectoId" | "UserId"> | undefined;
 }

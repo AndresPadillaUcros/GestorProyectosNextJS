@@ -6,7 +6,7 @@ import { InscripcionListRelationFilter } from "../inputs/InscripcionListRelation
 import { ObjetivosEspecificosListRelationFilter } from "../inputs/ObjetivosEspecificosListRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
 import { StringNullableFilter } from "../inputs/StringNullableFilter";
-import { UsuarioRelationFilter } from "../inputs/UsuarioRelationFilter";
+import { UserRelationFilter } from "../inputs/UserRelationFilter";
 export declare class ProyectoWhereInput {
     AND?: ProyectoWhereInput[] | undefined;
     OR?: ProyectoWhereInput[] | undefined;
@@ -19,8 +19,8 @@ export declare class ProyectoWhereInput {
     estado?: EnumEnum_EstadoProyectoFilter | undefined;
     fase?: EnumEnum_FaseProyectoFilter | undefined;
     objetivoGeneral?: StringNullableFilter | undefined;
-    lider?: UsuarioRelationFilter | undefined;
-    usuarioId?: StringFilter | undefined;
+    lider?: UserRelationFilter | undefined;
+    UserId?: StringFilter | undefined;
     avances?: AvancesListRelationFilter | undefined;
     inscripciones?: InscripcionListRelationFilter | undefined;
     objetivosEspecificos?: ObjetivosEspecificosListRelationFilter | undefined;

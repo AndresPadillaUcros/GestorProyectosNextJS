@@ -10,7 +10,7 @@ export declare class ProyectoGroupBy {
     estado: "Activo" | "Inactivo";
     fase: "Iniciado" | "Desarrollo" | "Terminado";
     objetivoGeneral: string | null;
-    usuarioId: string;
+    UserId: string;
     _count: ProyectoCountAggregate | null;
     _min: ProyectoMinAggregate | null;
     _max: ProyectoMaxAggregate | null;

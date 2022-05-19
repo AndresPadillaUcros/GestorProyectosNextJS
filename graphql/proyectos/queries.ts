@@ -10,7 +10,7 @@ const GET_PROYECTOS= gql`
             estado
             fase
             lider {
-                nombre
+                name
                 apellido
             }
         }
@@ -30,7 +30,7 @@ const GET_PROYECTO= gql`
             objetivoGeneral
             lider {
                 email
-                nombre
+                name
                 apellido
             }
             objetivosEspecificos {
@@ -65,7 +65,7 @@ const GET_PROYECTOS_LIDER= gql`
             fase
             estado
             lider {
-                nombre
+                name
                 apellido
             }
         }

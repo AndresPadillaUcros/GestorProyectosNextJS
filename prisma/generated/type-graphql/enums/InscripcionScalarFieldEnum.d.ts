@@ -4,5 +4,5 @@ export declare enum InscripcionScalarFieldEnum {
     fechaIngreso = "fechaIngreso",
     fechaEgreso = "fechaEgreso",
     proyectoId = "proyectoId",
-    usuarioId = "usuarioId"
+    UserId = "UserId"
 }

@@ -41,7 +41,7 @@ tslib_1.__decorate([
         nullable: false
     }),
     tslib_1.__metadata("design:type", String)
-], InscripcionCreateManyInput.prototype, "usuarioId", void 0);
+], InscripcionCreateManyInput.prototype, "UserId", void 0);
 InscripcionCreateManyInput = tslib_1.__decorate([
     TypeGraphQL.InputType("InscripcionCreateManyInput", {
         isAbstract: true

@@ -41,7 +41,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", String)
-], AvancesMinOrderByAggregateInput.prototype, "usuarioId", void 0);
+], AvancesMinOrderByAggregateInput.prototype, "UserId", void 0);
 AvancesMinOrderByAggregateInput = tslib_1.__decorate([
     TypeGraphQL.InputType("AvancesMinOrderByAggregateInput", {
         isAbstract: true

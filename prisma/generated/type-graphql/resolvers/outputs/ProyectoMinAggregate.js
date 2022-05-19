@@ -60,7 +60,7 @@ tslib_1.__decorate([
         nullable: true
     }),
     tslib_1.__metadata("design:type", String)
-], ProyectoMinAggregate.prototype, "usuarioId", void 0);
+], ProyectoMinAggregate.prototype, "UserId", void 0);
 ProyectoMinAggregate = tslib_1.__decorate([
     TypeGraphQL.ObjectType("ProyectoMinAggregate", {
         isAbstract: true

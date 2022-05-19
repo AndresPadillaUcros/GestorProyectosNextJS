@@ -8,7 +8,7 @@ const DateTimeFilter_1 = require("../inputs/DateTimeFilter");
 const ProyectoRelationFilter_1 = require("../inputs/ProyectoRelationFilter");
 const StringFilter_1 = require("../inputs/StringFilter");
 const StringNullableFilter_1 = require("../inputs/StringNullableFilter");
-const UsuarioRelationFilter_1 = require("../inputs/UsuarioRelationFilter");
+const UserRelationFilter_1 = require("../inputs/UserRelationFilter");
 let AvancesWhereInput = AvancesWhereInput_1 = class AvancesWhereInput {
 };
 tslib_1.__decorate([
@@ -66,17 +66,17 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
 ], AvancesWhereInput.prototype, "proyectoId", void 0);
 tslib_1.__decorate([
-    TypeGraphQL.Field(_type => UsuarioRelationFilter_1.UsuarioRelationFilter, {
+    TypeGraphQL.Field(_type => UserRelationFilter_1.UserRelationFilter, {
         nullable: true
     }),
-    tslib_1.__metadata("design:type", UsuarioRelationFilter_1.UsuarioRelationFilter)
+    tslib_1.__metadata("design:type", UserRelationFilter_1.UserRelationFilter)
 ], AvancesWhereInput.prototype, "creadoPor", void 0);
 tslib_1.__decorate([
     TypeGraphQL.Field(_type => StringFilter_1.StringFilter, {
         nullable: true
     }),
     tslib_1.__metadata("design:type", StringFilter_1.StringFilter)
-], AvancesWhereInput.prototype, "usuarioId", void 0);
+], AvancesWhereInput.prototype, "UserId", void 0);
 AvancesWhereInput = AvancesWhereInput_1 = tslib_1.__decorate([
     TypeGraphQL.InputType("AvancesWhereInput", {
         isAbstract: true

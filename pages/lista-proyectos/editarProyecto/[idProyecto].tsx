@@ -42,7 +42,7 @@ const EditarProyecto:NextPage=()=> {
         e.preventDefault() 
         console.log('datos enviados;', formData)
         const data={
-            nombre:{set:  Object(formData)['nombre']},
+            name:{set:  Object(formData)['name']},
             objetivoGeneral:{set: Object(formData)['objetivoGeneral']},
             presupuesto:{set:  Object(formData)['presupuesto']},
             fechaInicio:{set:  Object(formData)['fechaInicio']},
@@ -95,9 +95,9 @@ const EditarProyecto:NextPage=()=> {
 
      
                       <Input
-                        label='Nombre del proyecto:'
+                        label='nombre del proyecto:'
                         type='text'
-                        name='nombre'
+                        name='name'
                         defaultValue={queryDataProyecto.proyecto.nombre}
                         required={true}
                         className='input widthInput'
@@ -462,7 +462,7 @@ const VerEstudiantes= ({inscripciones}:{inscripciones:any})=>{
                         {inscripcionesAceptadas.map((u:any) => {
                             return (
                                 <tr key={u.id}>
-                                    <td>{u.estudiante.nombre} {u.estudiante.apellido}</td>
+                                    <td>{u.estudiante.name} {u.estudiante.apellido}</td>
                                     <td>{u.fechaIngreso.slice(0,-14)} </td>
                                 </tr>
                             )
@@ -504,7 +504,7 @@ const VerAvancesProyecto= ({idProyecto}:{idProyecto:any})=>{
                                 <tr key={u.id}>
                                     <td>{i+1}</td>
                                     <td>{u.descripcion}</td>
-                                    <td>{u.creadoPor.nombre} {u.creadoPor.apellido}</td>
+                                    <td>{u.creadoPor.name} {u.creadoPor.apellido}</td>
                                     <td>{u.fecha.slice(0,-14)}</td>
                                 </tr>
                             )

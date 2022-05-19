@@ -40,7 +40,7 @@ tslib_1.__decorate([
         nullable: false
     }),
     tslib_1.__metadata("design:type", String)
-], Avances.prototype, "usuarioId", void 0);
+], Avances.prototype, "UserId", void 0);
 Avances = tslib_1.__decorate([
     TypeGraphQL.ObjectType("Avances", {
         isAbstract: true

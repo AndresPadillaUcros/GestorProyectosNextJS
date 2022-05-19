@@ -3,12 +3,12 @@ import { EnumEnum_EstadoInscripcionFieldUpdateOperationsInput } from "../inputs/
 import { NullableDateTimeFieldUpdateOperationsInput } from "../inputs/NullableDateTimeFieldUpdateOperationsInput";
 import { ProyectoUpdateOneRequiredWithoutInscripcionesInput } from "../inputs/ProyectoUpdateOneRequiredWithoutInscripcionesInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
-import { UsuarioUpdateOneRequiredWithoutInscripcionesInput } from "../inputs/UsuarioUpdateOneRequiredWithoutInscripcionesInput";
+import { UserUpdateOneRequiredWithoutInscripcionesInput } from "../inputs/UserUpdateOneRequiredWithoutInscripcionesInput";
 export declare class InscripcionUpdateInput {
     id?: StringFieldUpdateOperationsInput | undefined;
     estado?: EnumEnum_EstadoInscripcionFieldUpdateOperationsInput | undefined;
     fechaIngreso?: DateTimeFieldUpdateOperationsInput | undefined;
     fechaEgreso?: NullableDateTimeFieldUpdateOperationsInput | undefined;
     proyecto?: ProyectoUpdateOneRequiredWithoutInscripcionesInput | undefined;
-    estudiante?: UsuarioUpdateOneRequiredWithoutInscripcionesInput | undefined;
+    estudiante?: UserUpdateOneRequiredWithoutInscripcionesInput | undefined;
 }

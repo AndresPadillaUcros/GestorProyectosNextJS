@@ -1,29 +1,33 @@
 import type { NextPage } from 'next'
 import { useQuery, useMutation } from '@apollo/client';
 import {useEffect,useState} from 'react'
-import useFormData from '../../hook/useFormData';
 import {toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import { Loading } from 'react-loading-dot'
 
-import Input from '../../components/Input'
-import ButtonLoading from '../../components/ButtonLoading';
+import Input from 'components/Input'
+import ButtonLoading from 'components/ButtonLoading';
 
-import { useUser } from '../../context/userContext.js'
-import { useObj,ObjContext } from '../../context/objectContext.js'
+import useFormData from 'hook/useFormData';
 
-import { GET_USUARIO } from '../../graphql/usuarios/queries';
-import { CREAR_PROYECTO } from '../../graphql/proyectos/mutations';
+import { useUser } from 'context/userContext.js'
+import { useObj,ObjContext } from 'context/objectContext.js'
+import { GET_USUARIO } from 'graphql/usuarios/queries';
+import { CREAR_PROYECTO } from 'graphql/proyectos/mutations';
+
+import type { NextPageWithAuth } from "pages/_app"
+import { useSession } from "next-auth/react"
 
 
+const Home: NextPageWithAuth = () => {
 
-const Home: NextPage = () => {
+    const { data: session, status } = useSession()
 
-  const { userData } = useUser();
+    const userData = session?.user
 
   const{form, formData,updateFormData} = useFormData(null);
 
-  const{data:queryData,loading:queryLoading}=useQuery(GET_USUARIO,{variables:{where:{id:userData.id}}});
+  const{data:queryData,loading:queryLoading}=useQuery(GET_USUARIO,{variables:{where:{email:userData?.email}}});
 
   const [crearProyecto, {data:mutationData, loading:mutationLoading}] = useMutation(CREAR_PROYECTO);
 
@@ -31,7 +35,7 @@ const Home: NextPage = () => {
     e.preventDefault(); 
 
 
-    const lider ={connect:{email:userData.email}}
+    const lider ={connect:{email:userData?.email}}
 
     if (Object(formData)['objetivosEspecificos']){
  
@@ -62,6 +66,7 @@ const Home: NextPage = () => {
         }
     }, [mutationData])
     
+    if(status==='loading') return <div>  <Loading background="blue" /></div>
     if (queryLoading) return <div> <Loading background="blue" /> </div>
 
     console.log(queryData)
@@ -76,7 +81,7 @@ const Home: NextPage = () => {
                 className='d-flex flex-column justify-content-center align-items-center'
             >
 
-                <span className='text-uppercase text-primary'>Lider del proyecto: {queryData.usuario.nombre + ' ' + queryData.usuario.apellido}</span>
+                <span className='text-uppercase text-primary'>Lider del proyecto: {queryData.user.name + ' ' + queryData.user.apellido}</span>
                 <Input
                     label='Nombre del proyecto:'
                     type='text'
@@ -177,3 +182,4 @@ const FormObjetivo=({id}:{id:any})=>{
 }
 
 export default Home
+Home.auth=true

@@ -1,21 +1,26 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 
-import { Enum_EstadoProyecto , Enum_FaseProyecto } from '../../utils/enums'
 import { useQuery} from '@apollo/client';
 import { Loading } from 'react-loading-dot'
 
-import { GET_PROYECTOS_LIDER } from '../../graphql/proyectos/queries'
-import { useUser } from '../../context/userContext.js'
+import { Enum_EstadoProyecto , Enum_FaseProyecto } from 'utils/enums'
+import { GET_PROYECTOS_LIDER } from 'graphql/proyectos/queries'
+
+import type { NextPageWithAuth } from "pages/_app"
+import { useSession } from "next-auth/react"
+
+const Home: NextPageWithAuth = () => {
+
+  const { data: session, status } = useSession()
+
+  const userData= session?.user
+
+  const{data:queryData,loading:queryLoading}=useQuery(GET_PROYECTOS_LIDER,{variables:{where:{lider:{is:{email:{equals:userData?.email}}}}}});
 
 
-const Home: NextPage = () => {
-
-  const { userData } = useUser();
-
-  const{data:queryData,loading:queryLoading}=useQuery(GET_PROYECTOS_LIDER,{variables:{where:{id:userData._id}}});
-
-  if (queryLoading) return <div> <Loading background="blue" /> </div>
+  if(status==='loading') return <div>  <Loading background="blue" /></div>
+  if (queryLoading ) return <div> <Loading background="blue" /> </div>
 
 
   return (
@@ -35,7 +40,7 @@ const Home: NextPage = () => {
               <>
                 {queryData.proyectos.map((u:any) => {
                   return (
-                    <tr key={u._id}>
+                    <tr key={u.id}>
                       <td>{u.nombre}
                         <Link href={`/lista-proyectos/editarProyecto/${u.id}`} passHref>
                           <i className='fas fa-book-reader text-yellow-600 hover:text-yellow-400 cursor-pointer px-3' />
@@ -58,3 +63,5 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+Home.auth=true

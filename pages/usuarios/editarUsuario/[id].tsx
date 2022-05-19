@@ -3,23 +3,23 @@ import type { NextPage } from 'next'
 import {useEffect} from 'react'
 import Link from 'next/link'
 import { useQuery, useMutation } from '@apollo/client'
-import useFormData from '../../../hook/useFormData'
 import {toast } from 'react-toastify'
 import { Loading } from 'react-loading-dot'
 
 
-import { GET_USUARIO } from '../../../graphql/usuarios/queries'
-import { GET_USUARIOS } from '../../../graphql/usuarios/queries'
-import { EDITAR_USUARIO} from '../../../graphql/usuarios/mutations'
-import { Enum_EstadoUser } from '../../../utils/enums'
+import { GET_USUARIO } from 'graphql/usuarios/queries'
+import { GET_USUARIOS } from 'graphql/usuarios/queries'
+import { EDITAR_USUARIO} from 'graphql/usuarios/mutations'
+import { Enum_EstadoUser } from 'utils/enums'
 
-import Input from '../../../components/Input'
-import ButtonLoading from '../../../components/ButtonLoading'
-import DropDown from '../../../components/Dropdown'
+import useFormData from 'hook/useFormData'
+import Input from 'components/Input'
+import ButtonLoading from 'components/ButtonLoading'
+import DropDown from 'components/Dropdown'
 
+import type { NextPageWithAuth } from "pages/_app"
 
-
-const Post:NextPage = () => {
+const Post:NextPageWithAuth = () => {
   const router = useRouter()
   const { id } = router.query
 
@@ -127,3 +127,5 @@ const Post:NextPage = () => {
 }
 
 export default Post
+
+Post.auth=true

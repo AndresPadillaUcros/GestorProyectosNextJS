@@ -1,13 +1,15 @@
 import type { NextPage } from 'next'
-import { Enum_Rol , Enum_EstadoUser } from '../../utils/enums'
 import Link from 'next/link'
 import { useQuery, } from '@apollo/client';
 import Tooltip from '@material-ui/core/Tooltip';
 import { Loading } from 'react-loading-dot'
 
-import { GET_USUARIOS } from '../../graphql/usuarios/queries';
+import { Enum_Rol , Enum_EstadoUser } from 'utils/enums'
+import { GET_USUARIOS } from 'graphql/usuarios/queries';
 
-const Home: NextPage = () => {
+import type { NextPageWithAuth } from "pages/_app"
+
+const Home: NextPageWithAuth = () => {
 
 
   const {data,loading}=useQuery(GET_USUARIOS);
@@ -62,3 +64,5 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+Home.auth=true

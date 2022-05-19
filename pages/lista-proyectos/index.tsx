@@ -3,14 +3,21 @@ import Link from 'next/link'
 import { useQuery} from '@apollo/client';
 import { Loading } from 'react-loading-dot'
 
-import { Enum_EstadoProyecto , Enum_FaseProyecto } from '../../utils/enums'
-import { GET_PROYECTOS } from '../../graphql/proyectos/queries';
+import { Enum_EstadoProyecto , Enum_FaseProyecto } from 'utils/enums'
+import { GET_PROYECTOS } from 'graphql/proyectos/queries';
+import type { NextPageWithAuth } from "pages/_app"
+import { useSession } from "next-auth/react"
 
-const Home: NextPage = () => {
+const Home: NextPageWithAuth = () => {
 
+
+  const { data: session, status } = useSession()
   const {data,loading}=useQuery(GET_PROYECTOS);
 
 
+
+
+  if(status==='loading') return <div>  <Loading background="blue" /></div>
   if (loading) return <div> <Loading background="blue" /> </div>
 
   console.log(data)
@@ -35,7 +42,7 @@ const Home: NextPage = () => {
                   {data.proyectos.map((u:any) => {
                     return (
                       <tr key={u.id}>
-                        <td>{u.name}</td>
+                        <td>{u.nombre}</td>
                         <td>{u.lider.name} {u.lider.apellido}</td>
                         <td>{Enum_EstadoProyecto[u.estado]}</td>
                         <td>{Enum_FaseProyecto[u.fase]}</td>
@@ -58,3 +65,5 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+Home.auth=true

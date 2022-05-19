@@ -4,19 +4,21 @@ import {toast } from 'react-toastify'
 import { Loading } from 'react-loading-dot'
 import { useQuery, useMutation } from '@apollo/client';
 
-import useFormData from '../../hook/useFormData'
-import Input from '../../components/Input'
-import ButtonLoading from '../../components/ButtonLoading'
-import DropDown from '../../components/Dropdown'
+import useFormData from 'hook/useFormData'
+import Input from 'components/Input'
+import ButtonLoading from 'components/ButtonLoading'
+import DropDown from 'components/Dropdown'
 
-import { Enum_EstadoUser , Enum_Rol} from '../../utils/enums'
-import { GET_USUARIO } from '../../graphql/usuarios/queries'
-import { EDITAR_USUARIO} from '../../graphql/usuarios/mutations'
+import { Enum_EstadoUser , Enum_Rol} from 'utils/enums'
+import { GET_USUARIO } from 'graphql/usuarios/queries'
+import { EDITAR_USUARIO} from 'graphql/usuarios/mutations'
 
 
 import { useSession } from "next-auth/react"
+import type { NextPageWithAuth } from "pages/_app"
 
-const Home: NextPage = () => {
+
+const Home: NextPageWithAuth = () => {
     
     
     const { data: session, status } = useSession()
@@ -126,3 +128,5 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+Home.auth=true

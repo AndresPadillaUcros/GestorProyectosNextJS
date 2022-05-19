@@ -42,7 +42,7 @@ const GET_PROYECTO= gql`
                 estado
                 fechaIngreso
                 estudiante {
-                        nombre
+                        name
                         apellido
                         id
                 }

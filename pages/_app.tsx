@@ -17,7 +17,7 @@ import { SessionProvider } from "next-auth/react"
 import { useSession } from "next-auth/react"
 import type { NextComponentType  } from 'next'
 import type { NextPage } from 'next'
-
+import { useRouter } from 'next/router'
 
 
 
@@ -37,16 +37,19 @@ const client = new ApolloClient({
 
 function Auth({ children }:{children:any}) {
   // if `{ required: true }` is supplied, `status` can only be "loading" or "authenticated"
+
+  const router=useRouter()
   const { data: session, status  } = useSession()
+
   if (status === 'loading') {
-    return <div>Loading...</div>
+    return "cargando..."
   }
   if (status === 'authenticated') {
     return children
   }
-
-  else
-    return <div>You need to sign in</div>
+  else{
+    router.push('/')
+  }
 }
 
 
@@ -56,7 +59,7 @@ type PageAuth = {
   unauthorized: string
 };
 
-export type NextPageWithAuth = NextPage & {auth: PageAuth}
+export type NextPageWithAuth = NextPage & {auth: boolean}
 type CustomAppProps = AppProps & { Component: NextPageWithAuth }
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: CustomAppProps) {

@@ -2,24 +2,31 @@ import Link from 'next/link'
 import { useQuery } from '@apollo/client';
 import { Loading } from 'react-loading-dot'
 
-import { Enum_EstadoInscripcion } from '../../utils/enums';
-import { GET_INSCRIPCIONES_ESTUDIANTE } from '../../graphql/inscripcion/queries';
-import { useUser } from '../../context/userContext';
+import { Enum_EstadoInscripcion } from 'utils/enums';
+import { GET_INSCRIPCIONES_ESTUDIANTE } from 'graphql/inscripcion/queries';
+import { useUser } from 'context/userContext';
+import type { NextPageWithAuth } from "pages/_app"
 
-const MisInscripciones= () => {
-
-  const { userData } = useUser();
-
-
-  const{data:queryData,loading:queryLoading}=useQuery(GET_INSCRIPCIONES_ESTUDIANTE,{variables:{where:{usuarioId:{equals:userData.id}}} });
+import { useSession } from "next-auth/react"
 
 
+const MisInscripciones:NextPageWithAuth= () => {
+
+  const { data: session, status } = useSession()
+
+  const userData = session?.user
+  
+
+
+  const{data:queryData,loading:queryLoading}=useQuery(GET_INSCRIPCIONES_ESTUDIANTE,{variables:{where:{estudiante:{is:{email:{equals:userData?.email}}}}} });
+
+  if(status==='loading') return <div>  <Loading background="blue" /></div>
   if (queryLoading) return <div> <Loading background="blue" /> </div>
 
     return (
       <div>
           <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Inscripciones realizadas:</h1>
-          <span className='d-flex flex-column align-items-center justify-content-center'>Estudiante: {userData.nombre + ' ' + userData.apellido}</span>
+          <span className='d-flex flex-column align-items-center justify-content-center'>Estudiante: {userData?.name}</span>
           <table className='tabla'>
             <thead>
               <tr>
@@ -67,3 +74,5 @@ const MisInscripciones= () => {
   };
 
 export default MisInscripciones;
+
+MisInscripciones.auth=true

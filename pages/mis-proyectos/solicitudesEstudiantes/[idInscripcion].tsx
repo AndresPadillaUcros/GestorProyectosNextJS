@@ -5,21 +5,22 @@ import Link from 'next/link'
 
 
 import { useQuery, useMutation } from '@apollo/client';
-import useFormData from '../../../hook/useFormData';
+import useFormData from 'hook/useFormData';
 import {toast } from 'react-toastify';
 import { Loading } from 'react-loading-dot'
 
 
-import ButtonLoading from '../../../components/ButtonLoading';
-import DropDown from '../../../components/Dropdown';
+import ButtonLoading from 'components/ButtonLoading';
+import DropDown from 'components/Dropdown';
 
-import { Enum_EstadoInscripcion } from '../../../utils/enums';
-import { GET_INSCRIPCION,GET_INSCRIPCIONES } from '../../../graphql/inscripcion/queries';
-import { APROBAR_INSCRIPCION } from '../../../graphql/inscripcion/mutations';
+import { Enum_EstadoInscripcion } from 'utils/enums';
+import { GET_INSCRIPCION,GET_INSCRIPCIONES } from 'graphql/inscripcion/queries';
+import { APROBAR_INSCRIPCION } from 'graphql/inscripcion/mutations';
+import type { NextPageWithAuth } from "pages/_app"
 
 
 
-const EditarInscripcion:NextPage=()=> {
+const EditarInscripcion:NextPageWithAuth=()=> {
 
     const router = useRouter()
     const { idInscripcion } = router.query
@@ -123,3 +124,5 @@ const EditarInscripcion:NextPage=()=> {
 }
 
 export default EditarInscripcion;
+
+EditarInscripcion.auth=true

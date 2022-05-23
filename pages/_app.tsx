@@ -17,7 +17,7 @@ import { UserContext } from '../context/userContext.js';
 import { SessionProvider } from "next-auth/react"
 
 import { useSession } from "next-auth/react"
-import type { NextComponentType  } from 'next'
+
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import Loader from 'components/ClipLoader'

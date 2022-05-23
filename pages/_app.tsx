@@ -29,8 +29,8 @@ const client = new ApolloClient({
     new HttpLink({
       uri:
         process.env.NODE_ENV === 'production'
-          ? 'http://localhost:3000/api/graphql'
-          : 'http://localhost:3000/api/graphql',
+          ? 'http://gestor-proyectos.vercel.app/api/graphql'
+          : 'http://gestor-proyectos.vercel.app/api/graphql',
     })
   ])
 })

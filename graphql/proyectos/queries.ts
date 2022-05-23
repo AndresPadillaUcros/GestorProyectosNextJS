@@ -13,6 +13,11 @@ const GET_PROYECTOS= gql`
                 name
                 apellido
             }
+            inscripciones {
+                estudiante {
+                    email
+                }
+            }
         }
     }
 `;

@@ -1,6 +1,8 @@
 import type { AppProps } from 'next/app'
 import React, { Children, useEffect, useState } from 'react'
-import Layout from '../layouts/Layout'
+import Layout from 'layouts/Layout'
+import PrivateLayout from 'layouts/PrivateLayout'
+
 import '../styles/style.css'
 import '../styles/tabla.css'
 import '../styles/icons.css'
@@ -18,7 +20,7 @@ import { useSession } from "next-auth/react"
 import type { NextComponentType  } from 'next'
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
-
+import Loader from 'components/ClipLoader'
 
 
 const client = new ApolloClient({
@@ -42,7 +44,11 @@ function Auth({ children }:{children:any}) {
   const { data: session, status  } = useSession()
 
   if (status === 'loading') {
-    return "cargando..."
+    return (
+      <div> 
+        <Loader /> 
+      </div>
+    )
   }
   if (status === 'authenticated') {
     return children
@@ -64,21 +70,25 @@ type CustomAppProps = AppProps & { Component: NextPageWithAuth }
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: CustomAppProps) {
 
+  const [userData, setUserData] = useState({})
+
   return (
     <ApolloProvider client={client}>
-      <SessionProvider session={session}>
-          {Component.auth?(
-            <Auth>
+      <UserContext.Provider value={{ userData, setUserData }}>
+        <SessionProvider session={session}>
+            {Component.auth?(
+              <Auth>
+                <PrivateLayout>
+                  <Component {...pageProps} />
+                </PrivateLayout>
+              </Auth>
+            ):(
               <Layout>
                 <Component {...pageProps} />
               </Layout>
-            </Auth>
-          ):(
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          )}
-      </SessionProvider>
+            )}
+        </SessionProvider>
+      </UserContext.Provider>
     </ApolloProvider>
   )
 }

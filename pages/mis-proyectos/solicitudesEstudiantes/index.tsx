@@ -9,14 +9,13 @@ import { GET_INSCRIPCIONES_DEL_LIDER } from 'graphql/inscripcion/queries';
 
 
 import type { NextPageWithAuth } from "pages/_app"
-import { useSession } from "next-auth/react"
 
+import { useUser } from 'context/userContext';
 
 const  Home: NextPageWithAuth = () => {
 
-  const { data: session, status } = useSession()
+  const { userData } = useUser()
 
-  const userData= session?.user
 
 
   const{data:queryData,loading:queryLoading}=useQuery(GET_INSCRIPCIONES_DEL_LIDER, {variables:{where:{
@@ -38,7 +37,7 @@ const  Home: NextPageWithAuth = () => {
 
 
 
-  if(status==='loading') return <div>  <Loading background="blue" /></div>
+
   if (queryLoading) return <div> <Loading background="blue" /> </div>
 
 
@@ -49,7 +48,7 @@ const  Home: NextPageWithAuth = () => {
     return (
       <div>
           <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Lista de solicitudes de estudiantes:</h1>
-          <span className='d-flex flex-column text-center'>Lider del proyecto: {userData?.name}</span>
+          <span className='d-flex flex-column text-center'>Lider del proyecto:  {userData.name + ' ' + userData.apellido}</span>
           <table className='tabla'>
             <thead>
               <tr>

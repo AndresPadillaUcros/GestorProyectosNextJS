@@ -13,30 +13,35 @@ import useFormData from 'hook/useFormData';
 import Input from 'components/Input'
 import ButtonLoading from 'components/ButtonLoading';
 import DropDown from 'components/Dropdown';
+import PrivateComponent from 'components/PrivateComponent'
+import RenderIf from 'components/RenderIf'
+
 
 import { Enum_EstadoProyecto , Enum_FaseProyecto} from 'utils/enums';
 import { GET_PROYECTO,GET_PROYECTOS} from 'graphql/proyectos/queries';
 import {EDITAR_OBJETIVO,CREAR_OBJETIVO,ELIMINAR_OBJETIVO,EDITAR_PROYECTO} from 'graphql/proyectos/mutations';
 import { CREAR_INSCRIPCION } from 'graphql/inscripcion/mutations';
-import { CREAR_AVANCE } from 'graphql/avances/mutations'; 
+import { ELIMINAR_INSCRIPCION } from 'graphql/inscripcion/mutations';
+import { CREAR_AVANCE,ELIMINAR_AVANCE,EDITAR_AVANCE } from 'graphql/avances/mutations'; 
 import { GET_AVANCES } from 'graphql/avances/queries'; 
-import { useSession } from "next-auth/react"
-import { GET_USUARIO } from 'graphql/usuarios/queries'
-
+import { useUser } from 'context/userContext';
 import type { NextPageWithAuth } from "pages/_app"
+
+
 
 const EditarProyecto:NextPageWithAuth=()=> {        
 
     const router = useRouter()
     const { idProyecto } = router.query
-    
+
+    const { userData } = useUser()
+
     const{form, formData,updateFormData} = useFormData(null);
 
-    const { data: session, status } = useSession()
-    const userData = session?.user
+
     
     const{data:queryDataProyecto,error:queryErrorProyecto,loading:queryLoadingProyecto}=useQuery(GET_PROYECTO,{variables:{where:{id:idProyecto}} } );
-    const{data:queryData,error:queryError,loading:queryLoading}=useQuery(GET_USUARIO,{ variables:{where:{email:userData?.email}}});
+
 
 
     const [editarProyecto, {data:mutationData, loading:mutationLoading, error:mutationError}] = useMutation(EDITAR_PROYECTO,
@@ -55,6 +60,7 @@ const EditarProyecto:NextPageWithAuth=()=> {
             fase:{set:  Object(formData)['fase']},
 
         }
+        console.log('me ejecturaron hp')
         editarProyecto(
                 { variables:{data,where:{id:idProyecto}} } 
             )    
@@ -76,9 +82,28 @@ const EditarProyecto:NextPageWithAuth=()=> {
       },[queryErrorProyecto,mutationError]);
     
 
+    const desicionFuntion = ()=>{
+
+        if (userData.rol =='Lider'){
+            return false
+        } else {
+            return true
+        }
+    }
+
+    const desicionFuntion2 = ()=>{
+
+        if (userData.rol =='Administrador'){
+            return false
+        } else {
+            return true
+        }
+    }
+
+    
 
     if (queryLoadingProyecto) return <div> <Loading background="blue" /> </div>
-    if (queryLoading) return <div> <Loading background="blue" /> </div>
+
 
 
     return (
@@ -105,36 +130,18 @@ const EditarProyecto:NextPageWithAuth=()=> {
                         defaultValue={queryDataProyecto.proyecto.nombre}
                         required={true}
                         className='input widthInput'
-                        disabled={false}
+                        readOnly={desicionFuntion()}
                       />
 
-{/*                       <Input
-                        label='Nombre del proyecto:'
-                        type='text'
-                        name='nombre'
-                        defaultValue={queryDataProyecto.proyecto.nombre}
-                        required={true}
-                        className='input widthInput'
-                        disabled={true}
-                      /> */}
-       
                       <Input
                         label='Presupuesto del proyecto:'
                         type='string'
                         name='presupuesto'
                         defaultValue={queryDataProyecto.proyecto.presupuesto}
                         required={true}
-                        disabled={false}
+                        readOnly={desicionFuntion()}
                       />
          
-{/*                       <Input
-                        label='Presupuesto del proyecto:'
-                        type='string'
-                        name='presupuesto'
-                        defaultValue={queryDataProyecto.proyecto.presupuesto}
-                        required={true}
-                        disabled={true}
-                      /> */}
               
                       <Input
                         label='Fecha Inicio:'
@@ -142,7 +149,7 @@ const EditarProyecto:NextPageWithAuth=()=> {
                         name='fechaInicio'
                         defaultValue={queryDataProyecto.proyecto.fechaInicio.slice(0,-14)}
                         required={true}
-                        disabled={false}
+                        readOnly={desicionFuntion()}
                       />
 
                       <Input
@@ -152,18 +159,8 @@ const EditarProyecto:NextPageWithAuth=()=> {
                         defaultValue={queryDataProyecto.proyecto.objetivoGeneral}
                         required={true}
                         className='input widthInput'
-                        disabled={false}
+                        readOnly={desicionFuntion()}
                       />
-
-{/*                       <Input
-                        label='Objetivo General:'
-                        type='text'
-                        name='objetivoGeneral'
-                        defaultValue={queryDataProyecto.proyecto.objetivoGeneral}
-                        required={true}
-                        className='input widthInput'
-                        disabled={true}
-                      /> */}
 
                       <VerObjetivosEspecificos
                           objetivos={queryDataProyecto.proyecto.objetivosEspecificos}
@@ -176,7 +173,7 @@ const EditarProyecto:NextPageWithAuth=()=> {
 
                       <VerAvancesProyecto 
                           idProyecto={idProyecto}
-                          idUser={queryData.user.id}
+                          idUser={userData.id}
                       />
 
                       <DropDown
@@ -185,7 +182,7 @@ const EditarProyecto:NextPageWithAuth=()=> {
                           defaultValue={queryDataProyecto.proyecto.estado}
                           required={true}
                           options={Enum_EstadoProyecto}
-                          disabled={false}
+                          readOnly={desicionFuntion2()}
                       />
 
                       <DropDown
@@ -194,24 +191,28 @@ const EditarProyecto:NextPageWithAuth=()=> {
                           defaultValue={queryDataProyecto.proyecto.fase}
                           required={true}
                           options={Enum_FaseProyecto}
-                          disabled={false}
+                          readOnly={desicionFuntion2()}
 
                       /> 
-               
-                        <ButtonLoading
-                            disabled={Object.keys(formData).length === 0}
-                            loading={mutationLoading}
-                            text='Confirmar'                        
-                        /> 
+                        <PrivateComponent roleList={['Administrador','Lider']}>
+                            <ButtonLoading
+                                disabled={Object.keys(formData).length === 0}
+                                loading={mutationLoading}
+                                text='Confirmar'                        
+                            /> 
+                        </PrivateComponent>
       
             </form>
             <div className='d-flex flex-column justify-content-center align-items-center mt-3'>
-                <InscricpionProyecto
-                    idProyecto={idProyecto}
-                    idUser={queryData.user.id}
-                    estado={queryDataProyecto.proyecto.estado}
-                    inscripciones={queryDataProyecto.proyecto.inscripciones}
-                />
+                <PrivateComponent roleList={['Estudiante']}>
+                    <InscricpionProyecto
+                        idProyecto={idProyecto}
+                        idUser={userData.id}
+                        estado={queryDataProyecto.proyecto.estado}
+                        inscripciones={queryDataProyecto.proyecto.inscripciones}
+                    />
+                </PrivateComponent>
+
             </div>                   
         </div>
      );
@@ -244,12 +245,14 @@ const VerObjetivosEspecificos= ({objetivos,idProyecto}:{objetivos:any;idProyecto
                             ))}                      
                         </tbody>
                     </table>   
+                        <PrivateComponent roleList={['Lider']}>
+                            <i
+                                onClick={()=>setShowEditDialog(true)}
+                                className='fas fa-plus p-2 mx-20 d-flex flex-column justify-content-center align-items-center '
+                                role="button"
+                            />
+                        </PrivateComponent> 
 
-                        <i
-                            onClick={()=>setShowEditDialog(true)}
-                            className='fas fa-plus p-2 mx-20 d-flex flex-column justify-content-center align-items-center '
-                            role="button"
-                        />
                         <Dialog open={showEditDialog} onClose={()=>setShowEditDialog(false)}>
                             <AgregarObjetivo
                                 idProyecto={idProyecto}  
@@ -278,16 +281,20 @@ const Objetivo =({idObjetivo,descripcion,index,idProyecto}:{idObjetivo:any;descr
             <td>{index+1}</td>
             <td>{descripcion}
 
-                    <i 
-                        onClick={()=>setShowEditDialog(true)}
-                        className='fas fa-pen px-3' 
-                        role="button"
-                        />
-                    <i
-                        onClick={()=>setShowEditDialogDelete(true)}
-                        className='fas fa-trash '
-                        role="button"
-                    />   
+                    <PrivateComponent roleList={['Lider']}>
+                        <i 
+                            onClick={()=>setShowEditDialog(true)}
+                            className='fas fa-pen px-3' 
+                            role="button"
+                            />
+                        <i
+                            onClick={()=>setShowEditDialogDelete(true)}
+                            className='fas fa-trash '
+                            role="button"
+                        /> 
+                    </PrivateComponent> 
+
+
                     <Dialog open={showEditDialog} onClose={()=>setShowEditDialog(false)}>
                         <EditarObjetivo 
                             descripcion={descripcion}
@@ -310,6 +317,7 @@ const Objetivo =({idObjetivo,descripcion,index,idProyecto}:{idObjetivo:any;descr
         </tr>
     )
 }
+
 const AgregarObjetivo=({idProyecto,setShowEditDialog}:{idProyecto:any;setShowEditDialog:any})=>{
 
     const{form, formData,updateFormData} = useFormData(null);
@@ -350,7 +358,7 @@ const AgregarObjetivo=({idProyecto,setShowEditDialog}:{idProyecto:any;setShowEdi
                         defaultValue=''
                         required={true}
                         className='input widthInput'
-                        disabled={false}
+                        readOnly={false}
                 />
                 <ButtonLoading
                         disabled={Object.keys(formData).length === 0}
@@ -405,7 +413,7 @@ const EditarObjetivo=({idObjetivo,descripcion,index,idProyecto,setShowEditDialog
                         defaultValue={descripcion}
                         required={true}
                         className='input widthInput'
-                        disabled={false}
+                        readOnly={false}
                 />
                 <ButtonLoading
                         disabled={Object.keys(formData).length === 0}
@@ -489,7 +497,7 @@ const VerAvancesProyecto= ({idProyecto,idUser}:{idProyecto:any,idUser:any})=>{
     const{data:queryDataAvances,loading:queryLoadingAvances}=useQuery(GET_AVANCES,{variables:{where:{proyectoId:{equals:idProyecto} }}} );
     
     if (queryLoadingAvances) return <div> Cargando...</div>
-    console.log("los avances son:",queryDataAvances)
+
 
     return(
         <>                    
@@ -517,30 +525,34 @@ const VerAvancesProyecto= ({idProyecto,idUser}:{idProyecto:any,idUser:any})=>{
                         })}
                         </tbody>
                     </table>
-                    <i
-                        onClick={()=>setShowEditDialog(true)}
-                        className='fas fa-plus p-2 mx-20  d-flex flex-column align-items-center justify-content-center '
-                        role="button"
-                    />
+                    <PrivateComponent roleList={['Lider','Estudiante']}>
+                        <i
+                            onClick={()=>setShowEditDialog(true)}
+                            className='fas fa-plus p-2 mx-20  d-flex flex-column align-items-center justify-content-center '
+                            role="button"
+                        />
+                    </PrivateComponent>
+
                     <Dialog open={showEditDialog} onClose={()=>setShowEditDialog(false)}>
                         <AgregarAvance
                             idProyecto={idProyecto}  
                             idUser={idUser}
                             setShowEditDialog={setShowEditDialog}
                         />
-                        </Dialog>
+                    </Dialog>
 
 
             </Accordion>                 
         </>
     );
-
 }
+
+
 
 const AgregarAvance=({idProyecto,setShowEditDialog,idUser}:{idProyecto:any;setShowEditDialog:any,idUser:any})=>{
 
 
-    const{form, formData,updateFormData} = useFormData(null);
+    const{form:form2, formData:formData2,updateFormData:updateFormData2} = useFormData(null);
 
     const [crearAvance, {loading:mutationLoadingAvance}] = useMutation(CREAR_AVANCE,
         {refetchQueries:[{query:GET_PROYECTO,variables:{where:{id:idProyecto}} },
@@ -548,10 +560,10 @@ const AgregarAvance=({idProyecto,setShowEditDialog,idUser}:{idProyecto:any;setSh
                         ]                
     });
 
-    const submitForm = (e:any)=>{
+    const submitForm2 = (e:any)=>{
         e.preventDefault() 
 
-        const data={...formData,
+        const data={...formData2,
             creadoPor:{connect:{id:idUser}},
             proyecto:{connect:{id:idProyecto}}
         }
@@ -574,9 +586,9 @@ const AgregarAvance=({idProyecto,setShowEditDialog,idUser}:{idProyecto:any;setSh
         <div className='p-4'>
             <h1 className='text-center'>Nuevo Avance</h1>
             <form
-                onSubmit={submitForm}
-                onChange={updateFormData}
-                ref={form} 
+                onSubmit={submitForm2}
+                onChange={updateFormData2}
+                ref={form2} 
                 className='d-flex flex-column align-items-center justify-conent-center'
             >    
                 <Input
@@ -586,10 +598,10 @@ const AgregarAvance=({idProyecto,setShowEditDialog,idUser}:{idProyecto:any;setSh
                         defaultValue=''
                         required={true}
                         className='input widthInput'
-                        disabled={false}
+                        readOnly={false}
                 />
                 <ButtonLoading
-                        disabled={Object.keys(formData).length === 0}
+                        disabled={Object.keys(formData2).length === 0}
                         loading={mutationLoadingAvance}
                         text='Confirmar'
                 /> 
@@ -603,20 +615,21 @@ const AgregarAvance=({idProyecto,setShowEditDialog,idUser}:{idProyecto:any;setSh
 const InscricpionProyecto= ({ idProyecto,estado, inscripciones,idUser }:{ idProyecto:any,estado:any, inscripciones:any,idUser:any}) => {
 
 
-    const [estadoInscripcion, setEstadoInscripcion] = useState('');
+    const [InscripcionEstudiante, setInscripcionEstudiante] = useState({});
     
     const [crearInscripcion, {data:mutationDataInscripcion, loading:mutationLoadingInscripcion}] = useMutation(CREAR_INSCRIPCION);
 
-    /* const{data:queryDataUsuario,error:queryErrorUsuario,loading:queryLoadingUsuario}=useQuery(GET_USUARIO,{variables:{id:idUsuario} } );  */
+    const [cancelarInscripcion, {data:mutationDataEliminarInscripcion, loading:mutationLoadingEliminarInscripcion}] = useMutation(ELIMINAR_INSCRIPCION);
 
     useEffect(() => {
         if (inscripciones) {
-            const flt = inscripciones.filter((el:any) => el.estudiante.id === idUser);
+            const flt = inscripciones.filter((u:any) => u.estudiante.id === idUser);
             if (flt.length > 0) {
-            setEstadoInscripcion(flt[0].estado);
-            }
+                setInscripcionEstudiante(flt[0]);      
+            }      
         }
-        }, [inscripciones,idUser]);
+        console.log("la inscripcion es primero:",Object(InscripcionEstudiante)['estado'])
+        }, [inscripciones,idUser,InscripcionEstudiante,mutationLoadingInscripcion,mutationLoadingEliminarInscripcion,mutationDataInscripcion,mutationDataEliminarInscripcion]);
 
     const confirmarInscripcion=()=>{
 
@@ -626,6 +639,14 @@ const InscricpionProyecto= ({ idProyecto,estado, inscripciones,idUser }:{ idProy
              }
 
         crearInscripcion({variables:{data}})  
+        setTimeout(location.reload.bind(location), 4000)
+    }
+
+
+    const eliminarInscripcion=()=>{
+
+        cancelarInscripcion({variables:{where:{id:Object(InscripcionEstudiante)['id']}}})  
+        setTimeout(location.reload.bind(location), 4000)
     }
 
     useEffect(()=>{
@@ -634,21 +655,40 @@ const InscricpionProyecto= ({ idProyecto,estado, inscripciones,idUser }:{ idProy
         }
     }, [mutationDataInscripcion])    
     
-    /* if (queryLoadingUsuario) return <div> Cargando...</div> */
+
+    useEffect(()=>{
+        if (mutationDataEliminarInscripcion){
+            toast.success('Inscripcion cancelada con exito', {position: "top-right", autoClose: 2000, hideProgressBar: true,closeOnClick: true});
+        }
+    }, [mutationDataEliminarInscripcion])
+
 
     return(
         <>
-            {estadoInscripcion !=='' ? (<span className='d-flex flex-column align-items-center justify-content-center text-warning'>Ya estas inscrito en este proyecto y el estado es: {estadoInscripcion} </span>
-            ):(
-                <div onClick={()=>confirmarInscripcion()} className='flex flex-col items-center justify-center' >
-                    <ButtonLoading
-                                disabled={estado==='INACTIVO'}
-                                loading={mutationLoadingInscripcion}
-                                text='Inscribirme'
-                            /> 
+            <RenderIf isTrue={Object(InscripcionEstudiante)['estado'] }>
+                <span className='d-flex flex-column align-items-center justify-content-center text-warning'>Ya estas inscrito en este proyecto y el estado es: {Object(InscripcionEstudiante)['estado']} </span>
+
+                <div onClick={()=>eliminarInscripcion()} className='flex flex-col items-center justify-center' >
+                        <ButtonLoading
+                                    disabled={estado==='Inactivo'}
+                                    loading={mutationLoadingEliminarInscripcion}
+                                    text='cancelar Inscripcion'
+                        /> 
                 </div>
-                ) 
-            }           
+
+            </RenderIf>
+
+            <RenderIf isTrue={!Object(InscripcionEstudiante)['estado']} >
+                <div onClick={()=>confirmarInscripcion()} className='flex flex-col items-center justify-center' >
+                        <ButtonLoading
+                                    disabled={estado==='Inactivo'}
+                                    loading={mutationLoadingInscripcion}
+                                    text='Inscribirme'
+                        /> 
+                </div>
+            </RenderIf>
+
+       
         </>
     );
 };
@@ -657,5 +697,5 @@ const InscricpionProyecto= ({ idProyecto,estado, inscripciones,idUser }:{ idProy
 
 export default EditarProyecto;
 
-EditarProyecto.auth=false
+EditarProyecto.auth=true
 

@@ -109,7 +109,7 @@ const EditarInscripcion:NextPageWithAuth=()=> {
                     defaultValue={queryDataInscripcion.inscripcion.estado}
                     required={true}
                     options={Enum_EstadoInscripcion}
-                    disabled={false}
+                    readOnly={false}
                 />
                 
                 <ButtonLoading

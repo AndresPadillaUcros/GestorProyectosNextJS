@@ -1,5 +1,5 @@
 
-import { useUser } from '../../context/userContext';
+import { useUser } from 'context/userContext';
 
 
 const PrivateComponent = ({ roleList, children }) => {

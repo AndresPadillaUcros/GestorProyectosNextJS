@@ -8,18 +8,16 @@ import { Enum_EstadoProyecto , Enum_FaseProyecto } from 'utils/enums'
 import { GET_PROYECTOS_LIDER } from 'graphql/proyectos/queries'
 
 import type { NextPageWithAuth } from "pages/_app"
-import { useSession } from "next-auth/react"
+import { useUser } from 'context/userContext';
 
 const Home: NextPageWithAuth = () => {
 
-  const { data: session, status } = useSession()
 
-  const userData= session?.user
-
-  const{data:queryData,loading:queryLoading}=useQuery(GET_PROYECTOS_LIDER,{variables:{where:{lider:{is:{email:{equals:userData?.email}}}}}});
+  const { userData } = useUser()
 
 
-  if(status==='loading') return <div>  <Loading background="blue" /></div>
+  const{data:queryData,loading:queryLoading}=useQuery(GET_PROYECTOS_LIDER,{variables:{where:{lider:{is:{email:{equals:userData.email}}}}}});
+
   if (queryLoading ) return <div> <Loading background="blue" /> </div>
 
 

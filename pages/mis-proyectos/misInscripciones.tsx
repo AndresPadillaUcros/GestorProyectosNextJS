@@ -12,15 +12,10 @@ import { useSession } from "next-auth/react"
 
 const MisInscripciones:NextPageWithAuth= () => {
 
-  const { data: session, status } = useSession()
+  const { userData } = useUser()
+  const{data:queryData,loading:queryLoading}=useQuery(GET_INSCRIPCIONES_ESTUDIANTE,{variables:{where:{estudiante:{is:{email:{equals:userData.email}}}}} });
 
-  const userData = session?.user
   
-
-
-  const{data:queryData,loading:queryLoading}=useQuery(GET_INSCRIPCIONES_ESTUDIANTE,{variables:{where:{estudiante:{is:{email:{equals:userData?.email}}}}} });
-
-  if(status==='loading') return <div>  <Loading background="blue" /></div>
   if (queryLoading) return <div> <Loading background="blue" /> </div>
 
     return (

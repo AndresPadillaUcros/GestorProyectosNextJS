@@ -20,5 +20,14 @@ const EDITAR_AVANCE= gql`
     }
 `;
 
+const ELIMINAR_AVANCE= gql`
+    mutation DeleteAvances($where: AvancesWhereUniqueInput!) {
+        deleteAvances(where: $where) {
+            id
+        }
+    }
+`;
 
-export { CREAR_AVANCE,EDITAR_AVANCE };
+
+
+export { CREAR_AVANCE,EDITAR_AVANCE,ELIMINAR_AVANCE };

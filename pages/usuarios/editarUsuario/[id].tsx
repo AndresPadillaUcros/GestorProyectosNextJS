@@ -10,18 +10,24 @@ import { Loading } from 'react-loading-dot'
 import { GET_USUARIO } from 'graphql/usuarios/queries'
 import { GET_USUARIOS } from 'graphql/usuarios/queries'
 import { EDITAR_USUARIO} from 'graphql/usuarios/mutations'
-import { Enum_EstadoUser } from 'utils/enums'
+import { Enum_EstadoUser ,Enum_Rol} from 'utils/enums'
+
+
 
 import useFormData from 'hook/useFormData'
 import Input from 'components/Input'
 import ButtonLoading from 'components/ButtonLoading'
 import DropDown from 'components/Dropdown'
+import {useUser} from 'context/userContext'
 
 import type { NextPageWithAuth } from "pages/_app"
 
 const Post:NextPageWithAuth = () => {
+
   const router = useRouter()
   const { id } = router.query
+
+  const{userData} = useUser()
 
   const{form, formData,updateFormData} = useFormData(null);
   const{data:queryData,error:queryError,loading:queryLoading}=useQuery(GET_USUARIO,{ variables:{where:{id}}});
@@ -31,11 +37,13 @@ const Post:NextPageWithAuth = () => {
 
   const submitForm = (e:any)=>{
       e.preventDefault(); 
+      console.log(formData)
       editarUsuario({
           variables:{
                     where:{id}, 
                     data:{
                         estado:{set:  Object(formData)['estado']},
+                        rol:{set:  Object(formData)['rol']}
                         },
                     }
       })
@@ -57,7 +65,23 @@ const Post:NextPageWithAuth = () => {
       }
     },[queryError,mutationError]);
 
+    const desicionFuntion = ()=>{
+        if (userData.rol =='Administrador' || userData.rol =='Lider' ){
+            return false
+        } else {
+            return true
+        }
+    }
 
+    const desicionFuntion2 = ()=>{
+        if (userData.id === id){
+            return false
+        } else {
+            return true
+        }
+    }
+
+    
   if (queryLoading) return <div> <Loading background="blue" /> </div>
 
   return (
@@ -78,7 +102,8 @@ const Post:NextPageWithAuth = () => {
                   name='name'
                   defaultValue={queryData.user.name}
                   required={true}
-                  disabled={true}
+                  readOnly={true}
+               
               />
               <Input
                   label='Apellido de la persona:'
@@ -86,7 +111,8 @@ const Post:NextPageWithAuth = () => {
                   name='apellido'
                   defaultValue={queryData.user.apellido}
                   required={true}
-                  disabled={true}
+                  readOnly={true}
+                 
               />
               <Input
                   label='Correo de la persona:'
@@ -94,7 +120,8 @@ const Post:NextPageWithAuth = () => {
                   name='correo'
                   defaultValue={queryData.user.email}
                   required={true}
-                  disabled={true}
+                  readOnly={true}
+                  
               />
               <Input
                   label='Identificación de la persona:'
@@ -102,16 +129,28 @@ const Post:NextPageWithAuth = () => {
                   name='identificacion'
                   defaultValue={queryData.user.identificacion}
                   required={true}
-                  disabled={true}
+                  readOnly={true}
+               
               />
               <DropDown
                   label='Estado de la persona:'
                   name='estado'
                   defaultValue={queryData.user.estado}
                   required={true}
-                  disabled={false}
+                  readOnly={desicionFuntion()}
                   options={Enum_EstadoUser}
               />
+
+            <DropDown
+                  label='Rol:'
+                  name='rol'
+                  defaultValue={queryData.user.rol}
+                  required={true}
+                  readOnly={desicionFuntion()}
+                  options={Enum_Rol}
+              />
+
+
                <span>Rol del usuario: {queryData.user.rol}</span>
               <ButtonLoading
                   disabled={Object.keys(formData).length === 0}

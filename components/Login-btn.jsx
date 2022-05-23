@@ -8,7 +8,7 @@ const ButtonAuth=()=>{
     if (session) {
       return (
         <div className="text-center">
-          You are signed in as {session.user.email}
+          You are signed with <br/>  {session.user.email}
           <br />
           <button onClick={() => signOut({ callbackUrl: 'http://localhost:3000/' })}  className="Sign">Sign out</button>
         </div>

@@ -11,16 +11,13 @@ import { useSession } from "next-auth/react"
 const Home: NextPageWithAuth = () => {
 
 
-  const { data: session, status } = useSession()
+
   const {data,loading}=useQuery(GET_PROYECTOS);
 
 
-
-
-  if(status==='loading') return <div>  <Loading background="blue" /></div>
   if (loading) return <div> <Loading background="blue" /> </div>
 
-  console.log(data)
+  console.log("proyectos",data)
 
 
   return (
@@ -33,6 +30,7 @@ const Home: NextPageWithAuth = () => {
                 <th>Nombre Lider</th>
                 <th>Fase del Proyecto</th>
                 <th>Estado del Proyecto</th>
+                <th>Numero de estudiantes</th>
                 <th>Ver mas</th>
               </tr>
             </thead>
@@ -46,6 +44,7 @@ const Home: NextPageWithAuth = () => {
                         <td>{u.lider.name} {u.lider.apellido}</td>
                         <td>{Enum_EstadoProyecto[u.estado]}</td>
                         <td>{Enum_FaseProyecto[u.fase]}</td>
+                        <td>{u.inscripciones.length}</td>
                         <td>
                           <Link href={`/lista-proyectos/editarProyecto/${u.id}`} passHref>
                             <i className='fas fa-book-reader' role="button" />

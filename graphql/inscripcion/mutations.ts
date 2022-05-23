@@ -30,4 +30,16 @@ const APROBAR_INSCRIPCION= gql`
 `;
 
 
-export { CREAR_INSCRIPCION,APROBAR_INSCRIPCION };
+const ELIMINAR_INSCRIPCION= gql`
+mutation DeleteInscripcion($where: InscripcionWhereUniqueInput!) {
+    deleteInscripcion(where: $where) {
+      id
+      estado
+    }
+  }
+`;
+
+
+
+
+export { CREAR_INSCRIPCION,APROBAR_INSCRIPCION,ELIMINAR_INSCRIPCION };

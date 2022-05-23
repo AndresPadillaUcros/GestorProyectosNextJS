@@ -10,24 +10,19 @@ import ButtonLoading from 'components/ButtonLoading';
 
 import useFormData from 'hook/useFormData';
 
-import { useUser } from 'context/userContext.js'
+
 import { useObj,ObjContext } from 'context/objectContext.js'
 import { GET_USUARIO } from 'graphql/usuarios/queries';
 import { CREAR_PROYECTO } from 'graphql/proyectos/mutations';
 
 import type { NextPageWithAuth } from "pages/_app"
-import { useSession } from "next-auth/react"
-
+import { useUser } from 'context/userContext';
 
 const Home: NextPageWithAuth = () => {
 
-    const { data: session, status } = useSession()
-
-    const userData = session?.user
+const { userData } = useUser()
 
   const{form, formData,updateFormData} = useFormData(null);
-
-  const{data:queryData,loading:queryLoading}=useQuery(GET_USUARIO,{variables:{where:{email:userData?.email}}});
 
   const [crearProyecto, {data:mutationData, loading:mutationLoading}] = useMutation(CREAR_PROYECTO);
 
@@ -35,7 +30,7 @@ const Home: NextPageWithAuth = () => {
     e.preventDefault(); 
 
 
-    const lider ={connect:{email:userData?.email}}
+    const lider ={connect:{email:userData.email}}
 
     if (Object(formData)['objetivosEspecificos']){
  
@@ -66,11 +61,6 @@ const Home: NextPageWithAuth = () => {
         }
     }, [mutationData])
     
-    if(status==='loading') return <div>  <Loading background="blue" /></div>
-    if (queryLoading) return <div> <Loading background="blue" /> </div>
-
-    console.log(queryData)
-
     return (
         <div className='d-flex flex-column w-100 h-100 p-3  '>
             <h1 className='text-center'>Creacion de Proyecto</h1>
@@ -81,7 +71,7 @@ const Home: NextPageWithAuth = () => {
                 className='d-flex flex-column justify-content-center align-items-center'
             >
 
-                <span className='text-uppercase text-primary'>Lider del proyecto: {queryData.user.name + ' ' + queryData.user.apellido}</span>
+                <span className='text-uppercase text-primary'>Lider del proyecto: {userData.name + ' ' + userData?.apellido}</span>
                 <Input
                     label='Nombre del proyecto:'
                     type='text'
@@ -89,7 +79,7 @@ const Home: NextPageWithAuth = () => {
                     defaultValue={''}
                     required={true}
                     className='input widthInput'
-                    disabled={false}
+                    readOnly={false}
                 />
                 <Input
                     label='Presupuesto:'
@@ -97,7 +87,7 @@ const Home: NextPageWithAuth = () => {
                     name='presupuesto'
                     defaultValue={''}
                     required={true}
-                    disabled={false}
+                    readOnly={false}
                 />
                 <Input
                     label='Fecha de inicio:'
@@ -105,7 +95,7 @@ const Home: NextPageWithAuth = () => {
                     name='fechaInicio'
                     defaultValue={''}
                     required={true}
-                    disabled={false}
+                    readOnly={false}
                 />
                 <Input
                     label='Objetivo general:'
@@ -114,7 +104,7 @@ const Home: NextPageWithAuth = () => {
                     defaultValue={''}
                     required={false}
                     className='input widthInput '
-                    disabled={false}
+                    readOnly={false}
                 />
                 <Objetivos />
 
@@ -172,7 +162,7 @@ const FormObjetivo=({id}:{id:any})=>{
                 label='Descripcion' 
                 type='text' 
                 required={true} 
-                disabled={false}
+                readOnly={false}
                 defaultValue={''}
                 />
 

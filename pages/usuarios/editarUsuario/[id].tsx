@@ -137,7 +137,7 @@ const Post:NextPageWithAuth = () => {
                   name='estado'
                   defaultValue={queryData.user.estado}
                   required={true}
-                  readOnly={desicionFuntion()}
+                  disabled={desicionFuntion()}
                   options={Enum_EstadoUser}
               />
 
@@ -146,7 +146,7 @@ const Post:NextPageWithAuth = () => {
                   name='rol'
                   defaultValue={queryData.user.rol}
                   required={true}
-                  readOnly={desicionFuntion()}
+                  disabled={desicionFuntion()}
                   options={Enum_Rol}
               />
 

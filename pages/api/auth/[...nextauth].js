@@ -7,11 +7,14 @@ const prisma = new PrismaClient()
 
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
+  
   providers: [
     Auth0Provider({
         clientId: process.env.AUTH0_CLIENT_ID,
         clientSecret: process.env.AUTH0_CLIENT_SECRET,
         issuer: process.env.AUTH0_ISSUER
       })
-  ]
+  ],
+
+
 })

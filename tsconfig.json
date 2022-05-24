@@ -17,7 +17,7 @@
     "baseUrl": ".",
 
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/f.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/f.jsx", "pages/auth/signin.js"],
   "exclude": ["node_modules"],
 
 }

@@ -10,7 +10,7 @@ const ButtonAuth=()=>{
         <div className="text-center">
           You are signed with <br/>  {session.user.email}
           <br />
-          <button onClick={() => signOut({ callbackUrl: '/' })}  className="Sign">Sign out</button>
+          <button onClick={() => signOut( {callbackUrl: "/" })}  className="Sign">Sign out</button>
         </div>
       )
     }
@@ -18,7 +18,7 @@ const ButtonAuth=()=>{
       <div className="text-center">
         You are not signed in 
         <br />
-        <button onClick={() => signIn('auth0',{ callbackUrl: '/perfil' })}  className="Sign">Sign in</button>
+        <button onClick={() => signIn('auth0',{callbackUrl: "/" })}  className="Sign">Sign in</button>
       </div>
     )
 }

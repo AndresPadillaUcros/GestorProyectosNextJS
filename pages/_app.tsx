@@ -35,6 +35,18 @@ const client = new ApolloClient({
   ])
 })
 
+/* const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: from([
+    new HttpLink({
+      uri:
+        process.env.NODE_ENV === 'production'
+          ? 'http://localhost:3000/api/graphql'
+          : 'http://localhost:3000/api/graphql',
+    })
+  ])
+}) */
+
 
 
 function Auth({ children }:{children:any}) {

@@ -72,7 +72,7 @@ const EditarInscripcion:NextPageWithAuth=()=> {
             <h1 className='m-4 text-center'>Informacion del Estudiante</h1>
         
             <div className='d-flex flex-column p-10 align-items-center m-2 '>
-                <span className='uppercase  text-blue-600'>  Nombre:{' '+inscripcion.nombre} {inscripcion.apellido}  </span>
+                <span className='uppercase  text-blue-600'>  Nombre:{' '+inscripcion.name} {inscripcion.apellido}  </span>
                 <span className='uppercase  text-blue-600'>  Correo: {' '+inscripcion.email}  </span>
             </div>
 
@@ -109,7 +109,7 @@ const EditarInscripcion:NextPageWithAuth=()=> {
                     defaultValue={queryDataInscripcion.inscripcion.estado}
                     required={true}
                     options={Enum_EstadoInscripcion}
-                    readOnly={false}
+                    disabled={false}
                 />
                 
                 <ButtonLoading

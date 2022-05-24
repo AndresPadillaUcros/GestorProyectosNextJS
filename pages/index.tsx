@@ -44,33 +44,10 @@ const Usuarios =()=>{
               </tr>
           </thead>
             <tbody>
-              <tr>
-                <td>andres13xx@gmail.com</td>
-                <td>Scotyjunior1*</td>
-              </tr>
-              <tr>
-                <td>c-osmic@hotmail.com</td>
-                <td>Andrespadilla1*</td>
-              </tr>
-            </tbody>
-        </table>
 
-        <span className='d-flex flex-column text-center'> Usuarios con rol de LIDER: </span>
-        <table className='styled-table my-4'>
-          <thead>
-            <tr>
-              <th>Correo</th>
-              <th>Contraseña</th>
-              </tr>
-          </thead>
-            <tbody>
               <tr>
-                <td>federico@hotmail.com</td>
+                <td>javier@hotmail.com</td>
                 <td>Contraseña1*</td>
-              </tr>
-              <tr>
-                <td>c-osmic@hotmail.com</td>
-                <td>Andrespadilla1*</td>
               </tr>
             </tbody>
         </table>
@@ -85,15 +62,37 @@ const Usuarios =()=>{
           </thead>
             <tbody>
               <tr>
-                <td>andres13xx@gmail.com</td>
-                <td>Scotyjunior1*</td>
+                <td>luis@hotmail.com</td>
+                <td>Contraseña1*</td>
               </tr>
               <tr>
-                <td>c-osmic@hotmail.com</td>
-                <td>Andrespadilla1*</td>
+                <td>isabel@hotmail.com</td>
+                <td>Contraseña1*</td>
               </tr>
             </tbody>
         </table>
+
+        <span className='d-flex flex-column text-center'> Usuarios con rol de ESTUDIANTE: </span>
+        <table className='styled-table my-4'>
+          <thead>
+            <tr>
+              <th>Correo</th>
+              <th>Contraseña</th>
+              </tr>
+          </thead>
+            <tbody>
+              <tr>
+                <td>federico@hotmail.com</td>
+                <td>Contraseña1*</td>
+              </tr>
+              <tr>
+                <td>laura@hotmail.com</td>
+                <td>Contraseña1*</td>
+              </tr>
+            </tbody>
+        </table>
+
+
 
       </div>
 

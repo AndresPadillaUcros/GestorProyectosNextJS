@@ -114,7 +114,7 @@ const Home: NextPageWithAuth = () => {
                             defaultValue={userData.rol}
                             required={true}
                             options={Enum_Rol}
-                            readOnly={true}
+                            disabled={true}
                         />
                         <DropDown
                             label='Estado:'
@@ -122,7 +122,7 @@ const Home: NextPageWithAuth = () => {
                             defaultValue={userData.estado}
                             required={true}
                             options={Enum_EstadoUser}
-                            readOnly={true}
+                            disabled={true}
                         />
 
                         <ButtonLoading

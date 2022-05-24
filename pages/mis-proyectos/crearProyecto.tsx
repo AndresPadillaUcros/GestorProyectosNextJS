@@ -6,6 +6,7 @@ import { nanoid } from 'nanoid';
 import { Loading } from 'react-loading-dot'
 
 import Input from 'components/Input'
+import ExtendedInput from 'components/ExtendedInput'
 import ButtonLoading from 'components/ButtonLoading';
 
 import useFormData from 'hook/useFormData';
@@ -17,6 +18,7 @@ import { CREAR_PROYECTO } from 'graphql/proyectos/mutations';
 
 import type { NextPageWithAuth } from "pages/_app"
 import { useUser } from 'context/userContext';
+
 
 const Home: NextPageWithAuth = () => {
 
@@ -72,7 +74,7 @@ const { userData } = useUser()
             >
 
                 <span className='text-uppercase text-primary'>Lider del proyecto: {userData.name + ' ' + userData?.apellido}</span>
-                <Input
+                <ExtendedInput
                     label='Nombre del proyecto:'
                     type='text'
                     name='nombre'
@@ -97,7 +99,7 @@ const { userData } = useUser()
                     required={true}
                     readOnly={false}
                 />
-                <Input
+                <ExtendedInput
                     label='Objetivo general:'
                     type='text'
                     name='objetivoGeneral'
@@ -157,7 +159,7 @@ const FormObjetivo=({id}:{id:any})=>{
 
     return(
         <div className='flex items-center'>
-            <Input 
+            <ExtendedInput 
                 name={`nested||objetivosEspecificos||${id}||descripcion`}  
                 label='Descripcion' 
                 type='text' 

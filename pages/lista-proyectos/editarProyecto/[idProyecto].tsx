@@ -16,7 +16,7 @@ import DropDown from 'components/Dropdown';
 import PrivateComponent from 'components/PrivateComponent'
 import RenderIf from 'components/RenderIf'
 
-
+import ExtendedInput from 'components/ExtendedInput'
 import { Enum_EstadoProyecto , Enum_FaseProyecto} from 'utils/enums';
 import { GET_PROYECTO,GET_PROYECTOS} from 'graphql/proyectos/queries';
 import {EDITAR_OBJETIVO,CREAR_OBJETIVO,ELIMINAR_OBJETIVO,EDITAR_PROYECTO} from 'graphql/proyectos/mutations';
@@ -123,7 +123,7 @@ const EditarProyecto:NextPageWithAuth=()=> {
                     <span className='text-uppercase'>Lider del proyecto: {queryDataProyecto.proyecto.lider.name+ ' ' + queryDataProyecto.proyecto.lider.apellido}</span>
 
      
-                      <Input
+                      <ExtendedInput
                         label='nombre del proyecto:'
                         type='text'
                         name='nombre'
@@ -152,7 +152,7 @@ const EditarProyecto:NextPageWithAuth=()=> {
                         readOnly={desicionFuntion()}
                       />
 
-                      <Input
+                      <ExtendedInput
                         label='Objetivo General:'
                         type='text'
                         name='objetivoGeneral'
@@ -182,7 +182,7 @@ const EditarProyecto:NextPageWithAuth=()=> {
                           defaultValue={queryDataProyecto.proyecto.estado}
                           required={true}
                           options={Enum_EstadoProyecto}
-                          readOnly={desicionFuntion2()}
+                          disabled={desicionFuntion2()}
                       />
 
                       <DropDown
@@ -191,7 +191,7 @@ const EditarProyecto:NextPageWithAuth=()=> {
                           defaultValue={queryDataProyecto.proyecto.fase}
                           required={true}
                           options={Enum_FaseProyecto}
-                          readOnly={desicionFuntion2()}
+                          disabled={desicionFuntion2()}
 
                       /> 
                         <PrivateComponent roleList={['Administrador','Lider']}>
@@ -351,7 +351,7 @@ const AgregarObjetivo=({idProyecto,setShowEditDialog}:{idProyecto:any;setShowEdi
                 ref={form} 
                 className='d-flex flex-column align-items-center justify-content-center'
             >    
-                <Input
+                <ExtendedInput
                         label='Descripcion:'
                         type='text'
                         name='descripcion'
@@ -406,7 +406,7 @@ const EditarObjetivo=({idObjetivo,descripcion,index,idProyecto,setShowEditDialog
                 ref={form} 
                 className='d-flex flex-column align-items-center justify-content-center'
             >    
-                <Input
+                <ExtendedInput
                         label='Descripcion:'
                         type='text'
                         name='descripcion'
@@ -591,7 +591,7 @@ const AgregarAvance=({idProyecto,setShowEditDialog,idUser}:{idProyecto:any;setSh
                 ref={form2} 
                 className='d-flex flex-column align-items-center justify-conent-center'
             >    
-                <Input
+                <ExtendedInput
                         label='Descripcion:'
                         type='text'
                         name='descripcion'
